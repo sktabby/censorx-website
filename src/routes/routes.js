@@ -1,0 +1,21 @@
+
+export const ROUTES = {
+  HOME: "/",
+  PROBLEM: "/problem",
+  SOLUTION: "/solution",
+  HOW_IT_WORKS: "/how-it-works",
+  ROLES: "/roles",
+  PRIVACY: "/privacy",
+  FEATURES: "/features",
+  DOWNLOAD: "/download",
+  USER_GUIDE: "/user-guide",
+  TRL: "/trl",
+  ROADMAP: "/roadmap",
+  USE_CASES: "/use-cases",
+  WHY_IT_MATTERS: "/why-it-matters",
+  FAQ: "/faq",
+  CONTACT: "/contact",
+  PRIVACY_POLICY: "/legal/privacy-policy",
+  TERMS: "/legal/terms",
+  DISCLAIMER: "/legal/disclaimer",
+};
