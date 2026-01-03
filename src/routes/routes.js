@@ -1,9 +1,7 @@
 
 export const ROUTES = {
   HOME: "/",
-  PROBLEM: "/problem",
-  SOLUTION: "/solution",
-  HOW_IT_WORKS: "/how-it-works",
+  
   ROLES: "/roles",
   PRIVACY: "/privacy",
   FEATURES: "/features",
@@ -18,4 +16,6 @@ export const ROUTES = {
   PRIVACY_POLICY: "/legal/privacy-policy",
   TERMS: "/legal/terms",
   DISCLAIMER: "/legal/disclaimer",
+  ABOUT: "/about",
+
 };

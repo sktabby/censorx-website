@@ -6,9 +6,30 @@
   --c3:#237f79;
   --c4:#32b2a9;
 
-  --bg: radial-gradient(1200px 700px at 20% -10%, rgba(50,178,169,.18), transparent 60%),
-        radial-gradient(900px 500px at 90% 10%, rgba(35,127,121,.20), transparent 55%),
-        linear-gradient(180deg, #000 0%, #071918 35%, #000 100%);
+  --bg:
+  radial-gradient(
+    1200px 700px at 20% -10%,
+    rgba(50,178,169,0.16) 0%,
+    rgba(50,178,169,0.08) 35%,
+    rgba(50,178,169,0.02) 55%,
+    transparent 75%
+  ),
+  radial-gradient(
+    900px 500px at 90% 10%,
+    rgba(35,127,121,0.18) 0%,
+    rgba(35,127,121,0.08) 30%,
+    rgba(35,127,121,0.02) 55%,
+    transparent 75%
+  ),
+  linear-gradient(
+    180deg,
+    #000000 0%,
+    #040f0f 25%,
+    #071918 50%,
+    #040f0f 75%,
+    #000000 100%
+  );
+
 
   --card: rgba(7,25,24,0.72);
   --card2: rgba(21,76,72,0.16);

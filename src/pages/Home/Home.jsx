@@ -1,4 +1,3 @@
-
 import React from "react";
 import Hero from "./sections/Hero";
 import ProblemHighlight from "./sections/ProblemHighlight";
@@ -7,14 +6,28 @@ import WhoItsFor from "./sections/WhoItsFor";
 import WhyDifferent from "./sections/WhyDifferent";
 import TrustSignals from "./sections/TrustSignals";
 
+function Divider() {
+  return <div className="sectionDivider" />;
+}
+
 export default function Home() {
   return (
     <>
       <Hero />
+
+      <Divider />
       <ProblemHighlight />
+
+      <Divider />
       <WhatCensorXDoes />
+
+      <Divider />
       <WhoItsFor />
+
+      <Divider />
       <WhyDifferent />
+
+      <Divider />
       <TrustSignals />
     </>
   );

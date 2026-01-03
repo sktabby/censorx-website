@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import { ROUTES } from "../../../routes/routes";
 import Card from "../../../components/ui/Card";
 import Button from "../../../components/ui/Button";
+import CensorXMobileDemo from "../../../components/ui/CensorXMobileDemo";
 
 export default function Hero() {
   return (
@@ -11,9 +12,8 @@ export default function Hero() {
       <div className="container grid2">
         <div className="pageHeader">
           <div className="badgeRow">
-            <kbd className="pill">Privacy-first</kbd>
-            <kbd className="pill">On-device</kbd>
-            <kbd className="pill">Real-time</kbd>
+            <kbd className="pill">Product of ATA minds</kbd>
+            
           </div>
 
           <h1 className="h1">
@@ -21,8 +21,7 @@ export default function Hero() {
           </h1>
 
           <p className="p">
-            CensorX acts as a digital safety layer that detects risky content instantly and responds in the moment —
-            without storing your private data.
+            CensorX acts as a digital safety layer that detects risky content instantly and responds in the moment.
           </p>
 
           <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginTop: 16 }}>
@@ -36,25 +35,10 @@ export default function Hero() {
         </div>
 
         <Card className="soft">
-          <div style={{ fontWeight: 900, fontSize: 16, marginBottom: 8 }}>
-            What CensorX does in seconds
-          </div>
+  <CensorXMobileDemo />
+</Card>
 
-          <div style={{ color: "var(--muted)", lineHeight: 1.7 }}>
-            • Detects harassment, hate, and toxic language<br />
-            • Filters explicit & violent imagery<br />
-            • Protects children silently, without disrupting usage<br />
-            • Sends parents real-time alerts when needed<br />
-          </div>
 
-          <hr className="sep" />
-
-          <div style={{ display: "grid", gap: 10 }}>
-            <MiniStat title="Cross-app layer" text="Works as an extra safety shield across apps." />
-            <MiniStat title="Fast actions" text="Block • Blur • Warn • Notify — instantly." />
-            <MiniStat title="Data stays local" text="No external storage by default." />
-          </div>
-        </Card>
       </div>
     </section>
   );

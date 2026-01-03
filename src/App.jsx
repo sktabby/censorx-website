@@ -7,9 +7,7 @@ import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 
 import Home from "./pages/Home/Home";
-import ProblemStatement from "./pages/ProblemStatement/ProblemStatement";
-import Solution from "./pages/Solution/Solution";
-import HowItWorks from "./pages/HowItWorks/HowItWorks";
+
 import Roles from "./pages/Roles/Roles";
 import PrivacyEthics from "./pages/PrivacyEthics/PrivacyEthics";
 import Features from "./pages/Features/Features";
@@ -25,6 +23,8 @@ import Contact from "./pages/Contact/Contact";
 import PrivacyPolicy from "./pages/Legal/PrivacyPolicy";
 import Terms from "./pages/Legal/Terms";
 import Disclaimer from "./pages/Legal/Disclaimer";
+import AboutUs from "./pages/AboutUs/AboutUs";
+
 
 import NotFound from "./pages/NotFound";
 
@@ -35,9 +35,7 @@ export default function App() {
       <main className="mainWrap">
         <Routes>
           <Route path={ROUTES.HOME} element={<Home />} />
-          <Route path={ROUTES.PROBLEM} element={<ProblemStatement />} />
-          <Route path={ROUTES.SOLUTION} element={<Solution />} />
-          <Route path={ROUTES.HOW_IT_WORKS} element={<HowItWorks />} />
+          
           <Route path={ROUTES.ROLES} element={<Roles />} />
           <Route path={ROUTES.PRIVACY} element={<PrivacyEthics />} />
           <Route path={ROUTES.FEATURES} element={<Features />} />
@@ -53,6 +51,8 @@ export default function App() {
           <Route path={ROUTES.PRIVACY_POLICY} element={<PrivacyPolicy />} />
           <Route path={ROUTES.TERMS} element={<Terms />} />
           <Route path={ROUTES.DISCLAIMER} element={<Disclaimer />} />
+          <Route path={ROUTES.ABOUT} element={<AboutUs />} />
+
 
           <Route path="*" element={<NotFound />} />
         </Routes>
