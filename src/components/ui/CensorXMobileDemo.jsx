@@ -449,7 +449,7 @@ export default function CensorXMobileDemo() {
 
           <div className="appBar">
             <div className="igLogo">
-              <InstaGlyph /> Instagram
+              <InstaGlyph /> Social 
             </div>
             <div className="appIcons" aria-hidden="true">
               <HeartIcon />

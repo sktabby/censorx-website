@@ -4,6 +4,7 @@ import ProblemHighlight from "./sections/ProblemHighlight";
 import WhatCensorXDoes from "./sections/WhatCensorXDoes";
 import WhoItsFor from "./sections/WhoItsFor";
 import WhyDifferent from "./sections/WhyDifferent";
+import CoFounders from "./sections/CoFounders";
 import TrustSignals from "./sections/TrustSignals";
 
 function Divider() {
@@ -26,6 +27,10 @@ export default function Home() {
 
       <Divider />
       <WhyDifferent />
+
+      
+      <Divider />
+      <CoFounders />
 
       <Divider />
       <TrustSignals />
