@@ -7,7 +7,7 @@ export default function Features() {
   return (
     <>
       <FeatureGrid />
-      <CustomLevels />
+      
     </>
   );
 }

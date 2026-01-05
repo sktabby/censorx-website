@@ -8,7 +8,7 @@ export default function RoadmapTimeline() {
     { t: "Multi-language support", d: "Improve coverage across diverse languages and slang." },
     { t: "Audio harassment detection", d: "Extend protection to voice-based abuse (future phase)." },
     { t: "Cross-platform expansion", d: "Beyond Android: broader device coverage over time." },
-    { t: "School / enterprise dashboards", d: "High-level safety metrics without invading privacy." },
+ 
     { t: "Continuous AI improvement", d: "Refine models with careful evaluation and guardrails." },
   ];
 

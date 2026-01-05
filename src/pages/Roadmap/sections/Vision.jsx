@@ -12,7 +12,7 @@ export default function Vision() {
       <Card className="soft">
         <ul className="list">
           <li>Protection that adapts to people, not just platforms.</li>
-          <li>Tools for families, educators, and institutions (optional future).</li>
+          <li>Tools for families, educators, and institutions.</li>
           <li>Ethical safeguards that prevent misuse and overreach.</li>
         </ul>
       </Card>

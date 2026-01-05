@@ -25,6 +25,7 @@ export default function Navbar() {
 
   const mainLinks = useMemo(
     () => [
+       { to: ROUTES.HOME, label: "Home" },  
       { to: ROUTES.FEATURES, label: "Features" },
       { to: ROUTES.FAQ, label: "FAQ" },
       { to: ROUTES.CONTACT, label: "Contact" },

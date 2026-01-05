@@ -111,9 +111,14 @@ export default function WhoItsFor() {
           One system • Three experiences • Same protection layer
         </div>
 
-        <NavLink to={ROUTES.ROLES} style={{ textDecoration: "none" }}>
-          <Button variant="outline">Explore roles</Button>
-        </NavLink>
+        <NavLink
+  to={ROUTES.ROLES}
+  style={{ textDecoration: "none" }}
+  onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+>
+  <Button variant="outline">Explore roles</Button>
+</NavLink>
+
       </div>
     </Section>
   );

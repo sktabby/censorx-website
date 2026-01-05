@@ -1,4 +1,3 @@
-
 import React from "react";
 
 export default function Button({
@@ -20,7 +19,18 @@ export default function Button({
       ? "btnGhost"
       : "btnOutline");
 
-  const props = Comp === "a" ? { href } : { onClick, type };
+  const handleClick = (e) => {
+    // 👉 Always scroll to top on navigation intent
+    window.scrollTo({ top: 0, left: 0 });
+
+    // 👉 Preserve existing behavior
+    if (onClick) onClick(e);
+  };
+
+  const props =
+    Comp === "a"
+      ? { href, onClick: handleClick }
+      : { onClick: handleClick, type };
 
   return (
     <Comp className={`${base} ${className}`} {...props}>

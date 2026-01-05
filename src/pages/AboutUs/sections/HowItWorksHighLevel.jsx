@@ -7,7 +7,6 @@ export default function HowItWorksHighLevel() {
     <section className="container section">
       <Header
         k="⚙️ How CensorX Works"
-        t="High-level flow — simple, fast, privacy-first"
         d="We explain how CensorX works without technical jargon. The focus is trust: it runs quietly, detects harmful content, takes action instantly, and avoids external storage."
       />
 
@@ -29,14 +28,7 @@ export default function HowItWorksHighLevel() {
         </Step>
       </div>
 
-      <div style={{ marginTop: 18, display: "flex", gap: 12, flexWrap: "wrap" }}>
-        <NavLink to={ROUTES.HOW_IT_WORKS} className="navA" style={{ textDecoration: "none" }}>
-          View “How it works” page →
-        </NavLink>
-        <NavLink to={ROUTES.PRIVACY} className="navA" style={{ textDecoration: "none" }}>
-          See Privacy & Ethics →
-        </NavLink>
-      </div>
+
     </section>
   );
 }

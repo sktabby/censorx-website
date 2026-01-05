@@ -11,7 +11,7 @@ export default function CustomLevels() {
     >
       <Card className="soft">
         <ul className="list">
-          <li>Strict mode for children (recommended).</li>
+          <li>Strict mode for children.</li>
           <li>Balanced mode for teens and general use.</li>
           <li>Personal mode for individuals with custom toggles.</li>
         </ul>

@@ -25,12 +25,16 @@ import Terms from "./pages/Legal/Terms";
 import Disclaimer from "./pages/Legal/Disclaimer";
 import AboutUs from "./pages/AboutUs/AboutUs";
 
+import ScrollToTop from "./components/layout/ScrollToTop";
+
 
 import NotFound from "./pages/NotFound";
 
 export default function App() {
   return (
     <div className="appShell">
+            <ScrollToTop />
+
       <Navbar />
       <main className="mainWrap">
         <Routes>
