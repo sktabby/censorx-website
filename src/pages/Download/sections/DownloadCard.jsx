@@ -240,10 +240,10 @@ export default function DownloadCard() {
           }}
         >
           <div>
-            <div style={{ fontWeight: 900, fontSize: 16 }}>CensorX Prototype APK</div>
-            <div style={{ color: "var(--muted2)", marginTop: 6 }}>
+            <div style={{ fontWeight: 900, fontSize: 20 }}>CensorX Prototype APK</div>
+            {/* <div style={{ color: "var(--muted2)", marginTop: 6 }}>
               Supported Android: 9+ (recommended). Update this as per your build.
-            </div>
+            </div> */}
           </div>
 
           <Button as="a" href="/Censorx-version-1.0.apk" download variant="primary">

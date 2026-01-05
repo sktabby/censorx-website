@@ -7,7 +7,6 @@ export default function TRL() {
   return (
     <>
       <TRLStatus />
-      <WhatNext />
     </>
   );
 }
