@@ -2,6 +2,8 @@ import React, { useMemo, useState, useEffect, useRef } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { ROUTES } from "../../routes/routes";
 import Button from "../ui/Button";
+import logo from "../../assets/team/c_logo_without_bg.png";
+
 
 export default function Navbar() {
   const [open, setOpen] = useState(false); // mobile menu
@@ -49,11 +51,49 @@ export default function Navbar() {
     <header className="navWrap">
       <div className="container navBar">
         <NavLink to={ROUTES.HOME} className="brand">
-          <div className="brandMark" aria-hidden="true" />
-          <div>
-            <div className="brandTitle">CensorX.ai</div>
-            <div className="brandSub">Your Digital Guardian</div>
-          </div>
+         <img
+  src={logo}
+  alt="CensorX logo"
+  aria-hidden="true"
+  style={{
+    width: 46,
+    height: 46,
+    objectFit: "contain",
+    opacity: 0.95,
+  }}
+/>
+
+         <div>
+  <div
+    className="brandTitle"
+    style={{
+      fontSize: "clamp(16px, 3.5vw, 20px)",
+      fontWeight: 900,
+      lineHeight: 1.1,
+    }}
+  >
+    CensorX.ai
+  </div>
+
+  <div
+  className="brandSub"
+  style={{
+    fontSize: "clamp(10px, 2.4vw, 12px)",
+    opacity: 0.8,
+    marginTop: 1,
+
+    /* 👇 critical for one-line behavior */
+    whiteSpace: "nowrap",
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+    maxWidth: "100%",
+  }}
+>
+  Your Digital Guardian
+</div>
+
+</div>
+
         </NavLink>
 
         {/* DESKTOP LINKS */}
@@ -103,7 +143,18 @@ export default function Navbar() {
 
         <div className="navActions">
           <NavLink to={ROUTES.DOWNLOAD}>
-            <Button variant="primary">Download APK</Button>
+         <div
+  style={{
+    fontSize: "clamp(11px, 2.8vw, 14px)",
+    whiteSpace: "nowrap",        // ✅ prevents line break
+  }}
+>
+  <Button variant="primary">
+    <span style={{ whiteSpace: "nowrap" }}>Download APK</span>
+  </Button>
+</div>
+
+
           </NavLink>
 
           <button
