@@ -13,7 +13,7 @@ export default function Hero() {
         <div className="pageHeader">
           <div className="badgeRow">
             <kbd className="pill">Product of ATA minds</kbd>
-            
+
           </div>
 
           <h1 className="h1">
@@ -28,15 +28,22 @@ export default function Hero() {
             <NavLink to={ROUTES.DOWNLOAD}>
               <Button variant="primary">Download APK</Button>
             </NavLink>
-            <NavLink to={ROUTES.HOW_IT_WORKS}>
-              <Button variant="outline">How It Works</Button>
-            </NavLink>
+            <Button
+              variant="outline"
+              onClick={() => {
+                const el = document.getElementById("how-it-works");
+                if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+              }}
+            >
+              How It Works
+            </Button>
+
           </div>
         </div>
 
         <Card className="soft">
-  <CensorXMobileDemo />
-</Card>
+          <CensorXMobileDemo />
+        </Card>
 
 
       </div>

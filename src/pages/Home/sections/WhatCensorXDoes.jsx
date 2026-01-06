@@ -9,6 +9,7 @@ import safetyImg from "../../../assets/team/censorx-visual.png";
 
 export default function WhatCensorXDoes() {
   return (
+    <div id="how-it-works"  style={{ scrollMarginTop: 90 }} >
     <Section
       title="What CensorX does"
       subtitle="A real-time digital safety layer built for the moment harm appears."
@@ -167,5 +168,6 @@ export default function WhatCensorXDoes() {
         </div>
       </Card>
     </Section>
+    </div>
   );
 }
