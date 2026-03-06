@@ -24,6 +24,8 @@ import PrivacyPolicy from "./pages/Legal/PrivacyPolicy";
 import Terms from "./pages/Legal/Terms";
 import Disclaimer from "./pages/Legal/Disclaimer";
 import AboutUs from "./pages/AboutUs/AboutUs";
+import Team from "./pages/Team/Team";
+import Career from "./pages/Career/Career";
 
 import ScrollToTop from "./components/layout/ScrollToTop";
 
@@ -33,13 +35,13 @@ import NotFound from "./pages/NotFound";
 export default function App() {
   return (
     <div className="appShell">
-            <ScrollToTop />
+      <ScrollToTop />
 
       <Navbar />
       <main className="mainWrap">
         <Routes>
           <Route path={ROUTES.HOME} element={<Home />} />
-          
+
           <Route path={ROUTES.ROLES} element={<Roles />} />
           <Route path={ROUTES.PRIVACY} element={<PrivacyEthics />} />
           <Route path={ROUTES.FEATURES} element={<Features />} />
@@ -51,6 +53,8 @@ export default function App() {
           <Route path={ROUTES.WHY_IT_MATTERS} element={<WhyItMatters />} />
           <Route path={ROUTES.FAQ} element={<FAQ />} />
           <Route path={ROUTES.CONTACT} element={<Contact />} />
+          <Route path={ROUTES.TEAM} element={<Team />} />
+          <Route path={ROUTES.CAREER} element={<Career />} />
 
           <Route path={ROUTES.PRIVACY_POLICY} element={<PrivacyPolicy />} />
           <Route path={ROUTES.TERMS} element={<Terms />} />

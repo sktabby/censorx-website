@@ -13,6 +13,8 @@ export const ROUTES = {
   WHY_IT_MATTERS: "/why-it-matters",
   FAQ: "/faq",
   CONTACT: "/contact",
+  CAREER: "/career",
+  TEAM: "/team",
   PRIVACY_POLICY: "/legal/privacy-policy",
   TERMS: "/legal/terms",
   DISCLAIMER: "/legal/disclaimer",

@@ -29,8 +29,7 @@ export default function Home() {
       <WhyDifferent />
 
       
-      <Divider />
-      <CoFounders />
+
 
       <Divider />
       <TrustSignals />

@@ -18,20 +18,22 @@ export default function Navbar() {
       { to: ROUTES.PRIVACY, label: "Privacy" },
       { to: ROUTES.TRL, label: "TRL" },
       { to: ROUTES.ROADMAP, label: "Roadmap" },
+      { to: ROUTES.FAQ, label: "FAQ" },
        // ✅ add this route
     ],
     []
   );
 
-  const mainLinks = useMemo(
-    () => [
-       { to: ROUTES.HOME, label: "Home" },  
-      { to: ROUTES.FEATURES, label: "Features" },
-      { to: ROUTES.FAQ, label: "FAQ" },
-      { to: ROUTES.CONTACT, label: "Contact" },
-    ],
-    []
-  );
+const mainLinks = useMemo(
+  () => [
+    { to: ROUTES.HOME, label: "Home" },
+    { to: ROUTES.FEATURES, label: "Features" },
+    { to: ROUTES.TEAM, label: "Team" },
+    { to: ROUTES.CAREER, label: "Careers" },
+    { to: ROUTES.CONTACT, label: "Contact" },
+  ],
+  []
+);
 
   useEffect(() => {
     setOpen(false);

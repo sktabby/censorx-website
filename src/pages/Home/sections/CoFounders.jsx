@@ -34,7 +34,7 @@ function Underline() {
         height: 3,
         borderRadius: 999,
         background: "rgba(255,255,255,0.18)",
-        marginTop: 10,
+       
       }}
     />
   );
