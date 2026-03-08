@@ -8,5 +8,5 @@ to pull the others work follow this command without loosing your local work
 to push your changes to github use the below commands
 
 git add .
-git commit -m "commited by aqsa career!"
+git commit -m "commited by aqsa change the pdf file and work on google form logic!"
 git push

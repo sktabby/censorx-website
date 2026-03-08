@@ -93,6 +93,12 @@ export default function Career() {
     f: false,
   });
 
+  const [popup, setPopup] = useState({
+    show: false,
+    type: "",
+    message: "",
+  });
+
   const [form, setForm] = useState({
     fullName: "",
     phone: "",
@@ -150,6 +156,14 @@ export default function Career() {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(email || "").trim());
   }
 
+  function showPopup(type, message) {
+    setPopup({ show: true, type, message });
+
+    setTimeout(() => {
+      setPopup({ show: false, type: "", message: "" });
+    }, 3000);
+  }
+
   const sectionComplete = {
     a:
       !!form.fullName.trim() &&
@@ -158,7 +172,6 @@ export default function Career() {
       !!form.college.trim() &&
       !!form.passingYear.trim(),
 
-    // section b should not count in progress
     b:
       !!form.role.trim() &&
       !!form.level.trim() &&
@@ -173,12 +186,14 @@ export default function Career() {
       !!form.contribution.trim() &&
       !!form.projectStack.trim(),
 
-    e: !!form.oneLine.trim() && !!form.feature.trim(),
+    e:
+      !!form.oneLine.trim() &&
+      !!form.feature.trim(),
 
     f: !!form.resumeLink.trim(),
   };
 
-  const progressSections = ["a", "c", "d", "e", "f"];
+  const progressSections = ["a", "b", "c", "d", "e", "f"];
   const completedCount = progressSections.filter((key) => sectionComplete[key]).length;
   const totalSections = progressSections.length;
   const progress = Math.round((completedCount / totalSections) * 100);
@@ -257,10 +272,18 @@ export default function Career() {
 
   async function onSubmit(e) {
     e.preventDefault();
-    if (!canSubmit()) return;
+
+    const currentScrollY = window.scrollY;
+
+    if (!canSubmit()) {
+      showPopup("warning", "Please complete all required sections before submitting.");
+      requestAnimationFrame(() => {
+        window.scrollTo({ top: currentScrollY, behavior: "auto" });
+      });
+      return;
+    }
 
     setSubmitting(true);
-    setSent(false);
 
     try {
       const payload = buildPayload();
@@ -271,41 +294,63 @@ export default function Career() {
         await submitToGoogleForm(payload);
       }
 
-      setSent(true);
-      setForm({
-        fullName: "",
-        phone: "",
-        email: "",
-        college: "",
-        passingYear: "",
-        role: "AIML Engineer Intern",
-        level: "",
-        yearsOfExperience: "",
-        hasLaptop: "Yes",
-        profileLink: "",
-        tech: [],
-        projectTitle: "",
-        contribution: "",
-        projectStack: "",
-        oneLine: "",
-        feature: "",
-        resumeLink: "",
+      showPopup("success", "Application submitted successfully.");
+
+      requestAnimationFrame(() => {
+        window.scrollTo({ top: currentScrollY, behavior: "auto" });
       });
 
-      setTimeout(() => setSent(false), 3000);
+      // Reset after popup closes / delay
+      setTimeout(() => {
+        setForm({
+          fullName: "",
+          phone: "",
+          email: "",
+          college: "",
+          passingYear: "",
+          role: "AIML Engineer Intern",
+          level: "",
+          yearsOfExperience: "",
+          hasLaptop: "Yes",
+          profileLink: "",
+          tech: [],
+          projectTitle: "",
+          contribution: "",
+          projectStack: "",
+          oneLine: "",
+          feature: "",
+          resumeLink: "",
+        });
+
+        setOpenSections({
+          a: false,
+          b: false,
+          c: false,
+          d: false,
+          e: false,
+          f: false,
+        });
+      }, 3000);
     } catch (err) {
       console.error("Careers form submit error:", err);
+      showPopup("error", "Error submitting application. Please try again.");
+
+      requestAnimationFrame(() => {
+        window.scrollTo({ top: currentScrollY, behavior: "auto" });
+      });
     } finally {
       setSubmitting(false);
     }
   }
 
+
   return (
-    <div className="career-page container">
+    <div className="">
       <Section
-        title="Application Form"
-        subtitle="Fill all required details carefully before submitting."
+        title="Apply For Internship at Censorx.ai"
+        subtitle="We are Expanding Our Team!"
       >
+
         <div className="career-top-info">
           <Card className="soft career-info-card">
             <div className="career-info-card-head">
@@ -315,8 +360,35 @@ export default function Career() {
                   Apply for the role that best matches your skills
                 </div>
               </div>
-              <div className="career-pill">
-                {completedCount}/{totalSections} Counted Sections Done
+
+              <div className="career-info-actions">
+
+                <a
+                  href="/files/censorx-internship-details.pdf"
+                  download="CensorX-Internship-Details.pdf"
+                  className="career-details-btn"
+                >
+                  Details
+                </a>
+                <button
+                  type="button"
+                  className="career-apply-btn"
+                  onClick={() => {
+                    const formSection = document.getElementById("career-form-section");
+                    if (formSection) {
+                      const topOffset = 90;
+                      const elementTop =
+                        formSection.getBoundingClientRect().top + window.pageYOffset - topOffset;
+
+                      window.scrollTo({
+                        top: elementTop,
+                        behavior: "smooth",
+                      });
+                    }
+                  }}
+                >
+                  Apply Now
+                </button>
               </div>
             </div>
 
@@ -337,220 +409,261 @@ export default function Career() {
                 </div>
               </div>
             </div>
-          </Card>
 
-          <Card className="soft career-progress-card">
-            <div className="career-progress-head">
-              <span className="career-mini-title">Application Progress</span>
-              <span className="career-progress-text">{progress}% Complete</span>
-            </div>
-            <div className="career-progress-track">
-              <div
-                className="career-progress-fill"
-                style={{ width: `${progress}%` }}
-              />
-            </div>
-            <div className="career-note" style={{ marginTop: 10 }}>
-              Section B is required for submission, but it is not counted in the progress bar.
+            <div className="career-job-details">
+              <div className="career-job-detail-item">
+                <span className="career-job-detail-label">Internship Duration:</span>
+                <span className="career-job-detail-value">6–11 Months</span>
+              </div>
+
+              <div className="career-job-detail-item">
+                <span className="career-job-detail-label">Mode:</span>
+                <span className="career-job-detail-value">In-Office Internship — Compulsory</span>
+              </div>
+
+              <div className="career-job-detail-item">
+                <span className="career-job-detail-label">Type:</span>
+                <span className="career-job-detail-value">Full-Time Paid Internship</span>
+              </div>
+
+              <div className="career-job-detail-item">
+                <span className="career-job-detail-label">Start:</span>
+                <span className="career-job-detail-value">Immediate</span>
+              </div>
+
+              <div className="career-job-detail-item">
+                <span className="career-job-detail-label">Location:</span>
+                <span className="career-job-detail-value">
+                  Kalsekar Incubation Centre (AIKTC), Plot Nos. 2 & 3, Sector 16,
+                  Khandagaon, Near Thana Naka, New Panvel
+                </span>
+              </div>
+              <div className="career-job-detail-item">
+                <span className="career-job-detail-label">Queries & Technical Support:</span>
+                <span className="career-job-detail-value">+91 98203 76923</span>
+              </div>
             </div>
           </Card>
         </div>
 
-        <Card className="soft career-form-card">
-          <form onSubmit={onSubmit} className="career-form">
-            <CollapsibleSection
-              title="Section A"
-              subtitle="Basic Details"
-              open={openSections.a}
-              onToggle={() => toggleSection("a")}
-              complete={sectionComplete.a}
-            >
-              <Grid2>
-                <Field label="Name *">
-                  <input className="inp" name="fullName" value={form.fullName} onChange={onChange} />
-                </Field>
-                <Field label="Contact No *">
-                  <input className="inp" name="phone" value={form.phone} onChange={onChange} />
-                </Field>
-                <Field label="E-Mail *">
-                  <input className="inp" name="email" value={form.email} onChange={onChange} />
-                </Field>
-                <Field label="College *">
-                  <input className="inp" name="college" value={form.college} onChange={onChange} />
-                </Field>
-                <Field label="Passing Year *">
-                  <input className="inp" name="passingYear" value={form.passingYear} onChange={onChange} />
-                </Field>
-              </Grid2>
-            </CollapsibleSection>
+        <div id="career-form-section">
+          <Card className="soft career-form-card">
+            <h2 className="form-heading">Application Form</h2>
+            <form onSubmit={onSubmit} className="career-form" >
 
-            <CollapsibleSection
-              title="Section B"
-              subtitle="Role & Experience"
-              open={openSections.b}
-              onToggle={() => toggleSection("b")}
-              complete={sectionComplete.b}
-            >
-              <Grid2>
-                <Field label="Position applying for *">
-                  <div className="select-wrap">
-                    <select className="inp select-inp" name="role" value={form.role} onChange={onChange}>
-                      {roleOptions.map((role) => (
-                        <option key={role} value={role}>{role}</option>
-                      ))}
-                    </select>
-                  </div>
-                </Field>
-
-                <Field label="Experience level *">
-                  <div className="select-wrap">
-                    <select className="inp select-inp" name="level" value={form.level} onChange={onChange}>
-                      <option value="">Select</option>
-                      <option>Beginner</option>
-                      <option>Intermediate</option>
-                      <option>Advanced</option>
-                    </select>
-                  </div>
-                </Field>
-
-                <Field label="Year of Experience *">
-                  <input
-                    className="inp"
-                    name="yearsOfExperience"
-                    value={form.yearsOfExperience}
-                    onChange={onChange}
-                  />
-                </Field>
-
-                <Field label="Do you have your own laptop? *">
-                  <div className="select-wrap">
-                    <select className="inp select-inp" name="hasLaptop" value={form.hasLaptop} onChange={onChange}>
-                      <option>Yes</option>
-                      <option>No</option>
-                    </select>
-                  </div>
-                </Field>
-
-                <Field label="GitHub / LinkedIn / Portfolio (any) *">
-                  <input
-                    className="inp"
-                    name="profileLink"
-                    value={form.profileLink}
-                    onChange={onChange}
-                    placeholder="Paste any one link"
-                  />
-                </Field>
-              </Grid2>
-            </CollapsibleSection>
-
-            <CollapsibleSection
-              title="Section C"
-              subtitle={
-                form.role === "AIML Engineer Intern"
-                  ? "Skills & Tools for AIML Engineer Intern"
-                  : "Skills & Tools for Andriod Developer Intern"
-              }
-              open={openSections.c}
-              onToggle={() => toggleSection("c")}
-              complete={sectionComplete.c}
-            >
-              <Field label="Select primary tools you know *">
-                <div className="chips">
-                  {techOptions.map((t) => {
-                    const active = form.tech.includes(t);
-                    return (
-                      <button
-                        key={t}
-                        type="button"
-                        className={`chip ${active ? "on" : ""}`}
-                        onClick={() => toggleTech(t)}
-                      >
-                        {t}
-                      </button>
-                    );
-                  })}
+              <Card className="soft career-progress-card">
+                <div className="career-progress-head">
+                  <span className="career-mini-title"> Progress</span>
+                  <span className="career-progress-text">{progress}% Complete</span>
                 </div>
-              </Field>
-            </CollapsibleSection>
+                <div className="career-progress-track">
+                  <div
+                    className="career-progress-fill"
+                    style={{ width: `${progress}%` }}
+                  />
+                </div>
 
-            <CollapsibleSection
-              title="Section D"
-              subtitle="Project Proof"
-              open={openSections.d}
-              onToggle={() => toggleSection("d")}
-              complete={sectionComplete.d}
-            >
-              <Field label="Best project you've built (title). *">
-                <input className="inp" name="projectTitle" value={form.projectTitle} onChange={onChange} />
-              </Field>
+              </Card>
+              <CollapsibleSection
+                title="Section A"
+                subtitle="Basic Details"
+                open={openSections.a}
+                onToggle={() => toggleSection("a")}
+                complete={sectionComplete.a}
+              >
+                <Grid2>
+                  <Field label="Name *">
+                    <input className="inp" name="fullName" value={form.fullName} onChange={onChange} />
+                  </Field>
+                  <Field label="Contact No *">
+                    <input className="inp" name="phone" value={form.phone} onChange={onChange} />
+                  </Field>
+                  <Field label="E-Mail *">
+                    <input className="inp" name="email" value={form.email} onChange={onChange} />
+                  </Field>
+                  <Field label="College *">
+                    <input className="inp" name="college" value={form.college} onChange={onChange} />
+                  </Field>
+                  <Field label="Passing Year *">
+                    <input className="inp" name="passingYear" value={form.passingYear} onChange={onChange} />
+                  </Field>
+                </Grid2>
+              </CollapsibleSection>
 
-              <Field label="Your contribution (what exactly you did). *">
-                <textarea className="inp" name="contribution" value={form.contribution} onChange={onChange} rows={4} />
-              </Field>
+              <CollapsibleSection
+                title="Section B"
+                subtitle="Role & Experience"
+                open={openSections.b}
+                onToggle={() => toggleSection("b")}
+                complete={sectionComplete.b}
+              >
+                <Grid2>
+                  <Field label="Position applying for *">
+                    <div className="select-wrap">
+                      <select className="inp select-inp" name="role" value={form.role} onChange={onChange}>
+                        {roleOptions.map((role) => (
+                          <option key={role} value={role}>{role}</option>
+                        ))}
+                      </select>
+                    </div>
+                  </Field>
 
-              <Field label="Tech stack used *">
-                <input className="inp" name="projectStack" value={form.projectStack} onChange={onChange} />
-              </Field>
-            </CollapsibleSection>
+                  <Field label="Experience level *">
+                    <div className="select-wrap">
+                      <select className="inp select-inp" name="level" value={form.level} onChange={onChange}>
+                        <option value="">Select</option>
+                        <option>Beginner</option>
+                        <option>Intermediate</option>
+                        <option>Advanced</option>
+                      </select>
+                    </div>
+                  </Field>
 
-            <CollapsibleSection
-              title="Section E"
-              subtitle="Short Questions"
-              open={openSections.e}
-              onToggle={() => toggleSection("e")}
-              complete={sectionComplete.e}
-            >
-              <Field label="What do you know about censorx.ai ? Describe in one line. *">
-                <textarea className="inp" name="oneLine" value={form.oneLine} onChange={onChange} rows={3} />
-              </Field>
+                  <Field label="Year of Experience *">
+                    <input
+                      className="inp"
+                      name="yearsOfExperience"
+                      value={form.yearsOfExperience}
+                      onChange={onChange}
+                    />
+                  </Field>
 
-              <Field label="What is one feature you'd love to build in this project? (3-5 lines) *">
-                <textarea className="inp" name="feature" value={form.feature} onChange={onChange} rows={4} />
-              </Field>
-            </CollapsibleSection>
+                  <Field label="Do you have your own laptop? *">
+                    <div className="select-wrap">
+                      <select className="inp select-inp" name="hasLaptop" value={form.hasLaptop} onChange={onChange}>
+                        <option>Yes</option>
+                        <option>No</option>
+                      </select>
+                    </div>
+                  </Field>
 
-            <CollapsibleSection
-              title="Section F"
-              subtitle="Resume"
-              open={openSections.f}
-              onToggle={() => toggleSection("f")}
-              complete={sectionComplete.f}
-            >
-              <Field label="Resume Link *">
-                <input
-                  className="inp"
-                  type="url"
-                  name="resumeLink"
-                  value={form.resumeLink}
-                  onChange={onChange}
-                  placeholder="Paste Google Drive / resume URL"
-                />
-              </Field>
+                  <Field label="GitHub / LinkedIn / Portfolio (any) *">
+                    <input
+                      className="inp"
+                      name="profileLink"
+                      value={form.profileLink}
+                      onChange={onChange}
+                      placeholder="Paste any one link"
+                    />
+                  </Field>
+                </Grid2>
+              </CollapsibleSection>
 
-              <div className="career-note">
-                Share a public link so the team can open your resume without requesting access.
+              <CollapsibleSection
+                title="Section C"
+                subtitle={
+                  form.role === "AIML Engineer Intern"
+                    ? "Skills & Tools for AIML Engineer Intern"
+                    : "Skills & Tools for Andriod Developer Intern"
+                }
+                open={openSections.c}
+                onToggle={() => toggleSection("c")}
+                complete={sectionComplete.c}
+              >
+                <Field label="Select primary tools you know *">
+                  <div className="chips">
+                    {techOptions.map((t) => {
+                      const active = form.tech.includes(t);
+                      return (
+                        <button
+                          key={t}
+                          type="button"
+                          className={`chip ${active ? "on" : ""}`}
+                          onClick={() => toggleTech(t)}
+                        >
+                          {t}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </Field>
+              </CollapsibleSection>
+
+              <CollapsibleSection
+                title="Section D"
+                subtitle="Project Proof"
+                open={openSections.d}
+                onToggle={() => toggleSection("d")}
+                complete={sectionComplete.d}
+              >
+                <Field label="Best project you've built (title). *">
+                  <input className="inp" name="projectTitle" value={form.projectTitle} onChange={onChange} />
+                </Field>
+
+                <Field label="Your contribution (what exactly you did). *">
+                  <textarea className="inp" name="contribution" value={form.contribution} onChange={onChange} rows={4} />
+                </Field>
+
+                <Field label="Tech stack used *">
+                  <input className="inp" name="projectStack" value={form.projectStack} onChange={onChange} />
+                </Field>
+              </CollapsibleSection>
+
+              <CollapsibleSection
+                title="Section E"
+                subtitle="Short Questions"
+                open={openSections.e}
+                onToggle={() => toggleSection("e")}
+                complete={sectionComplete.e}
+              >
+                <Field label="What do you know about censorx.ai ? Describe in one line. *">
+                  <textarea className="inp" name="oneLine" value={form.oneLine} onChange={onChange} rows={3} />
+                </Field>
+
+                <Field label="What is one feature you'd love to build in this project? (3-5 lines) *">
+                  <textarea className="inp" name="feature" value={form.feature} onChange={onChange} rows={4} />
+                </Field>
+              </CollapsibleSection>
+
+              <CollapsibleSection
+                title="Section F"
+                subtitle="Resume"
+                open={openSections.f}
+                onToggle={() => toggleSection("f")}
+                complete={sectionComplete.f}
+              >
+                <Field label="Resume Link *">
+                  <input
+                    className="inp"
+                    type="url"
+                    name="resumeLink"
+                    value={form.resumeLink}
+                    onChange={onChange}
+                    placeholder="Paste Google Drive / resume URL"
+                  />
+                </Field>
+
+                <div className="career-note">
+                  Share a public link so the team can open your resume without requesting access.
+                </div>
+              </CollapsibleSection>
+
+              <div className="career-submit-row">
+                <div className="career-submit-row">
+                  <button className="career-apply-btn" type="submit" disabled={submitting}>
+                    {submitting ? "Submitting..." : "Submit Application"}
+                  </button>
+                </div>
               </div>
-            </CollapsibleSection>
-
-            <div className="career-submit-row">
-              <Button variant="primary" type="submit" disabled={submitting || !canSubmit()}>
-                {submitting ? "Submitting..." : "Submit Application"}
-              </Button>
-
-              {sent && (
-                <span className="career-submit-note success">
-                  Application submitted successfully
-                </span>
-              )}
-
-              {!canSubmit() && (
-                <span className="career-submit-note">
-                  Complete all required sections to submit
-                </span>
-              )}
+            </form>
+          </Card>
+        </div>
+        {popup.show && (
+          <div className="career-popup-overlay">
+            <div className={`career-popup career-popup-${popup.type}`}>
+              <div className="career-popup-content">
+                <span>{popup.message}</span>
+                <button
+                  type="button"
+                  className="career-popup-close"
+                  onClick={() => setPopup({ show: false, type: "", message: "" })}
+                >
+                  ×
+                </button>
+              </div>
             </div>
-          </form>
-        </Card>
+          </div>
+        )}
       </Section>
     </div>
   );
