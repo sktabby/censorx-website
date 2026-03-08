@@ -364,8 +364,8 @@ export default function Career() {
               <div className="career-info-actions">
 
                 <a
-                  href="/files/censorx-internship-details.pdf"
-                  download="CensorX-Internship-Details.pdf"
+                  href="/files/Censorx Technologies.pdf"
+                  download="Censorx Technologies.pdf"
                   className="career-details-btn"
                 >
                   Details
