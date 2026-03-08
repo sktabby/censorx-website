@@ -1,34 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import { ROUTES } from "../../routes/routes";
-import { PROTECTED_MEMBER_UNLOCK_EVENT } from "../../utils/protectedMembers";
 
 export default function Footer() {
-  const [aqsaProfile, setAqsaProfile] = useState(null);
-
-  useEffect(() => {
-    function handleProtectedMemberUnlock(event) {
-      const detail = event.detail;
-
-      if (!detail || detail.memberKey !== "aqsa") {
-        return;
-      }
-
-      setAqsaProfile({
-        memberKey: "aqsa",
-        unlocked: detail.unlocked !== false,
-        profileUrl: String(detail.profileUrl || "").trim(),
-        unlockedAt: Number(detail.unlockedAt || Date.now()),
-      });
-    }
-
-    window.addEventListener(PROTECTED_MEMBER_UNLOCK_EVENT, handleProtectedMemberUnlock);
-
-    return () => {
-      window.removeEventListener(PROTECTED_MEMBER_UNLOCK_EVENT, handleProtectedMemberUnlock);
-    };
-  }, []);
-
   return (
     <footer
       style={{
@@ -171,13 +145,7 @@ export default function Footer() {
               </div>
 
               <div style={{ marginTop: 10, display: "grid", gap: 8 }}>
-                {aqsaProfile?.unlocked && aqsaProfile?.profileUrl ? (
-                  <FounderLink name="Aqsa" href={aqsaProfile.profileUrl} />
-                ) : aqsaProfile?.unlocked ? (
-                  <FounderUnlockedLink name="Aqsa" />
-                ) : (
-                  <FounderLockedLink />
-                )}
+                <FounderLink name="Aqsa" href="https://www.linkedin.com/in/aqsashah2004/" />
                 <FounderLink name="Tabish" href="https://www.linkedin.com/in/tabish-profile/" />
                 <FounderLink name="Ashar" href="https://www.linkedin.com/in/mohammadashar0911/" />
               </div>
@@ -396,131 +364,6 @@ function FounderLink({ name, href }) {
         <LinkedInMark />
       </span>
     </a>
-  );
-}
-
-function FounderLockedLink() {
-  return (
-    <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        gap: 10,
-        padding: "11px 12px",
-        borderRadius: 14,
-        border: "1px solid rgba(255,255,255,0.08)",
-        background: "rgba(255,255,255,0.015)",
-        color: "inherit",
-        opacity: 0.78,
-      }}
-    >
-      <div style={{ display: "flex", alignItems: "center", gap: 10, minWidth: 0 }}>
-        <span
-          style={{
-            width: 30,
-            height: 30,
-            borderRadius: 11,
-            display: "inline-flex",
-            alignItems: "center",
-            justifyContent: "center",
-            background: "rgba(79,195,247,0.07)",
-            border: "1px solid rgba(79,195,247,0.16)",
-            fontWeight: 950,
-            fontSize: 12,
-            flexShrink: 0,
-          }}
-        >
-          L
-        </span>
-
-        <div style={{ display: "grid", gap: 2, minWidth: 0 }}>
-          <span style={{ fontWeight: 900, fontSize: 13, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
-            Protected member
-          </span>
-          <span style={{ fontSize: 12, color: "var(--muted2)" }}>Profile locked</span>
-        </div>
-      </div>
-
-      <span
-        style={{
-          display: "inline-flex",
-          alignItems: "center",
-          gap: 6,
-          padding: "6px 9px",
-          borderRadius: 999,
-          background: "rgba(255,255,255,0.04)",
-          border: "1px solid rgba(255,255,255,0.08)",
-          fontSize: 11,
-          fontWeight: 800,
-          color: "var(--muted2)",
-        }}
-      >
-        <span aria-hidden="true">Lock</span>
-      </span>
-    </div>
-  );
-}
-
-function FounderUnlockedLink({ name }) {
-  return (
-    <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        gap: 10,
-        padding: "11px 12px",
-        borderRadius: 14,
-        border: "1px solid rgba(255,255,255,0.10)",
-        background: "rgba(255,255,255,0.02)",
-        color: "inherit",
-      }}
-    >
-      <div style={{ display: "flex", alignItems: "center", gap: 10, minWidth: 0 }}>
-        <span
-          style={{
-            width: 30,
-            height: 30,
-            borderRadius: 11,
-            display: "inline-flex",
-            alignItems: "center",
-            justifyContent: "center",
-            background: "rgba(79,195,247,0.10)",
-            border: "1px solid rgba(79,195,247,0.22)",
-            fontWeight: 950,
-            fontSize: 12,
-            flexShrink: 0,
-          }}
-        >
-          {String(name || "?").slice(0, 1).toUpperCase()}
-        </span>
-
-        <div style={{ display: "grid", gap: 2, minWidth: 0 }}>
-          <span style={{ fontWeight: 900, fontSize: 13, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
-            {name}
-          </span>
-          <span style={{ fontSize: 12, color: "var(--muted2)" }}>LinkedIn unlocked</span>
-        </div>
-      </div>
-
-      <span
-        style={{
-          display: "inline-flex",
-          alignItems: "center",
-          gap: 6,
-          padding: "6px 9px",
-          borderRadius: 999,
-          background: "rgba(79,195,247,0.10)",
-          border: "1px solid rgba(79,195,247,0.22)",
-          fontSize: 11,
-          fontWeight: 800,
-          color: "#cdeff4",
-        }}
-      >
-        Ready
-      </span>
-    </div>
   );
 }
 
