@@ -6,45 +6,53 @@ export default function ProblemDeepDive() {
   return (
     <section className="container section">
       <Header
-        k="🧠 Problem Statement"
-        t="The internet moves fast — harm reaches kids faster"
-        d="Cyberbullying, explicit content, and stranger contact have scaled globally. The biggest issue is not that parents don’t care — it’s that manual protection can’t keep up."
+        k="Problem"
+        t="Why digital safety needs to be proactive"
+        d="Online harm is no longer rare or limited. It can appear in chats, reels, comments, gaming spaces, and shared media — often before a child or parent even realizes it."
       />
 
       <div style={single()}>
         <div style={card()}>
-          <div style={{ fontWeight: 900, fontSize: 15, marginBottom: 8 }}>
-            What’s happening (and why it matters)
+          <div style={{ fontWeight: 900, fontSize: 16, marginBottom: 10, color: "var(--text)" }}>
+            What families are dealing with today
           </div>
 
           <p style={para()}>
-            Online harm today doesn’t arrive in one form — it stacks. Cyberbullying now comes from
-            anonymous accounts, group chats, gaming lobbies, and public comments. Explicit content can
-            appear unexpectedly via forwards, spam, pop-ups, or misleading links — often without the
-            child searching for it. Stranger contact is also easier than ever on games and social platforms,
-            where “friendly” chats can quickly shift into manipulation or coercion. Over time, repeated exposure
-            can impact mental health: anxiety, isolation, sleep issues, low confidence, and trauma.
+            Harmful online experiences rarely come in just one form. A child may
+            face bullying in a group chat, explicit media through a forwarded post,
+            or unsafe conversations that start casually and become manipulative.
+            The deeper issue is speed — harmful content reaches people faster than
+            manual protection can respond.
             {!expanded ? (
               <>
                 {" "}
-                <span style={{ opacity: 0.75 }}>
-                  Traditional protections lag behind—manual monitoring isn’t 24/7, blanket app blocks backfire,
-                  reporting is reactive, and simple keyword filters miss slang, coded language, and image-based content.
+                <span style={{ opacity: 0.82 }}>
+                  Parents cannot monitor every screen all day, and traditional
+                  tools often either over-block or react too late.
                 </span>
               </>
             ) : (
               <>
-                <span style={{ display: "block", marginTop: 10, opacity: 0.9 }}>
-                  The hard truth: most “solutions” react after harm happens. Parents can’t watch every screen,
-                  banning apps pushes kids to secret usage, and platform reporting systems move too slowly. Even
-                  advanced filters fail when content is visual, contextual, or disguised in slang. That’s why the goal
-                  isn’t banning the internet — it’s enabling safer use in real-time, without invading dignity or trust.
+                <span style={{ display: "block", marginTop: 12, opacity: 0.9 }}>
+                  Many existing solutions are still too rigid. Blocking everything
+                  can create frustration and secret usage, while reporting systems
+                  usually act only after harm has already happened. Simple filters
+                  also struggle with slang, context, memes, screenshots, and
+                  image-based abuse. That is why modern digital safety must work
+                  in the moment — quietly, responsibly, and with far better timing.
                 </span>
               </>
             )}
           </p>
 
-          <div style={{ marginTop: 12, display: "flex" }}>
+          <div style={{ marginTop: 14, display: "flex", flexWrap: "wrap", gap: 10 }}>
+            <Tag>Cyberbullying</Tag>
+            <Tag>Explicit content</Tag>
+            <Tag>Stranger contact</Tag>
+            <Tag>Real-time risk</Tag>
+          </div>
+
+          <div style={{ marginTop: 16, display: "flex" }}>
             <button
               type="button"
               onClick={() => setExpanded((s) => !s)}
@@ -61,15 +69,35 @@ export default function ProblemDeepDive() {
 
 function Header({ k, t, d }) {
   return (
-    <div style={{ maxWidth: 950, marginBottom: 14 }}>
+    <div style={{ maxWidth: 920, marginBottom: 16 }}>
       <div style={kicker()}>{k}</div>
-      <h2 className="h2" style={{ marginTop: 10 }}>
+      <h2 className="h2" style={{ marginTop: 12 }}>
         {t}
       </h2>
-      <p className="p" style={{ marginTop: 10, opacity: 0.85 }}>
+      <p className="p" style={{ marginTop: 10, opacity: 0.88, maxWidth: 780 }}>
         {d}
       </p>
     </div>
+  );
+}
+
+function Tag({ children }) {
+  return (
+    <span
+      style={{
+        display: "inline-flex",
+        alignItems: "center",
+        padding: "8px 12px",
+        borderRadius: 999,
+        background: "rgba(255,255,255,0.04)",
+        border: "1px solid rgba(255,255,255,0.08)",
+        fontSize: 12,
+        fontWeight: 700,
+        color: "var(--muted)",
+      }}
+    >
+      {children}
+    </span>
   );
 }
 
@@ -77,12 +105,13 @@ const kicker = () => ({
   display: "inline-flex",
   padding: "7px 12px",
   borderRadius: 999,
-  background: "rgba(255,255,255,0.06)",
-  border: "1px solid rgba(255,255,255,0.08)",
+  background: "rgba(50,178,169,0.10)",
+  border: "1px solid rgba(50,178,169,0.18)",
   fontSize: 12,
   fontWeight: 800,
   letterSpacing: "0.08em",
   textTransform: "uppercase",
+  color: "var(--c4)",
 });
 
 const single = () => ({
@@ -93,17 +122,18 @@ const single = () => ({
 
 const para = () => ({
   margin: 0,
-  opacity: 0.86,
-  fontSize: "clamp(13px, 3.5vw, 14.5px)",
-  lineHeight: 1.75,
+  opacity: 0.9,
+  fontSize: "clamp(14px, 2.5vw, 15.5px)",
+  lineHeight: 1.85,
+  color: "var(--muted)",
 });
 
 const readMoreBtn = () => ({
   appearance: "none",
-  border: "1px solid rgba(255,255,255,0.14)",
-  background: "rgba(255,255,255,0.04)",
-  color: "rgba(255,255,255,0.92)",
-  padding: "9px 12px",
+  border: "1px solid rgba(50,178,169,0.22)",
+  background: "rgba(50,178,169,0.08)",
+  color: "var(--text)",
+  padding: "10px 14px",
   borderRadius: 999,
   fontWeight: 800,
   fontSize: 13,
@@ -112,9 +142,9 @@ const readMoreBtn = () => ({
 });
 
 const card = () => ({
-  borderRadius: 20,
-  padding: "clamp(14px, 2.2vw, 18px)",
-  background: "rgba(18,18,22,0.75)",
+  borderRadius: 24,
+  padding: "clamp(18px, 3vw, 24px)",
+  background: "linear-gradient(180deg, rgba(7,25,24,0.78), rgba(0,0,0,0.40))",
   border: "1px solid rgba(255,255,255,0.08)",
-  boxShadow: "0 14px 44px rgba(0,0,0,0.25)",
+  boxShadow: "0 18px 50px rgba(0,0,0,0.28)",
 });

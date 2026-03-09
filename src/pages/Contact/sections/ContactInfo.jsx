@@ -10,7 +10,7 @@ export default function ContactInfo() {
     >
       <Card className="soft">
         <ul className="list">
-          <li><b>Support email:</b> censorx01@gmail.com</li>
+          <li><b>Support email:</b> contact@censorx.in </li>
           <li>
             <b>Evaluation:</b> Share device model, Android version, and test
             scenario details

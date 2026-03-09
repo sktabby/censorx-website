@@ -4,36 +4,56 @@ import { ROUTES } from "../../routes/routes";
 import Button from "../ui/Button";
 import logo from "../../assets/team/c_logo_without_bg.png";
 
-
 export default function Navbar() {
   const [open, setOpen] = useState(false); // mobile menu
   const [ddOpen, setDdOpen] = useState(false); // dropdown
   const loc = useLocation();
   const ddRef = useRef(null);
+  const mobileRef = useRef(null);
+  const menuBtnRef = useRef(null);
 
   const exploreItems = useMemo(
     () => [
-     { to: ROUTES.ABOUT, label: "About us" },
+      { to: ROUTES.ABOUT, label: "About us" },
       { to: ROUTES.ROLES, label: "who can use censorX?" },
       { to: ROUTES.PRIVACY, label: "Privacy" },
       { to: ROUTES.TRL, label: "TRL" },
       { to: ROUTES.ROADMAP, label: "Roadmap" },
       { to: ROUTES.FAQ, label: "FAQ" },
-       // ✅ add this route
+      // ✅ add this route
     ],
     []
   );
 
-const mainLinks = useMemo(
-  () => [
-    { to: ROUTES.HOME, label: "Home" },
-    { to: ROUTES.FEATURES, label: "Features" },
-    { to: ROUTES.TEAM, label: "Team" },
-    { to: ROUTES.CAREER, label: "Careers" },
-    { to: ROUTES.CONTACT, label: "Contact" },
-  ],
-  []
-);
+  const mainLinks = useMemo(
+    () => [
+      { to: ROUTES.HOME, label: "Home" },
+      { to: ROUTES.FEATURES, label: "Features" },
+      { to: ROUTES.TEAM, label: "Team" },
+      { to: ROUTES.CAREER, label: "Careers" },
+      { to: ROUTES.CONTACT, label: "Contact" },
+    ],
+    []
+  );
+
+  useEffect(() => {
+    function handleOutsideClick(e) {
+      const clickedInsidePanel = mobileRef.current?.contains(e.target);
+      const clickedMenuButton = menuBtnRef.current?.contains(e.target);
+
+      if (!clickedInsidePanel && !clickedMenuButton) {
+        setOpen(false);
+      }
+    }
+
+    if (open) {
+      document.addEventListener("mousedown", handleOutsideClick);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, [open]);
 
   useEffect(() => {
     setOpen(false);
@@ -54,56 +74,49 @@ const mainLinks = useMemo(
     <header className="navWrap">
       <div className="container navBar">
         <NavLink to={ROUTES.HOME} className="brand">
-         <img
-  src={logo}
-  alt="CensorX logo"
-  aria-hidden="true"
-  style={{
-    width: 46,
-    height: 46,
-    objectFit: "contain",
-    opacity: 0.95,
-  }}
-/>
+          <img
+            src={logo}
+            alt="CensorX logo"
+            aria-hidden="true"
+            style={{
+              width: 46,
+              height: 46,
+              objectFit: "contain",
+              opacity: 0.95,
+            }}
+          />
 
-         <div>
-  <div
-    className="brandTitle"
-    style={{
-      fontSize: "clamp(16px, 3.5vw, 20px)",
-      fontWeight: 900,
-      lineHeight: 1.1,
-    }}
-  >
-    CensorX.ai
-  </div>
+          <div>
+            <div
+              className="brandTitle"
+              style={{
+                fontSize: "clamp(16px, 3.5vw, 20px)",
+                fontWeight: 900,
+                lineHeight: 1.1,
+              }}
+            >
+              CensorX.ai
+            </div>
 
-  <div
-  className="brandSub"
-  style={{
-    fontSize: "clamp(10px, 2.4vw, 12px)",
-    opacity: 0.8,
-    marginTop: 1,
-
-    /* 👇 critical for one-line behavior */
-    whiteSpace: "nowrap",
-    overflow: "hidden",
-    textOverflow: "ellipsis",
-    maxWidth: "100%",
-  }}
->
-  Your Digital Guardian
-</div>
-
-</div>
-
+            <div
+              className="brandSub"
+              style={{
+                fontSize: "clamp(10px, 2.4vw, 12px)",
+                opacity: 0.8,
+                marginTop: 1,
+                whiteSpace: "nowrap",
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+                maxWidth: "100%",
+              }}
+            >
+              Your Digital Guardian
+            </div>
+          </div>
         </NavLink>
 
         {/* DESKTOP LINKS */}
         <nav className="navLinks">
-         
-
-          {/* ✅ Keep these separate */}
           {mainLinks.map((x) => (
             <NavLink
               key={x.to}
@@ -114,7 +127,7 @@ const mainLinks = useMemo(
             </NavLink>
           ))}
 
-           {/* ✅ Dropdown: Explore */}
+          {/* ✅ Dropdown: Explore */}
           <div className="navDrop" ref={ddRef}>
             <button
               className={`navA dropBtn ${ddOpen ? "active" : ""}`}
@@ -146,21 +159,20 @@ const mainLinks = useMemo(
 
         <div className="navActions">
           <NavLink to={ROUTES.DOWNLOAD}>
-         <div
-  style={{
-    fontSize: "clamp(11px, 2.8vw, 14px)",
-    whiteSpace: "nowrap",        // ✅ prevents line break
-  }}
->
-  <Button variant="primary">
-    <span style={{ whiteSpace: "nowrap" }}>Download APK</span>
-  </Button>
-</div>
-
-
+            <div
+              style={{
+                fontSize: "clamp(11px, 2.8vw, 14px)",
+                whiteSpace: "nowrap",
+              }}
+            >
+              <Button variant="primary">
+                <span style={{ whiteSpace: "nowrap" }}>Download APK</span>
+              </Button>
+            </div>
           </NavLink>
 
           <button
+            ref={menuBtnRef}
             className="menuBtn"
             onClick={() => setOpen((s) => !s)}
             aria-label="Menu"
@@ -173,7 +185,7 @@ const mainLinks = useMemo(
 
       {/* MOBILE PANEL */}
       {open && (
-        <div className="container mobilePanel">
+        <div ref={mobileRef} className="container mobilePanel">
           <div className="mobileGroupTitle">Explore</div>
           {exploreItems.map((x) => (
             <NavLink key={x.to} to={x.to} className="mobileA">
@@ -187,8 +199,6 @@ const mainLinks = useMemo(
               {x.label}
             </NavLink>
           ))}
-
-          
         </div>
       )}
     </header>

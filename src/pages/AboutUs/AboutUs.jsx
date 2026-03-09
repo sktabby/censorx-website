@@ -7,7 +7,8 @@ import HowItWorksHighLevel from "./sections/HowItWorksHighLevel";
 export default function AboutUs() {
   return (
     <div className="page">
-     
+      
+
       <ProblemDeepDive />
       <SolutionWhatIs />
       <HowItWorksHighLevel />

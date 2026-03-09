@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { ROUTES } from "../../routes/routes";
 
+
 export default function Footer() {
   return (
     <footer
@@ -70,7 +71,7 @@ export default function Footer() {
                       wordBreak: "break-word",
                     }}
                   >
-                    censorx01@gmail.com
+                    contact@censorx.in
                   </a>
                 </div>
 
@@ -97,33 +98,34 @@ export default function Footer() {
             {/* SOCIAL */}
             <div style={{ marginTop: 18, display: "grid", gap: 10 }}>
               <FooterLabel>Social</FooterLabel>
+
               <div className="ftPills">
+
                 <ExtPill
                   href="https://www.instagram.com/ataminds?igsh=MWxzam90a2xoZTd5dg=="
                   label="Instagram"
                   icon={<InstagramIcon />}
                 />
-                <ExtPill href="https://youtube.com/@ataminds?si=5oP1fxznhvHj03FD" label="YouTube" icon={<YouTubeIcon />} />
+
+                <ExtPill
+                  href="https://youtube.com/@ataminds?si=5oP1fxznhvHj03FD"
+                  label="YouTube"
+                  icon={<YouTubeIcon />}
+                />
+
+                <ExtPill
+                  href="https://www.linkedin.com/company/censorx-ai/"
+                  label="LinkedIn"
+                  icon={<LinkedInMark />}
+                />
+
               </div>
             </div>
           </div>
 
           {/* RIGHT */}
           <div className="ftRight">
-            {/* LEGAL */}
-            <div style={{ display: "grid", gap: 10 }}>
-              <FooterLabel className="ftRightLabel">Legal</FooterLabel>
-
-              <div className="ftLegal">
-                <FooterPillLink to={ROUTES.PRIVACY_POLICY}>Privacy Policy</FooterPillLink>
-                <FooterPillLink to={ROUTES.TERMS}>Terms</FooterPillLink>
-                <FooterPillLink to={ROUTES.DISCLAIMER}>Disclaimer</FooterPillLink>
-              </div>
-
-              <div className="ftLegalNote" style={{ color: "var(--muted2)", fontSize: 12, opacity: 0.75 }}>
-                By using CensorX, you agree to our policies and terms.
-              </div>
-            </div>
+            
 
             {/* COFOUNDERS */}
             <div
@@ -150,8 +152,20 @@ export default function Footer() {
                 <FounderLink name="Ashar" href="https://www.linkedin.com/in/mohammadashar0911/" />
               </div>
 
-              <div style={{ marginTop: 10, fontSize: 11, color: "var(--muted2)", opacity: 0.8 }}>
-                Note: LinkedIn may ask you to sign in depending on your region/settings.
+              
+            </div>
+            {/* LEGAL */}
+            <div style={{ display: "grid", gap: 10 }}>
+              <FooterLabel className="ftRightLabel">Legal</FooterLabel>
+
+              <div className="ftLegal">
+                <FooterPillLink to={ROUTES.PRIVACY_POLICY}>Privacy Policy</FooterPillLink>
+                <FooterPillLink to={ROUTES.TERMS}>Terms</FooterPillLink>
+                <FooterPillLink to={ROUTES.DISCLAIMER}>Disclaimer</FooterPillLink>
+              </div>
+
+              <div className="ftLegalNote" style={{ color: "var(--muted2)", fontSize: 12, opacity: 0.75 }}>
+                By using CensorX, you agree to our policies and terms.
               </div>
             </div>
           </div>

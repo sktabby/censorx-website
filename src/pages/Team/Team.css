@@ -1,0 +1,105 @@
+.team-page{
+  width:100%;
+}
+
+/* Career CTA section */
+
+.team-career{
+  padding:80px 20px;
+}
+
+.team-career-box{
+  max-width:var(--max);
+  margin:auto;
+
+  background:var(--card);
+  border:1px solid var(--stroke);
+  border-radius:var(--r2);
+
+  padding:48px 36px;
+  text-align:center;
+
+  box-shadow:var(--shadow);
+  backdrop-filter: blur(10px);
+}
+
+.team-career-badge{
+  display:inline-block;
+
+  padding:6px 16px;
+  margin-bottom:18px;
+
+  border-radius:999px;
+
+  background:var(--card2);
+  border:1px solid var(--stroke);
+
+  color:var(--c4);
+  font-weight:600;
+  font-size:14px;
+}
+
+.team-career-title{
+  color:var(--text);
+  font-size:34px;
+  margin-bottom:14px;
+}
+
+.team-career-text{
+  color:var(--muted);
+  font-size:16px;
+  max-width:680px;
+  margin:auto;
+  line-height:1.7;
+  margin-bottom:28px;
+}
+
+.team-career-btn{
+  background:var(--c4);
+  color:#000;
+
+  border:none;
+  padding:14px 30px;
+
+  border-radius:var(--r1);
+  font-weight:600;
+  font-size:15px;
+
+  cursor:pointer;
+
+  transition:all .25s ease;
+}
+
+.team-career-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 30px rgba(50,178,169,0.35);
+}
+
+.team-career-btn:focus{
+  outline:none;
+  box-shadow:var(--focus);
+}
+
+
+/* Mobile */
+
+@media(max-width:768px){
+
+  .team-career-box{
+    padding:36px 24px;
+  }
+
+  .team-career-title{
+    font-size:26px;
+  }
+
+  .team-career-text{
+    font-size:15px;
+  }
+
+  .team-career-btn{
+    width:100%;
+    max-width:260px;
+  }
+
+}
