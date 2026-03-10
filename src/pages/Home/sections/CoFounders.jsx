@@ -46,15 +46,15 @@ export default function CoFounders() {
     () => [
       {
         key: "ashar",
-        name: "Mohammad Ashar",
+        name: "Mr. Mohammad Ashar",
         role: "Co-Founder | Cloud & Security",
-        line1: "Manages website development and research",
+        line1: "Oversees legal operations, financial management,",
         line2: "Handles security, legal compliance, and operations",
         img: asharImg,
       },
       {
         key: "tabish",
-        name: "Tabish Shaikh",
+        name: "Mr. Tabish Shaikh",
         role: "Co-Founder | Computer Engineer",
         line1: "Leads AI/ML development and model integration,",
         line2: "Handles backend architecture and system logic",
@@ -62,10 +62,10 @@ export default function CoFounders() {
       },
       {
         key: "aqsa",
-        name: "Aqsa Shah",
+        name: "Ms. Aqsa Shah",
         role: "Co-Founder | ECS Engineer",
-        line1: "Oversees finance and frontend development",
-        line2: "Leads marketing, strategy, and content creation",
+        line1: "Drives product development, frontend engineering, website experience,",
+        line2: "and digital strategy.",
         img: aqsaImg,
       },
     ],
@@ -243,9 +243,7 @@ export default function CoFounders() {
               className={`soft cx-teamCard ${inView ? "in" : ""}`}
               style={{ transitionDelay: `${inView ? idx * 120 : 0}ms` }}
             >
-              <div className="cx-frame">
-                <img src={m.img} alt={m.name} />
-              </div>
+              
 
               <div className="cx-text">
                 <h3 className="cx-name">{m.name}</h3>
