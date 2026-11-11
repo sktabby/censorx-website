@@ -1,3 +1,4 @@
+
 import React from "react";
 import { NavLink } from "react-router-dom";
 import Section from "../../../components/ui/Section";
@@ -5,11 +6,14 @@ import Card from "../../../components/ui/Card";
 import Button from "../../../components/ui/Button";
 import { ROUTES } from "../../../routes/routes";
 
+import parentImage from "../../../assets/parentsdp.jpg";
+import childImage from "../../../assets/childdp.jpg";
+
 export default function WhoItsFor() {
   return (
     <Section
       title="Who it’s for"
-      subtitle="Designed for different users — without forcing one experience on everyone."
+      subtitle="Protection for children. Confidence for parents."
     >
       <style>{`
         .cx-rolesGrid{
@@ -74,6 +78,14 @@ export default function WhoItsFor() {
           border: 1px solid rgba(50,178,169,0.30);
           box-shadow: 0 12px 30px rgba(0,0,0,0.22);
           flex: 0 0 auto;
+          overflow:hidden;
+        }
+
+        .cx-roleIcon img{
+          width:100%;
+          height:100%;
+          object-fit:cover;
+          display:block;
         }
 
         .cx-roleTitle{
@@ -101,37 +113,31 @@ export default function WhoItsFor() {
       `}</style>
 
       <div className="cx-rolesGrid">
-        <RoleCard title="Parents" icon={parentIcon} />
-        <RoleCard title="Children" icon={childIcon} />
-        <RoleCard title="Individuals" icon={individualIcon} />
+        <RoleCard title="Parents" image={parentImage} />
+        <RoleCard title="Children" image={childImage} />
       </div>
 
       <div className="cx-rolesFooter">
-        <div className="cx-rolesHint">
-          One system • Three experiences • Same protection layer
-        </div>
+     
 
         <NavLink
-  to={ROUTES.ROLES}
-  style={{ textDecoration: "none" }}
-  onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
->
-  <Button variant="outline">Explore roles</Button>
-</NavLink>
-
+          to={ROUTES.ROLES}
+          style={{ textDecoration: "none" }}
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        >
+          <Button variant="outline">Explore roles</Button>
+        </NavLink>
       </div>
     </Section>
   );
 }
 
-function RoleCard({ title, icon }) {
+function RoleCard({ title, image }) {
   return (
     <Card className="soft cx-roleCard">
       <div className="cx-roleTop">
-        <div className="cx-roleIcon" aria-hidden="true" style={{ color: "#32b2a9" }}>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            {icon}
-          </svg>
+        <div className="cx-roleIcon" aria-hidden="true">
+          <img src={image} alt="" />
         </div>
 
         <h3 className="cx-roleTitle">{title}</h3>
@@ -139,56 +145,3 @@ function RoleCard({ title, icon }) {
     </Card>
   );
 }
-
-/* Icons kept same, just extracted */
-const parentIcon = (
-  <>
-    <path
-      d="M12 3l8 4v6c0 5-3.5 8-8 8s-8-3-8-8V7l8-4z"
-      stroke="currentColor"
-      strokeWidth="1.8"
-      strokeLinejoin="round"
-    />
-    <path
-      d="M9.5 12.5l1.8 1.8 3.8-4"
-      stroke="currentColor"
-      strokeWidth="1.8"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </>
-);
-
-const childIcon = (
-  <>
-    <path
-      d="M8 10a4 4 0 118 0v1a3 3 0 01-3 3h-2a3 3 0 01-3-3v-1z"
-      stroke="currentColor"
-      strokeWidth="1.8"
-    />
-    <path
-      d="M9 18h6"
-      stroke="currentColor"
-      strokeWidth="1.8"
-      strokeLinecap="round"
-    />
-  </>
-);
-
-const individualIcon = (
-  <>
-    <path
-      d="M12 21s-7-4.4-7-10a4 4 0 017-2 4 4 0 017 2c0 5.6-7 10-7 10z"
-      stroke="currentColor"
-      strokeWidth="1.8"
-      strokeLinejoin="round"
-    />
-    <path
-      d="M9.2 12.2l1.6 1.6 3.9-3.9"
-      stroke="currentColor"
-      strokeWidth="1.8"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </>
-);

@@ -3,7 +3,6 @@ export const ROUTES = {
   HOME: "/",
   
   ROLES: "/roles",
-  PRIVACY: "/privacy",
   FEATURES: "/features",
   DOWNLOAD: "/download",
   USER_GUIDE: "/user-guide",
@@ -15,9 +14,11 @@ export const ROUTES = {
   CONTACT: "/contact",
   CAREER: "/career",
   TEAM: "/team",
+  SCHOOLS: "/schools",
   PRIVACY_POLICY: "/legal/privacy-policy",
   TERMS: "/legal/terms",
   DISCLAIMER: "/legal/disclaimer",
+  DELETE_ACCOUNT: "/delete-account",
   ABOUT: "/about",
 
 };

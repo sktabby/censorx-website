@@ -138,25 +138,9 @@ export default function WhatCensorXDoes() {
             Protect users while respecting privacy, dignity, and trust.
 
             <div className="cx-foot">
-              <NavLink to={ROUTES.ABOUT} style={{ textDecoration: "none" }}>
-                <button
-                  type="button"
-                  style={{
-                    padding: "10px 14px",
-                    borderRadius: 12,
-                    border: "1px solid rgba(50,178,169,0.35)",
-                    background: "rgba(50,178,169,0.12)",
-                    color: "rgba(255,255,255,0.95)",
-                    fontSize: 13,
-                    fontWeight: 800,
-                    cursor: "pointer",
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: 8,
-                  }}
-                >
-                  See more <span aria-hidden="true">→</span>
-                </button>
+              <NavLink to={ROUTES.ABOUT} className="cxMoreBtn">
+                See More
+                <span className="cxMoreArrow" aria-hidden="true">→</span>
               </NavLink>
             </div>
           </div>

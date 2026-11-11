@@ -17,7 +17,7 @@ export default function WhatIsCensorX() {
         <ul className="list">
           <li>Created to close the gap between exposure and protection.</li>
           <li>Focuses on prevention and wellbeing, not blame.</li>
-          <li>Designed for parents, children, individuals — and future institutional use.</li>
+          <li>Designed for parents and children — and future institutional use.</li>
         </ul>
       </Card>
     </Section>

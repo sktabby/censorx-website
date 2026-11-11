@@ -356,9 +356,7 @@ export default function Career() {
             <div className="career-info-card-head">
               <div>
                 <div className="career-mini-title">Open Positions</div>
-                <div className="career-mini-subtitle">
-                  Apply for the role that best matches your skills
-                </div>
+              
               </div>
 
               <div className="career-info-actions">
@@ -448,7 +446,9 @@ export default function Career() {
 
         <div id="career-form-section">
           <Card className="soft career-form-card">
-            <h2 className="form-heading">Application Form</h2>
+            <h2  style={{ color: "#ffffff" }}>
+  Application Form
+</h2>
             <form onSubmit={onSubmit} className="career-form" >
 
               <Card className="soft career-progress-card">
@@ -644,6 +644,7 @@ export default function Career() {
                     {submitting ? "Submitting..." : "Submit Application"}
                   </button>
                 </div>
+          
               </div>
             </form>
           </Card>

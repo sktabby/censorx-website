@@ -5,6 +5,7 @@ import WhatCensorXDoes from "./sections/WhatCensorXDoes";
 import WhoItsFor from "./sections/WhoItsFor";
 import WhyDifferent from "./sections/WhyDifferent";
 import CoFounders from "./sections/CoFounders";
+import OurStory from "./sections/OurStory";
 import TrustSignals from "./sections/TrustSignals";
 
 function Divider() {
@@ -28,11 +29,13 @@ export default function Home() {
       <Divider />
       <WhyDifferent />
 
-      
-
+     
 
       <Divider />
       <TrustSignals />
+
+       <Divider />
+      <OurStory />
     </>
   );
 }

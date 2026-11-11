@@ -1,118 +1,185 @@
-import React from "react";
+
+import React, { useState } from "react";
+import logo from "../../../assets/team/c_logo_without_bg.png";
 
 export default function SolutionWhatIs() {
+  const [open, setOpen] = useState(false);
+
   return (
     <section className="container section">
-      <Header
-        k="Solution"
-        t="What CensorX is really trying to solve"
-        d="CensorX is a real-time digital safety layer designed to reduce exposure to harmful content and harassment while keeping the online experience normal, usable, and respectful."
-      />
+      <div className="cx-solutionCard">
+        <div className="cx-solutionHeading">
+          <img
+            src={logo}
+            alt="CensorX logo"
+            className="cx-solutionLogo"
+          />
+          <div className="cx-solutionTitle">
+            What CensorX actually does
+          </div>
+        </div>
 
-      <div style={grid()}>
-        <Card title="A protection layer, not a restriction layer">
-          CensorX is designed to step in only when risk appears. It is not about
-          blocking everything — it is about making digital spaces safer without
-          making daily use frustrating.
-        </Card>
+        <p className="cx-solutionPara">
+          CensorX lives on your child's phone and does its work right there, on the
+          phone. Think of it as a caring adult glancing over a shoulder — not
+          reading everything, just watching for the things that hurt. It looks for
+          harassment in chats, harmful images in feeds, and the endless pull of
+          short videos that quietly eat hours. When something harmful shows up, it
+          acts in that moment: a harmful image is blurred before it is really
+          seen, a cruel message that is part of a pattern reaches you as a short
+          alert, and short-video apps can be paused or limited at the times you
+          choose. Nothing waits for a report, a screenshot, or a confession.
+        </p>
 
-        <Card title="Built for the moment harm appears">
-          Many tools respond after a report. CensorX focuses on the moment of
-          exposure, when timely action can matter most.
-        </Card>
+        <div
+          className={`cx-solutionExpandable ${open ? "expanded" : ""}`}
+          aria-hidden={!open}
+        >
+          <p className="cx-solutionPara">
+            It is not a restriction tool. We don't switch off the internet or
+            turn every app into a locked door — your child still chats, still
+            watches, still plays. Protection sits beside normal use instead of
+            replacing it, because a child who feels trapped will always find
+            another phone. It is built on honesty: your child can always see
+            that CensorX is on, every permission is explained before we ask for
+            it, and what the app sees on the screen stays on the phone instead
+            of being uploaded. You get what matters — alerts and a weekly
+            summary — not a copy of every private conversation. And it is built
+            with humility. No system catches everything. CensorX will sometimes
+            miss a message and sometimes flag one it shouldn't, which is why
+            every alert asks you to look, not to panic, and why nothing we
+            build replaces a real conversation between you and your child. Our
+            aim is simple: a child who can grow up online with more confidence
+            and less exposure, and a parent who can breathe a little easier.
+          </p>
+        </div>
 
-        <Card title="Made for families, individuals, and safer usage">
-          The idea is simple: help people stay protected while still allowing
-          healthy, normal use of apps, platforms, and conversations.
-        </Card>
-
-        <Card title="Privacy-first by design">
-          Safety should not come at the cost of dignity. CensorX is built around
-          responsible detection, minimal intrusion, and trust-centered protection.
-        </Card>
+        <div className="cx-solutionActions">
+          <button
+            type="button"
+            onClick={() => setOpen((s) => !s)}
+            className="cx-readMoreBtn"
+            aria-expanded={open}
+          >
+            {open ? "Read Less" : "Read More"}
+            <span className={`cx-readMoreArrow ${open ? "rotated" : ""}`}>
+              ↓
+            </span>
+          </button>
+        </div>
       </div>
 
-      <div style={{ marginTop: 16 }}>
-        <WideCard
-          title="Prevention, not fear"
-          text="CensorX is meant to guide, protect, and reduce harm — not to shame users, create panic, or turn digital life into constant surveillance. The goal is safer digital behavior with more confidence and less exposure."
-        />
-      </div>
+      <style>{`
+        .cx-solutionCard {
+          border-radius: 24px;
+          padding: clamp(18px, 3vw, 24px);
+          background: linear-gradient(
+            180deg,
+            rgba(7,25,24,0.78),
+            rgba(0,0,0,0.40)
+          );
+          border: 1px solid rgba(255,255,255,0.08);
+          box-shadow: 0 18px 50px rgba(0,0,0,0.28);
+        }
+
+        .cx-solutionHeading {
+          display: flex;
+          align-items: center;
+          gap: 14px;
+          margin-bottom: 14px;
+        }
+
+        .cx-solutionLogo {
+          width: 56px;
+          height: 56px;
+          object-fit: contain;
+          flex-shrink: 0;
+        }
+
+        .cx-solutionTitle {
+          font-weight: 900;
+          font-size: 18px;
+          color: var(--text);
+        }
+
+        .cx-solutionPara {
+          margin: 0;
+          opacity: 0.9;
+          font-size: clamp(14px, 2.5vw, 15.5px);
+          line-height: 1.85;
+          color: var(--muted);
+        }
+
+        .cx-solutionExpandable {
+          display: grid;
+          grid-template-rows: 0fr;
+          opacity: 0;
+          transition:
+            grid-template-rows 500ms ease,
+            opacity 350ms ease;
+        }
+
+        .cx-solutionExpandable > p {
+          min-height: 0;
+          overflow: hidden;
+        }
+
+        .cx-solutionExpandable.expanded {
+          grid-template-rows: 1fr;
+          opacity: 1;
+        }
+
+        .cx-solutionExpandable.expanded > p {
+          padding-top: 12px;
+        }
+
+        .cx-solutionActions {
+          display: flex;
+          margin-top: 16px;
+        }
+
+        .cx-readMoreBtn {
+          display: inline-flex;
+          align-items: center;
+          gap: 9px;
+          appearance: none;
+          border: 1px solid rgba(50,178,169,0.22);
+          background: rgba(50,178,169,0.08);
+          color: var(--text);
+          padding: 10px 16px;
+          border-radius: 999px;
+          font-weight: 800;
+          font-size: 13px;
+          cursor: pointer;
+          transition:
+            transform 200ms ease,
+            background 200ms ease,
+            border-color 200ms ease;
+        }
+
+        .cx-readMoreBtn:hover {
+          background: rgba(50,178,169,0.16);
+          border-color: rgba(50,178,169,0.5);
+          transform: translateY(-2px);
+        }
+
+        .cx-readMoreArrow {
+          display: inline-block;
+          transition: transform 300ms ease;
+        }
+
+        .cx-readMoreArrow.rotated {
+          transform: rotate(180deg);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .cx-solutionExpandable,
+          .cx-readMoreBtn,
+          .cx-readMoreArrow {
+            transition: none;
+          }
+        }
+      `}</style>
     </section>
   );
 }
-
-function Header({ k, t, d }) {
-  return (
-    <div style={{ maxWidth: 920, marginBottom: 16 }}>
-      <div style={kicker()}>{k}</div>
-      <h2 className="h2" style={{ marginTop: 12 }}>{t}</h2>
-      <p className="p" style={{ marginTop: 10, opacity: 0.88, maxWidth: 780 }}>{d}</p>
-    </div>
-  );
-}
-
-function Card({ title, children }) {
-  return (
-    <div style={card()}>
-      <div style={{ fontWeight: 900, fontSize: 16, color: "var(--text)" }}>{title}</div>
-      <p
-        style={{
-          marginTop: 10,
-          opacity: 0.88,
-          fontSize: "clamp(13.5px, 2vw, 15px)",
-          lineHeight: 1.75,
-          color: "var(--muted)",
-        }}
-      >
-        {children}
-      </p>
-    </div>
-  );
-}
-
-function WideCard({ title, text }) {
-  return (
-    <div style={card()}>
-      <div style={{ fontWeight: 900, fontSize: 16, color: "var(--text)" }}>{title}</div>
-      <p
-        style={{
-          marginTop: 10,
-          opacity: 0.9,
-          lineHeight: 1.8,
-          color: "var(--muted)",
-          fontSize: "clamp(14px, 2vw, 15.5px)",
-        }}
-      >
-        {text}
-      </p>
-    </div>
-  );
-}
-
-const kicker = () => ({
-  display: "inline-flex",
-  padding: "7px 12px",
-  borderRadius: 999,
-  background: "rgba(50,178,169,0.10)",
-  border: "1px solid rgba(50,178,169,0.18)",
-  fontSize: 12,
-  fontWeight: 800,
-  letterSpacing: "0.08em",
-  textTransform: "uppercase",
-  color: "var(--c4)",
-});
-
-const grid = () => ({
-  display: "grid",
-  gap: 14,
-  gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
-});
-
-const card = () => ({
-  borderRadius: 24,
-  padding: "clamp(18px, 3vw, 24px)",
-  background: "linear-gradient(180deg, rgba(7,25,24,0.78), rgba(0,0,0,0.40))",
-  border: "1px solid rgba(255,255,255,0.08)",
-  boxShadow: "0 18px 50px rgba(0,0,0,0.28)",
-});

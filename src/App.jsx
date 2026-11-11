@@ -9,7 +9,6 @@ import Footer from "./components/layout/Footer";
 import Home from "./pages/Home/Home";
 
 import Roles from "./pages/Roles/Roles";
-import PrivacyEthics from "./pages/PrivacyEthics/PrivacyEthics";
 import Features from "./pages/Features/Features";
 import Download from "./pages/Download/Download";
 import UserGuide from "./pages/UserGuide/UserGuide";
@@ -23,9 +22,11 @@ import Contact from "./pages/Contact/Contact";
 import PrivacyPolicy from "./pages/Legal/PrivacyPolicy";
 import Terms from "./pages/Legal/Terms";
 import Disclaimer from "./pages/Legal/Disclaimer";
+import DeleteAccount from "./pages/Legal/DeleteAccount";
 import AboutUs from "./pages/AboutUs/AboutUs";
 import Team from "./pages/Team/Team";
 import Career from "./pages/Career/Career";
+import Schools from "./pages/Schools/Schools";
 
 import ScrollToTop from "./components/layout/ScrollToTop";
 
@@ -43,7 +44,6 @@ export default function App() {
           <Route path={ROUTES.HOME} element={<Home />} />
 
           <Route path={ROUTES.ROLES} element={<Roles />} />
-          <Route path={ROUTES.PRIVACY} element={<PrivacyEthics />} />
           <Route path={ROUTES.FEATURES} element={<Features />} />
           <Route path={ROUTES.DOWNLOAD} element={<Download />} />
           <Route path={ROUTES.USER_GUIDE} element={<UserGuide />} />
@@ -55,12 +55,15 @@ export default function App() {
           <Route path={ROUTES.CONTACT} element={<Contact />} />
           <Route path={ROUTES.TEAM} element={<Team />} />
           <Route path={ROUTES.CAREER} element={<Career />} />
+          <Route path={ROUTES.SCHOOLS} element={<Schools />} />
 
           <Route path={ROUTES.PRIVACY_POLICY} element={<PrivacyPolicy />} />
           <Route path={ROUTES.TERMS} element={<Terms />} />
           <Route path={ROUTES.DISCLAIMER} element={<Disclaimer />} />
           <Route path={ROUTES.ABOUT} element={<AboutUs />} />
 
+
+          <Route path={ROUTES.DELETE_ACCOUNT} element={<DeleteAccount />} />
 
           <Route path="*" element={<NotFound />} />
         </Routes>

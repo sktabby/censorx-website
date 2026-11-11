@@ -1,142 +1,174 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { ROUTES } from "../../../routes/routes";
 
+const css = `
+  .cxHw{
+    background:#ffffff;
+    color:#111827;
+    border-radius:24px;
+    padding:clamp(22px, 4vw, 40px);
+    box-shadow:0 18px 50px rgba(0,0,0,0.30);
+    border-left:6px solid #0f6b65;
+  }
+  .cxHw-k{
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:#0f6b65;
+    margin:0 0 10px;
+  }
+  .cxHw h2{
+    margin:0 0 6px;
+    font-size:clamp(24px, 3.4vw, 34px);
+    line-height:1.15;
+    font-weight:900;
+    color:#0b1220;
+    letter-spacing:-0.01em;
+  }
+  .cxHw h3{
+    margin:0 0 22px;
+    font-size:clamp(16px, 2.2vw, 19px);
+    line-height:1.4;
+    font-weight:700;
+    color:#0f6b65;
+  }
+  .cxHw p{
+    margin:0 0 18px;
+    font-size:clamp(14.5px, 1.8vw, 16px);
+    line-height:1.85;
+    color:#374151;
+    max-width:820px;
+  }
+  .cxHw p:last-of-type{ margin-bottom:0; }
+  .cxHw-n{
+    display:inline-block;
+    min-width:34px;
+    font-weight:900;
+    color:#0f6b65;
+    letter-spacing:0.04em;
+  }
+  .cxHw p b{ color:#0b1220; }
+  .cxHw-more{
+    margin-top:18px;
+    background:none;
+    border:none;
+    padding:0;
+    font:inherit;
+    font-size:14px;
+    font-weight:800;
+    color:#0f6b65;
+    cursor:pointer;
+    text-decoration:underline;
+    text-underline-offset:4px;
+  }
+  .cxHw-more:hover{ color:#0b4f4b; }
+  .cxHw-cta{
+    margin-top:26px;
+    padding-top:22px;
+    border-top:1px solid rgba(17,24,39,0.10);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:14px;
+    flex-wrap:wrap;
+  }
+  .cxHw-cta p{ margin:0; max-width:520px; }
+  .cxHw-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:12px 22px;
+    border-radius:999px;
+    background:#111827;
+    color:#ffffff;
+    font-weight:800;
+    font-size:14px;
+    text-decoration:none;
+    box-shadow:0 10px 24px rgba(0,0,0,0.25);
+    transition:transform .15s ease, background .15s ease;
+  }
+  .cxHw-btn:hover{
+    transform:translateY(-2px);
+    background:#0f6b65;
+  }
+`;
+
 export default function HowItWorksHighLevel() {
+  const [open, setOpen] = useState(false);
+
   return (
     <section className="container section">
-      <Header
-        k="How It Works"
-        t="How CensorX works in a simple way"
-        d="CensorX is designed to work quietly in the background, detect harmful situations quickly, and respond in real time — without turning normal digital use into something stressful."
-      />
+      <style>{css}</style>
+      <div className="cxHw">
+        
+        <h2>How CensorX works?</h2>
 
-      <div style={flowWrap()}>
-        <Step n="1" title="Runs quietly in the background">
-          CensorX stays active while apps are being used normally, so protection
-          does not depend on someone remembering to open it every time.
-        </Step>
+        <p>
+          <span className="cxHw-n">01</span>
+          <b>It stays on while the phone is used.</b> Once a parent sets it up, a
+          small notice on the child's phone shows that protection is on. Nothing
+          is hidden, and no one has to remember to open an app.
+        </p>
 
-        <Step n="2" title="Looks for harmful patterns">
-          It checks for risky signals such as harassment, bullying, hate, explicit
-          material, and disturbing visuals.
-        </Step>
+        <p>
+          <span className="cxHw-n">02</span>
+          <b>It watches for harm, not for everything.</b> CensorX looks at what
+          appears on screen and in message notifications for signs of harassment,
+          bullying, hate and explicit or disturbing images. It is looking for
+          danger, not for a child's secrets.
+        </p>
 
-        <Step n="3" title="AI evaluates the level of risk">
-          The system quickly understands whether the situation is mild, serious,
-          or urgent and prepares the right response.
-        </Step>
+        <p>
+          <span className="cxHw-n">03</span>
+          <b>It judges how serious the moment is.</b> A single rude word is not an
+          emergency. A pattern of cruelty over an evening is. CensorX weighs
+          recent messages together, so parents hear about real concerns instead of
+          every stray comment.
+        </p>
 
-        <Step n="4" title="Responds instantly">
-          Based on the level of risk, CensorX can warn, blur, block, or notify —
-          depending on the safety setup being used.
-        </Step>
+        <div className={`cxCollapse${open ? " open" : ""}`} aria-hidden={!open}>
+          <div className="cxCollapseInner">
+            <p>
+              <span className="cxHw-n">04</span>
+              <b>It responds right then.</b> A harmful image is blurred with a
+              clear "leave app" option. Short-video apps can be limited at the
+              times you set. A possible concern is sent to the parent as a short
+              excerpt, with a gentle note to review it — never an alarm.
+            </p>
 
-        <Step n="5" title="Protection with privacy in mind">
-          The goal is safety without unnecessary storage, giving users protection
-          while respecting private digital activity.
-        </Step>
-      </div>
+            <p>
+              <span className="cxHw-n">05</span>
+              <b>It keeps what it sees on the phone.</b> Screen text and images are
+              checked on the device and are not uploaded. Parents receive alerts
+              and a weekly summary — screens blurred, concerns raised, device
+              usage, safe-hours kept — not a transcript of their child's life.
+            </p>
 
-      <div
-        style={{
-          marginTop: 18,
-          display: "flex",
-          justifyContent: "center",
-        }}
-      >
-        <NavLink
-          to={ROUTES.CONTACT}
-          style={{
-            display: "inline-flex",
-            alignItems: "center",
-            justifyContent: "center",
-            padding: "12px 18px",
-            borderRadius: 999,
-            background: "linear-gradient(90deg, rgba(50,178,169,.95), rgba(35,127,121,.95))",
-            color: "#001110",
-            fontWeight: 800,
-            fontSize: 14,
-            boxShadow: "0 10px 24px rgba(50,178,169,.18)",
-          }}
+            <p>
+              That is the whole idea. Protection at the moment it matters, honesty
+              with the child, and a parent who is informed without becoming a
+              spy.
+            </p>
+          </div>
+        </div>
+
+        <button
+          type="button"
+          className="cxHw-more"
+          onClick={() => setOpen((s) => !s)}
         >
-          Contact Us
-        </NavLink>
+          {open ? "Show less" : "Read more"}
+        </button>
+
+        <div className="cxHw-cta">
+          <p>Have a question about how this works for your family or your school?</p>
+          <NavLink to={ROUTES.CONTACT} className="cxHw-btn">
+            Contact us
+          </NavLink>
+        </div>
       </div>
     </section>
   );
 }
-
-function Header({ k, t, d }) {
-  return (
-    <div style={{ maxWidth: 920, marginBottom: 16 }}>
-      <div style={kicker()}>{k}</div>
-      <h2 className="h2" style={{ marginTop: 12 }}>{t}</h2>
-      <p className="p" style={{ marginTop: 10, opacity: 0.88, maxWidth: 780 }}>{d}</p>
-    </div>
-  );
-}
-
-function Step({ n, title, children }) {
-  return (
-    <div style={step()}>
-      <div style={num()}>{n}</div>
-      <div>
-        <div style={{ fontWeight: 900, fontSize: 15.5, color: "var(--text)" }}>{title}</div>
-        <div
-          style={{
-            marginTop: 8,
-            opacity: 0.88,
-            lineHeight: 1.75,
-            color: "var(--muted)",
-            fontSize: "clamp(13.5px, 2vw, 15px)",
-          }}
-        >
-          {children}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-const kicker = () => ({
-  display: "inline-flex",
-  padding: "7px 12px",
-  borderRadius: 999,
-  background: "rgba(50,178,169,0.10)",
-  border: "1px solid rgba(50,178,169,0.18)",
-  fontSize: 12,
-  fontWeight: 800,
-  letterSpacing: "0.08em",
-  textTransform: "uppercase",
-  color: "var(--c4)",
-});
-
-const flowWrap = () => ({
-  display: "grid",
-  gap: 14,
-});
-
-const step = () => ({
-  display: "grid",
-  gridTemplateColumns: "44px 1fr",
-  gap: 14,
-  borderRadius: 22,
-  padding: "clamp(16px, 2.5vw, 20px)",
-  background: "linear-gradient(180deg, rgba(7,25,24,0.78), rgba(0,0,0,0.40))",
-  border: "1px solid rgba(255,255,255,0.08)",
-  boxShadow: "0 18px 50px rgba(0,0,0,0.28)",
-  alignItems: "start",
-});
-
-const num = () => ({
-  width: 40,
-  height: 40,
-  borderRadius: 14,
-  display: "grid",
-  placeItems: "center",
-  fontWeight: 900,
-  color: "var(--text)",
-  background: "rgba(50,178,169,0.14)",
-  border: "1px solid rgba(50,178,169,0.24)",
-});

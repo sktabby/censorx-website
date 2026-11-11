@@ -15,7 +15,7 @@ export default function ClosingCTA() {
       <Card className="soft">
         <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
           <NavLink to={ROUTES.DOWNLOAD}>
-            <Button variant="primary">Download APK</Button>
+            <Button variant="primary">Get the app</Button>
           </NavLink>
           <NavLink to={ROUTES.USER_GUIDE}>
             <Button variant="outline">User Guide</Button>

@@ -1,13 +1,12 @@
-
 import React from "react";
 import ContactInfo from "./sections/ContactInfo";
-import ContactForm from "./sections/ContactForm";
+import ContactForms from "./sections/ContactForms";
 
 export default function Contact() {
   return (
     <>
-      <ContactInfo />
-      <ContactForm />
+     
+      <ContactForms />
     </>
   );
 }

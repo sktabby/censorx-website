@@ -6,8 +6,9 @@ import Vision from "./sections/Vision";
 export default function Roadmap() {
   return (
     <>
+     
       <RoadmapTimeline />
-      <Vision />
+     <Vision />
     </>
   );
 }

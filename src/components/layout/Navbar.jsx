@@ -16,7 +16,9 @@ export default function Navbar() {
     () => [
       { to: ROUTES.ABOUT, label: "About us" },
       { to: ROUTES.ROLES, label: "who can use censorX?" },
-      { to: ROUTES.PRIVACY, label: "Privacy" },
+      { to: ROUTES.PRIVACY_POLICY, label: "Privacy" },
+      { to: ROUTES.TERMS, label: "Terms" },
+      { to: ROUTES.CAREER, label: "Careers" },
       { to: ROUTES.TRL, label: "TRL" },
       { to: ROUTES.ROADMAP, label: "Roadmap" },
       { to: ROUTES.FAQ, label: "FAQ" },
@@ -30,7 +32,7 @@ export default function Navbar() {
       { to: ROUTES.HOME, label: "Home" },
       { to: ROUTES.FEATURES, label: "Features" },
       { to: ROUTES.TEAM, label: "Team" },
-      { to: ROUTES.CAREER, label: "Careers" },
+      { to: ROUTES.SCHOOLS, label: "Schools" },
       { to: ROUTES.CONTACT, label: "Contact" },
     ],
     []
@@ -166,7 +168,7 @@ export default function Navbar() {
               }}
             >
               <Button variant="primary">
-                <span style={{ whiteSpace: "nowrap" }}>Download APK</span>
+                <span style={{ whiteSpace: "nowrap" }}>Get the app</span>
               </Button>
             </div>
           </NavLink>
@@ -186,15 +188,15 @@ export default function Navbar() {
       {/* MOBILE PANEL */}
       {open && (
         <div ref={mobileRef} className="container mobilePanel">
-          <div className="mobileGroupTitle">Explore</div>
-          {exploreItems.map((x) => (
+          <div className="mobileGroupTitle">More</div>
+          {mainLinks.map((x) => (
             <NavLink key={x.to} to={x.to} className="mobileA">
               {x.label}
             </NavLink>
           ))}
 
-          <div className="mobileGroupTitle">More</div>
-          {mainLinks.map((x) => (
+          <div className="mobileGroupTitle">Explore</div>
+          {exploreItems.map((x) => (
             <NavLink key={x.to} to={x.to} className="mobileA">
               {x.label}
             </NavLink>

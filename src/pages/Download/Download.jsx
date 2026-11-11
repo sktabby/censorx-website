@@ -8,8 +8,9 @@ export default function Download() {
   return (
     <>
       <DownloadCard />
-      <Permissions />
-      <InstallSteps />
+      <InstallSteps /> 
+    {/*  <Permissions />*/}
+     
     </>
   );
 }

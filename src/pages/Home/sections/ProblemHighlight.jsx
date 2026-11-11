@@ -3,24 +3,11 @@ import { NavLink } from "react-router-dom";
 import { ROUTES } from "../../../routes/routes";
 
 import Section from "../../../components/ui/Section";
-import Card from "../../../components/ui/Card";
 
 function Icon({ children }) {
   return (
-    <span
-      aria-hidden="true"
-      style={{
-        width: 34,
-        height: 34,
-        borderRadius: 12,
-        display: "grid",
-        placeItems: "center",
-        background: "rgba(255,255,255,0.08)",
-        border: "1px solid rgba(255,255,255,0.14)",
-        boxShadow: "0 8px 20px rgba(0,0,0,0.25)",
-      }}
-    >
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+    <span className="cxPr-icon" aria-hidden="true">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
         {children}
       </svg>
     </span>
@@ -28,59 +15,174 @@ function Icon({ children }) {
 }
 
 export default function ProblemHighlight() {
-  const cardBase = {
-    padding: 16,
-    borderRadius: 18,
-    border: "1px solid rgba(255,255,255,0.12)",
-    boxShadow: "0 18px 45px rgba(0,0,0,0.35)",
-  };
-
-  const heading = {
-    margin: 0,
-    fontSize: 15,
-    fontWeight: 700,
-    letterSpacing: "-0.01em",
-    lineHeight: 1.2,
-  };
-
-  const body = {
-    margin: 0,
-    marginTop: 8,
-    opacity: 0.9,
-    lineHeight: 1.55,
-    fontSize: 13,
-  };
-
-  const stat = {
-    marginTop: 10,
-    fontSize: 12,
-    opacity: 0.9,
-    color: "var(--muted2)",
-  };
-
   return (
     <Section
       title="The internet changed. Safety didn’t."
-      subtitle="Harassment, explicit exposure, and unwanted contact can happen in seconds — especially to minors."
+      subtitle=""
     >
-      <div
-        style={{
-          display: "grid",
-          gap: 12,
-          gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-          alignItems: "stretch",
-        }}
-      >
+      <style>{`
+        .cxPr-grid{
+          display:grid;
+          gap:20px;
+          grid-template-columns:repeat(3, minmax(0,1fr));
+          align-items:stretch;
+        }
+        @media (max-width: 900px){
+          .cxPr-grid{ grid-template-columns:1fr; }
+        }
+
+        /* ---------- CARD ---------- */
+        .cxPr-card{
+          position:relative;
+          overflow:hidden;
+          border-radius:24px;
+          padding:26px 24px 24px;
+          color:#111827;
+          background:linear-gradient(160deg, #ffffff 0%, #f6fbfa 60%, #e9f6f4 100%);
+          box-shadow:
+            0 20px 50px rgba(0,0,0,0.32),
+            inset 0 1px 0 rgba(255,255,255,0.9);
+          display:flex;
+          flex-direction:column;
+          transition:transform .25s ease, box-shadow .25s ease;
+        }
+        /* gradient border */
+        .cxPr-card::before{
+          content:"";
+          position:absolute;
+          inset:0;
+          border-radius:24px;
+          padding:1.5px;
+          background:linear-gradient(
+            160deg,
+            #0a4a46 0%,
+            rgba(10,74,70,0.25) 45%,
+            rgba(10,74,70,0.6) 100%
+          );
+          -webkit-mask:
+            linear-gradient(#000 0 0) content-box,
+            linear-gradient(#000 0 0);
+          -webkit-mask-composite:xor;
+          mask-composite:exclude;
+          pointer-events:none;
+        }
+        /* corner wash */
+        .cxPr-card::after{
+          content:"";
+          position:absolute;
+          right:-70px; top:-70px;
+          width:210px; height:210px;
+          border-radius:50%;
+          background:radial-gradient(circle, rgba(10,74,70,0.16), rgba(10,74,70,0) 70%);
+          pointer-events:none;
+        }
+        .cxPr-card:hover{
+          transform:translateY(-6px);
+          box-shadow:
+            0 30px 70px rgba(0,0,0,0.40),
+            0 0 36px rgba(10,74,70,0.18),
+            inset 0 1px 0 rgba(255,255,255,0.9);
+        }
+
+        /* ---------- STAT ---------- */
+        .cxPr-stat{
+          position:relative;
+          z-index:1;
+          display:flex;
+          flex-direction:column;
+          margin-bottom:18px;
+        }
+        .cxPr-stat strong{
+          font-size:56px;
+          font-weight:900;
+          line-height:0.95;
+          letter-spacing:-0.035em;
+          background:linear-gradient(135deg, #073936 0%, #0a4a46 50%, #0f6b65 100%);
+          -webkit-background-clip:text;
+          background-clip:text;
+          color:transparent;
+        }
+        .cxPr-stat span{
+          margin-top:10px;
+          font-size:13px;
+          line-height:1.55;
+          font-weight:600;
+          color:#073936;
+        }
+
+        /* ---------- HEAD ---------- */
+        .cxPr-head{
+          position:relative;
+          z-index:1;
+          display:flex;
+          align-items:center;
+          gap:12px;
+          padding-top:16px;
+          border-top:1px solid rgba(10,74,70,0.18);
+          margin-bottom:10px;
+        }
+        .cxPr-icon{
+          width:42px;
+          height:42px;
+          border-radius:13px;
+          display:grid;
+          place-items:center;
+          color:#ffffff;
+          flex-shrink:0;
+          background:linear-gradient(145deg, #0f6b65, #073936);
+          box-shadow:
+            0 10px 22px rgba(10,74,70,0.40),
+            inset 0 1px 0 rgba(255,255,255,0.25);
+        }
+        .cxPr-card h3{
+          margin:0;
+          font-size:17px;
+          font-weight:900;
+          line-height:1.25;
+          letter-spacing:-0.01em;
+          color:#0b1220;
+        }
+        .cxPr-card p{
+          position:relative;
+          z-index:1;
+          margin:0;
+          font-size:14.5px;
+          line-height:1.7;
+          color:#374151;
+        }
+
+        /* ---------- FOOTER ---------- */
+        .cxPr-foot{
+          margin-top:20px;
+          display:flex;
+          align-items:center;
+          justify-content:space-between;
+          gap:10px;
+          flex-wrap:wrap;
+        }
+        .cxPr-src{
+          font-size:12px;
+          color:var(--muted2);
+          opacity:0.9;
+        }
+        @media (max-width: 600px){
+          .cxPr-card{ padding:22px 20px 20px; }
+          .cxPr-stat strong{ font-size:46px; }
+        }
+        @media (prefers-reduced-motion: reduce){
+          .cxPr-card{ transition:none; }
+          .cxPr-card:hover{ transform:none; }
+        }
+      `}</style>
+
+      <div className="cxPr-grid">
         {/* CARD 1 */}
-        <Card
-          className="soft"
-          style={{
-            ...cardBase,
-            background:
-              "linear-gradient(180deg, rgba(50,178,169,0.22), rgba(7,25,24,0.85))",
-          }}
-        >
-          <div style={{ display: "flex", gap: 12, alignItems: "flex-start" }}>
+        <div className="cxPr-card">
+          <div className="cxPr-stat">
+            <strong>55%</strong>
+            <span>of surveyed teens had seen sexual or violent content not meant for their age.</span>
+          </div>
+          <div className="cxPr-head">
             <Icon>
               <path
                 d="M12 3l8 4v6c0 5-3.5 8-8 8s-8-3-8-8V7l8-4z"
@@ -101,27 +203,21 @@ export default function ProblemHighlight() {
                 strokeLinecap="round"
               />
             </Icon>
-
-            <div>
-              <h3 style={heading}>Harm appears instantly</h3>
-              <p style={body}>Toxic + explicit content can pop up without warning.</p>
-              <div style={stat}>
-                <strong>55%</strong> reported exposure to vulgar/explicit content (2025).
-              </div>
-            </div>
+            <h3>Harmful content finds them first</h3>
           </div>
-        </Card>
+          <p>
+            It appears without searching — in reels, feeds and game chats, often
+            before a parent knows.
+          </p>
+        </div>
 
         {/* CARD 2 */}
-        <Card
-          className="soft"
-          style={{
-            ...cardBase,
-            background:
-              "linear-gradient(180deg, rgba(35,127,121,0.20), rgba(0,0,0,0.88))",
-          }}
-        >
-          <div style={{ display: "flex", gap: 12, alignItems: "flex-start" }}>
+        <div className="cxPr-card">
+          <div className="cxPr-stat">
+            <strong>75%</strong>
+            <span>of under-16s in the survey had been contacted by strangers on social media or in games.</span>
+          </div>
+          <div className="cxPr-head">
             <Icon>
               <path
                 d="M7 9a5 5 0 0110 0v2a4 4 0 01-4 4h-2a4 4 0 01-4-4V9z"
@@ -141,27 +237,21 @@ export default function ProblemHighlight() {
                 strokeLinecap="round"
               />
             </Icon>
-
-            <div>
-              <h3 style={heading}>Strangers reach minors</h3>
-              <p style={body}>DMs and game chats create direct access to kids.</p>
-              <div style={stat}>
-                <strong>75%</strong> of under-16s were contacted by strangers (2025).
-              </div>
-            </div>
+            <h3>Strangers can reach a child directly</h3>
           </div>
-        </Card>
+          <p>
+            Direct messages and in-game chat open a private line to a child that
+            no one else sees.
+          </p>
+        </div>
 
         {/* CARD 3 */}
-        <Card
-          className="soft"
-          style={{
-            ...cardBase,
-            background:
-              "linear-gradient(180deg, rgba(7,25,24,0.65), rgba(0,0,0,0.95))",
-          }}
-        >
-          <div style={{ display: "flex", gap: 12, alignItems: "flex-start" }}>
+        <div className="cxPr-card">
+          <div className="cxPr-stat">
+            <strong>24/7</strong>
+            <span>exposure. A phone goes to school, to bed and everywhere in between.</span>
+          </div>
+          <div className="cxPr-head">
             <Icon>
               <path
                 d="M12 21s-7-4.4-7-10a4 4 0 017-2 4 4 0 017 2c0 5.6-7 10-7 10z"
@@ -177,57 +267,24 @@ export default function ProblemHighlight() {
                 strokeLinejoin="round"
               />
             </Icon>
-
-            <div>
-              <h3 style={heading}>Mental toll is real</h3>
-              <p style={body}>Harassment can fuel anxiety, fear, and isolation.</p>
-              <div style={stat}>
-                <strong>7.5%</strong> of female victims considered suicide (reported).
-              </div>
-            </div>
+            <h3>The damage is not just online</h3>
           </div>
-        </Card>
+          <p>
+            Harassment and unwanted contact follow a child home. The stress shows
+            up in sleep, school and confidence.
+          </p>
+        </div>
       </div>
 
       {/* footer */}
-      <div
-        style={{
-          marginTop: 12,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          gap: 10,
-          flexWrap: "wrap",
-        }}
-      >
-        <div style={{ fontSize: 12, color: "var(--muted2)", opacity: 0.9 }}>
-          Sources: Sky News (2025) •{" "}
-          <a
-            href="https://childrenofthedigitalage.org/information-guides-for-parents/inappropriate-content/"
-            target="_blank"
-            rel="noreferrer"
-            style={{ color: "inherit", textDecoration: "underline", opacity: 0.95 }}
-          >
-            Children of the Digital Age
-          </a>
+      <div className="cxPr-foot">
+        <div className="cxPr-src">
+          Source: Sky News survey of Darlington secondary students, March 2025.
         </div>
 
-        <NavLink to={ROUTES.ABOUT} style={{ textDecoration: "none" }}>
-          <button
-            type="button"
-            style={{
-              padding: "10px 12px",
-              borderRadius: 12,
-              border: "1px solid rgba(255,255,255,0.14)",
-              background: "rgba(255,255,255,0.06)",
-              color: "inherit",
-              fontSize: 13,
-              fontWeight: 600,
-              cursor: "pointer",
-            }}
-          >
-            Read more →
-          </button>
+        <NavLink to={ROUTES.ABOUT} className="cxMoreBtn">
+          Read More
+          <span className="cxMoreArrow" aria-hidden="true">→</span>
         </NavLink>
       </div>
     </Section>

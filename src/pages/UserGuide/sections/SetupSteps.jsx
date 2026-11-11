@@ -11,8 +11,8 @@ export default function SetupSteps() {
     >
       <Card className="soft">
         <ol className="list">
-          <li>Install the APK.</li>
-          <li>Select your role: Parent / Child / Individual.</li>
+          <li>Install CensorX from Google Play on the parent's phone and on the child's phone.</li>
+          <li>Select your role: Parent / Child.</li>
           <li>Choose protection level (Strict / Balanced / Personal).</li>
           <li>Grant permissions (explained on-screen).</li>
           <li>Start using apps normally — CensorX runs in the background.</li>

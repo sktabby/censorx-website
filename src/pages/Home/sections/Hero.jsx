@@ -12,7 +12,7 @@ export default function Hero() {
       <div className="container grid2">
         <div className="pageHeader">
           <div className="badgeRow">
-            <kbd className="pill">Product of ATA minds</kbd>
+            <kbd className="pill">Censorx Technologies</kbd>
 
           </div>
 
@@ -26,7 +26,7 @@ export default function Hero() {
 
           <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginTop: 16 }}>
             <NavLink to={ROUTES.DOWNLOAD}>
-              <Button variant="primary">Download APK</Button>
+              <Button variant="primary">Get the app</Button>
             </NavLink>
             <Button
               variant="outline"
@@ -38,6 +38,12 @@ export default function Hero() {
               How It Works
             </Button>
 
+          </div>
+
+          <div style={{ marginTop: 10 }}>
+            <NavLink to={ROUTES.SCHOOLS}>
+              <Button variant="outline">Partner with us</Button>
+            </NavLink>
           </div>
         </div>
 

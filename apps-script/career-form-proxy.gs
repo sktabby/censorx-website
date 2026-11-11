@@ -244,8 +244,8 @@ function protectedMemberOutput(config) {
 }
 
 function setupAqsaProtectedMember() {
-  const fileId = "19JQ0yJRTDQLUkcoKAcT-f0MxUECCjYa6";
-  const passwordHash = "306b0b84c1edeeef9ea114b0425a13c386d1d9fa72ede9bc60496e2d9001daa9";
+  const fileId = "REPLACE_ME";
+  const passwordHash = "REPLACE_ME";
   const profileUrl = "https://www.linkedin.com/in/aqsashah2004/";
   const file = DriveApp.getFileById(fileId);
 

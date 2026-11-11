@@ -120,6 +120,52 @@ kbd.pill{
   border-color: rgba(255,255,255,0.08);
   color: var(--muted);
 }
+/* Dark-theme "Read more / See more" pill — same look as SolutionWhatIs */
+.cxMoreBtn{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  appearance:none;
+  border:1px solid rgba(50,178,169,0.22);
+  background:rgba(50,178,169,0.08);
+  color:var(--text);
+  padding:10px 16px;
+  border-radius:999px;
+  font:inherit;
+  font-weight:800;
+  font-size:13px;
+  line-height:1.2;
+  text-decoration:none;
+  cursor:pointer;
+  transition:transform 200ms ease, background 200ms ease, border-color 200ms ease;
+}
+.cxMoreBtn:hover{
+  background:rgba(50,178,169,0.16);
+  border-color:rgba(50,178,169,0.5);
+  transform:translateY(-2px);
+}
+.cxMoreBtn:focus-visible{ outline:none; box-shadow:var(--focus); }
+.cxMoreArrow{
+  display:inline-block;
+  transition:transform 300ms ease;
+}
+.cxMoreBtn:hover .cxMoreArrow{ transform:translateX(4px); }
+@media (prefers-reduced-motion: reduce){
+  .cxMoreBtn, .cxMoreArrow{ transition:none; }
+  .cxMoreBtn:hover, .cxMoreBtn:hover .cxMoreArrow{ transform:none; }
+}
+
+/* smooth expand / collapse (Read more / Show less) */
+.cxCollapse{
+  display:grid;
+  grid-template-rows:0fr;
+  opacity:0;
+  transition:grid-template-rows 0.45s ease, opacity 0.35s ease;
+}
+.cxCollapse.open{ grid-template-rows:1fr; opacity:1; }
+.cxCollapseInner{ overflow:hidden; min-height:0; }
+.cxCollapseInner > :first-child{ margin-top:16px; }
+
 .mobilePanel::-webkit-scrollbar{
   width: 6px;
 }
@@ -207,10 +253,8 @@ kbd.pill{
 
   border-radius: 18px;
   border: 1px solid rgba(255,255,255,0.08);
-  background: rgba(7,25,24,0.96);
+  background: #071918;
   box-shadow: 0 18px 50px rgba(0,0,0,0.42);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
 
   z-index: 120;
 }
