@@ -153,7 +153,7 @@ export default function Permissions() {
         .cxPm-card{
           border:1px solid rgba(255,255,255,0.12);
           background:rgba(255,255,255,0.04);
-          border-radius:18px;
+          border-radius:var(--radius-lg);
           padding:18px 18px 16px;
         }
         .cxPm-head{
@@ -165,12 +165,12 @@ export default function Permissions() {
         }
         .cxPm-head h4{
           margin:0;
-          font-size:16px;
-          font-weight:900;
+          font-size:15px;
+          font-weight:800;
         }
         .cxPm-opt{
           font-size:11px;
-          font-weight:800;
+          font-weight:700;
           letter-spacing:0.08em;
           text-transform:uppercase;
           padding:4px 9px;
@@ -184,20 +184,20 @@ export default function Permissions() {
           font-size:12px;
           font-weight:700;
           padding:4px 10px;
-          border-radius:8px;
+          border-radius:var(--radius-sm);
           border:1px solid rgba(255,255,255,0.18);
           color:rgba(255,255,255,0.85);
           margin-bottom:10px;
         }
         .cxPm-card p{
           margin:0;
-          font-size:13.5px;
+          font-size:12.5px;
           line-height:1.7;
           color:var(--muted2);
         }
         .cxPm-foot{
           margin-top:16px;
-          font-size:13.5px;
+          font-size:12.5px;
           line-height:1.7;
           color:var(--muted2);
         }
@@ -251,7 +251,7 @@ export default function Permissions() {
 
       {/* ✅ FEEDBACK FORM */}
       <Card className="soft" style={{ marginTop: 22 }}>
-        <div style={{ fontWeight: 900, fontSize: 20, marginBottom: 10 }}>Send Feedback</div>
+        <div style={{ fontWeight: 800, fontSize: 17.5, marginBottom: 10 }}>Send Feedback</div>
         <p className="p" style={{ color: "var(--muted2)", marginTop: 0 }}>
           Help us improve CensorX. Please don’t include personal chats or sensitive content.
         </p>
@@ -308,7 +308,7 @@ export default function Permissions() {
 
           {/* Message */}
           <div>
-            <div style={{ fontWeight: 800, fontSize: 12, marginBottom: 6, color: "var(--muted2)" }}>
+            <div style={{ fontWeight: 700, fontSize: 12, marginBottom: 6, color: "var(--muted2)" }}>
               Feedback / Issue Description (required)
             </div>
             <textarea
@@ -357,7 +357,7 @@ export default function Permissions() {
 function Input({ label, hint = "", error = false, ...props }) {
   return (
     <label style={{ display: "grid", gap: 6 }}>
-      <span style={{ fontWeight: 800, fontSize: 12, color: "var(--muted2)" }}>{label}</span>
+      <span style={{ fontWeight: 700, fontSize: 12, color: "var(--muted2)" }}>{label}</span>
       <input {...props} style={inputStyle(error)} />
       {hint ? (
         <span style={{ fontSize: 12, color: error ? "rgba(255,120,120,0.95)" : "var(--muted2)" }}>
@@ -371,7 +371,7 @@ function Input({ label, hint = "", error = false, ...props }) {
 function Select({ label, options, ...props }) {
   return (
     <label style={{ display: "grid", gap: 6 }}>
-      <span style={{ fontWeight: 800, fontSize: 12, color: "var(--muted2)" }}>{label}</span>
+      <span style={{ fontWeight: 700, fontSize: 12, color: "var(--muted2)" }}>{label}</span>
 
       <div style={{ position: "relative" }}>
         <select {...props} style={selectStyle()}>
@@ -398,7 +398,7 @@ function Select({ label, options, ...props }) {
             transform: "translateY(-50%)",
             pointerEvents: "none",
             opacity: 0.9,
-            fontSize: 14,
+            fontSize: 13,
             lineHeight: 1,
             color: "rgba(255,255,255,0.85)",
           }}
@@ -421,7 +421,7 @@ function FormSubmitButton({ submitting }) {
         border: "1px solid rgba(255,255,255,0.12)",
         background: "linear-gradient(180deg, rgba(79,195,247,0.22), rgba(79,195,247,0.12))",
         color: "inherit",
-        fontWeight: 900,
+        fontWeight: 800,
         cursor: submitting ? "not-allowed" : "pointer",
         boxShadow: "0 10px 30px rgba(0,0,0,0.25)",
         transition: "transform 120ms ease, filter 120ms ease",

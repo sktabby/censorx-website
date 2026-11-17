@@ -17,7 +17,7 @@
 .career-info-card,
 .career-progress-card,
 .career-form-card {
-  border-radius: 24px;
+  border-radius: var(--radius-xl);
 }
 
 /* INFORMATION CARD */
@@ -25,8 +25,8 @@
   padding: 24px;
   background: #ffffff;
   color: #000000;
-  border: 1px solid #0f514c;
-  border-left: 5px solid #0f514c;
+  border: 1px solid #0f6b65;
+  border-left: 5px solid #0f6b65;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.10);
 }
 
@@ -42,8 +42,8 @@
 /* OPEN POSITIONS HEADING */
 .career-info-card .career-mini-title {
   color: #ffffff !important;
-  font-size: 16px;
-  font-weight: 900;
+  font-size: 15px;
+  font-weight: 800;
 }
 
 .career-mini-subtitle {
@@ -61,10 +61,10 @@
 }
 
 .career-position-box {
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   padding: 17px;
   background: #ffffff;
-  border: 1px solid #0f514c;
+  border: 1px solid #0f6b65;
   transition: border-color .2s ease, transform .2s ease;
 }
 
@@ -74,9 +74,9 @@
 }
 
 .career-position-role {
-  font-size: 15px;
-  font-weight: 900;
-  color: #0f514c;
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--teal-ink);
   margin-bottom: 8px;
 }
 
@@ -92,9 +92,9 @@
   display: grid;
   gap: 12px;
   padding: 17px;
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   background: #ffffff;
-  border: 1px solid #0f514c;
+  border: 1px solid #0f6b65;
 }
 
 .career-job-detail-item {
@@ -106,8 +106,8 @@
 }
 
 .career-job-detail-label {
-  font-weight: 900;
-  color: #0f514c;
+  font-weight: 800;
+  color: var(--teal-ink);
 }
 
 .career-job-detail-value {
@@ -130,7 +130,7 @@
   padding: 11px 19px;
   border-radius: 999px;
   font-size: 13px;
-  font-weight: 800;
+  font-weight: 700;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
@@ -142,19 +142,19 @@
 .career-details-btn {
   color: #000000;
   background: #ffffff;
-  border: 1px solid #0f514c;
+  border: 1px solid #0f6b65;
 }
 
 .career-details-btn:hover {
-  background: #0f514c;
+  background: var(--teal-ink);
   color: #ffffff;
   transform: translateY(-2px);
 }
 
 .career-apply-btn {
   color: #ffffff;
-  background: #0f514c;
-  border: 1px solid #0f514c;
+  background: var(--teal-ink);
+  border: 1px solid #0f6b65;
   box-shadow: 0 6px 16px rgba(15, 81, 76, .18);
 }
 
@@ -181,7 +181,7 @@
   padding: 26px;
   background: #ffffff;
   color: #000000;
-  border: 1px solid #0f514c;
+  border: 1px solid #0f6b65;
   box-shadow: 0 15px 40px rgba(0, 0, 0, .10);
 }
 
@@ -192,8 +192,8 @@
   border: none !important;
   padding: 0 !important;
   margin: 0 0 22px;
-  font-size: 27px;
-  font-weight: 900;
+  font-size: 24px;
+  font-weight: 800;
   letter-spacing: -0.5px;
 }
 
@@ -205,8 +205,8 @@
 /* PROGRESS */
 .career-progress-card {
   padding: 18px 20px;
-  background: #0f514c;
-  border: 1px solid #0f514c;
+  background: var(--teal-ink);
+  border: 1px solid #0f6b65;
 }
 
 .career-progress-head {
@@ -219,7 +219,7 @@
 
 .career-progress-text {
   font-size: 13px;
-  font-weight: 900;
+  font-weight: 800;
   color: #ffffff;
 }
 
@@ -240,9 +240,9 @@
 
 /* COLLAPSIBLE SECTIONS */
 .career-collapsible {
-  border: 1px solid #0f514c;
+  border: 1px solid #0f6b65;
   background: #ffffff;
-  border-radius: 18px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
   transition: border-color .2s ease, box-shadow .2s ease;
 }
@@ -252,8 +252,8 @@
 }
 
 .career-collapsible.done {
-  border-color: #0f514c;
-  box-shadow: inset 3px 0 0 #0f514c;
+  border-color: var(--teal-ink);
+  box-shadow: inset 3px 0 0 #0f6b65;
 }
 
 .career-collapsible-head {
@@ -283,19 +283,19 @@
 }
 
 .career-collapsible-title {
-  font-size: 16px;
-  font-weight: 900;
+  font-size: 15px;
+  font-weight: 800;
   color: #000000;
 }
 
 .career-complete-badge {
   padding: 5px 10px;
   border-radius: 999px;
-  background: #0f514c;
-  border: 1px solid #0f514c;
+  background: var(--teal-ink);
+  border: 1px solid #0f6b65;
   color: #ffffff;
   font-size: 11px;
-  font-weight: 900;
+  font-weight: 800;
 }
 
 .career-collapsible-subtitle {
@@ -308,17 +308,17 @@
   min-width: 72px;
   padding: 9px 14px;
   border-radius: 999px;
-  border: 1px solid #0f514c;
+  border: 1px solid #0f6b65;
   background: #ffffff;
   color: #000000;
   font-size: 12px;
-  font-weight: 800;
+  font-weight: 700;
   text-align: center;
 }
 
 .career-toggle.open {
-  border-color: #0f514c;
-  background: #0f514c;
+  border-color: var(--teal-ink);
+  background: var(--teal-ink);
   color: #ffffff;
 }
 
@@ -335,7 +335,7 @@
 }
 
 .career-label {
-  font-weight: 800;
+  font-weight: 700;
   color: #000000;
   font-size: 13px;
 }
@@ -343,7 +343,7 @@
 .inp {
   width: 100%;
   padding: 13px 15px;
-  border-radius: 12px;
+  border-radius: var(--radius-md);
   border: 1.5px solid #555f5d;
   background: #ffffff;
   color: #000000;
@@ -357,7 +357,7 @@
 }
 
 .inp:focus {
-  border-color: #0f514c;
+  border-color: var(--teal-ink);
   box-shadow: 0 0 0 3px rgba(15, 81, 76, .13);
 }
 
@@ -434,13 +434,13 @@ textarea.inp {
 }
 
 .chip:hover {
-  border-color: #0f514c;
-  color: #0f514c;
+  border-color: var(--teal-ink);
+  color: var(--teal-ink);
 }
 
 .chip.on {
-  border-color: #0f514c;
-  background: #0f514c;
+  border-color: var(--teal-ink);
+  background: var(--teal-ink);
   color: #ffffff;
   box-shadow: 0 3px 10px rgba(15, 81, 76, .12);
 }
@@ -451,9 +451,9 @@ textarea.inp {
   line-height: 1.7;
   color: #000000;
   padding: 12px 14px;
-  border-radius: 12px;
+  border-radius: var(--radius-md);
   background: #ffffff;
-  border: 1px solid #0f514c;
+  border: 1px solid #0f6b65;
 }
 
 /* SUBMIT */
@@ -469,9 +469,25 @@ textarea.inp {
   color: #000000 !important;
 }
 
+/* Consent line under the submit button: white on the dark form card */
+.career-submit-row p.career-consent {
+  color: #ffffff !important;
+}
+
+.career-submit-row p.career-consent a {
+  color: #7fdcd4;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.career-submit-row p.career-consent a:hover {
+  color: #ffffff;
+}
+
 .career-submit-row a {
-  color: #0f514c;
-  font-weight: 800;
+  color: var(--teal-ink);
+  font-weight: 700;
 }
 
 .career-submit-row a:hover {
@@ -493,7 +509,7 @@ textarea.inp {
 
 .career-popup {
   width: min(420px, 100%);
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: 0 18px 40px rgba(0, 0, 0, .2);
   animation: careerPopupCenterIn .25s ease;
@@ -511,26 +527,26 @@ textarea.inp {
 .career-popup-success {
   background: #ffffff;
   color: #000000;
-  border: 1px solid #0f514c;
+  border: 1px solid #0f6b65;
 }
 
 .career-popup-warning {
   background: #ffffff;
   color: #000000;
-  border: 1px solid #0f514c;
+  border: 1px solid #0f6b65;
 }
 
 .career-popup-error {
   background: #ffffff;
   color: #000000;
-  border: 1px solid #0f514c;
+  border: 1px solid #0f6b65;
 }
 
 .career-popup-close {
   border: none;
   background: transparent;
   color: inherit;
-  font-size: 24px;
+  font-size: 21px;
   cursor: pointer;
   line-height: 1;
 }
@@ -567,7 +583,7 @@ textarea.inp {
   .career-info-card,
   .career-progress-card,
   .career-form-card {
-    border-radius: 19px;
+    border-radius: var(--radius-lg);
   }
 
   .career-info-card {
@@ -583,7 +599,7 @@ textarea.inp {
   }
 
   .career-collapsible-title {
-    font-size: 15px;
+    font-size: 14px;
   }
 
   .career-collapsible-subtitle {
@@ -592,7 +608,7 @@ textarea.inp {
 
   .inp {
     padding: 12px 13px;
-    border-radius: 11px;
+    border-radius: var(--radius-md);
   }
 
   .chip {

@@ -12,7 +12,7 @@ const always = [
   },
   {
     t: "Check screens on the phone itself",
-    d: "What your child sees is checked on the device, not uploaded.",
+    d: "Screenshots are checked on the device and never uploaded. Only short excerpts of flagged messages reach the parent.",
   },
   {
     t: "Delete your data when you ask",
@@ -56,7 +56,7 @@ export default function TrustSignals() {
         }
 
         .cxTr-col{
-          border-radius:22px;
+          border-radius:var(--radius-xl);
           padding:22px 18px 14px;
           background:linear-gradient(180deg, rgba(7,25,24,0.78), rgba(0,0,0,0.40));
           border:1px solid rgba(255,255,255,0.08);
@@ -68,7 +68,7 @@ export default function TrustSignals() {
           padding-bottom:14px;
           border-bottom:1px solid rgba(255,255,255,0.08);
           font-size:13px;
-          font-weight:900;
+          font-weight:800;
           letter-spacing:0.12em;
           text-transform:uppercase;
           color:var(--text);
@@ -79,7 +79,7 @@ export default function TrustSignals() {
           gap:14px;
           align-items:flex-start;
           padding:12px 8px;
-          border-radius:14px;
+          border-radius:var(--radius-md);
           transition:background .2s ease;
         }
         .cxTr-item:hover{
@@ -101,22 +101,22 @@ export default function TrustSignals() {
           color:#32b2a9;
         }
         .cxTr-col.no .cxTr-mark{
-          background:rgba(255,255,255,0.05);
-          border:1px solid rgba(255,255,255,0.16);
-          color:rgba(255,255,255,0.8);
+          background:rgba(239,68,68,0.14);
+          border:1px solid rgba(239,68,68,0.4);
+          color:#f87171;
         }
 
         .cxTr-item b{
           display:block;
-          font-size:15px;
-          font-weight:900;
+          font-size:14px;
+          font-weight:800;
           line-height:1.35;
           color:var(--text);
         }
         .cxTr-item span{
           display:block;
           margin-top:4px;
-          font-size:13.5px;
+          font-size:12.5px;
           line-height:1.65;
           color:var(--muted2);
         }

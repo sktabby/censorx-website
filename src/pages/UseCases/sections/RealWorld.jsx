@@ -13,7 +13,6 @@ export default function RealWorld() {
         <ul className="list">
           <li>Kids receiving harmful messages in chats or gaming communities.</li>
           <li>Students exposed to explicit links or violent media.</li>
-          <li>Individuals facing harassment in public comment sections.</li>
           <li>Families seeking balance between safety and privacy.</li>
         </ul>
       </Card>

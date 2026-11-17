@@ -49,5 +49,27 @@
 
   --focus: 0 0 0 3px rgba(50,178,169,0.35);
 
-  --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  /* Typography: one family for the whole site. Never set a different
+     font-family in a page; use var(--font) or var(--font-mono). */
+  --font: "DM Sans Variable", "DM Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* Weights: body 400, labels 500/600, headings and buttons 700, display 800 (max). */
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-display: 800;
+
+  /* Corner radii: use these four (and 999px for pills). Never a raw px value. */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+
+  /* Teal for text and fills on white surfaces */
+  --teal-ink: #0f6b65;
+
+  /* Vertical space between page sections */
+  --section-y: clamp(32px, 4.5vw, 56px);
 }

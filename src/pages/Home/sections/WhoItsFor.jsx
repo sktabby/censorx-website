@@ -6,8 +6,8 @@ import Card from "../../../components/ui/Card";
 import Button from "../../../components/ui/Button";
 import { ROUTES } from "../../../routes/routes";
 
-import parentImage from "../../../assets/parentsdp.jpg";
-import childImage from "../../../assets/childdp.jpg";
+import parentImage from "../../../assets/parentsdp.webp";
+import childImage from "../../../assets/childdp.webp";
 
 export default function WhoItsFor() {
   return (
@@ -26,7 +26,7 @@ export default function WhoItsFor() {
         .cx-roleCard{
           position:relative;
           overflow:hidden;
-          border-radius:22px;
+          border-radius:var(--radius-xl);
           background: linear-gradient(180deg, rgba(7,25,24,0.70), rgba(0,0,0,0.55));
           border: 1px solid rgba(255,255,255,0.10);
           box-shadow: 0 18px 55px rgba(0,0,0,0.18);
@@ -71,7 +71,7 @@ export default function WhoItsFor() {
         .cx-roleIcon{
           width:48px;
           height:48px;
-          border-radius:16px;
+          border-radius:var(--radius-lg);
           display:grid;
           place-items:center;
           background: rgba(50,178,169,0.14);
@@ -90,8 +90,8 @@ export default function WhoItsFor() {
 
         .cx-roleTitle{
           margin:0;
-          font-weight: 900;
-          font-size: 17px;
+          font-weight: 800;
+          font-size: 16px;
           letter-spacing: -0.01em;
           color: rgba(255,255,255,0.94);
           line-height: 1.15;

@@ -6,7 +6,6 @@ export const ROUTES = {
   FEATURES: "/features",
   DOWNLOAD: "/download",
   USER_GUIDE: "/user-guide",
-  TRL: "/trl",
   ROADMAP: "/roadmap",
   USE_CASES: "/use-cases",
   WHY_IT_MATTERS: "/why-it-matters",

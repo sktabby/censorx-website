@@ -77,7 +77,7 @@ export default function CoFounders() {
           overflow: hidden;
           background: #ffffff !important;
           border: 1px solid rgba(21, 76, 72, 0.2) !important;
-          border-radius: 16px !important;
+          border-radius: var(--radius-lg) !important;
           box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06) !important;
           opacity: 0;
           transform: translateY(15px);
@@ -122,8 +122,8 @@ export default function CoFounders() {
         .cx-name {
           margin: 0;
           color: #103e3a !important;
-          font-size: 21px;
-          font-weight: 800;
+          font-size: 18.5px;
+          font-weight: 700;
           letter-spacing: -0.5px;
           line-height: 1.3;
         }
@@ -137,7 +137,7 @@ export default function CoFounders() {
           padding: 7px 11px;
           background: #eef6f4;
           border: 1px solid rgba(21, 76, 72, 0.15);
-          border-radius: 6px;
+          border-radius: var(--radius-sm);
           color: #154c48 !important;
           font-size: 12px;
           font-weight: 700;
@@ -156,7 +156,7 @@ export default function CoFounders() {
           width: 35px;
           height: 2px;
           margin: 13px auto 10px;
-          border-radius: 10px;
+          border-radius: var(--radius-md);
           background: #237f79;
           transition: width 300ms ease;
         }
@@ -169,7 +169,7 @@ export default function CoFounders() {
           margin: 0;
           max-width: 310px;
           color: #405b56 !important;
-          font-size: 14px;
+          font-size: 13px;
           font-weight: 500;
           line-height: 1.55;
         }
@@ -201,7 +201,7 @@ export default function CoFounders() {
           }
 
           .cx-name {
-            font-size: 20px;
+            font-size: 17.5px;
           }
 
           .cx-role {

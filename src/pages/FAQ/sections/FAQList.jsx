@@ -20,11 +20,11 @@ const FAQS = [
   },
   {
     q: "Does CensorX read, store, or upload private messages or media?",
-    a: "No. CensorX follows a privacy-first approach. All analysis happens locally on the device. No messages, images, videos, or screen recordings are stored or uploaded to servers."
+    a: "CensorX checks what is on the screen on the phone itself. Screenshots and screen recordings are never saved or uploaded. When a message is flagged as possible harassment, a short excerpt of that message is sent to our servers so the parent can see the alert. Full conversations are not uploaded. Our Privacy Policy explains this in detail."
   },
   {
     q: "What happens if a child tries to uninstall or disable CensorX?",
-    a: "CensorX continuously monitors its protection state. If a child attempts to uninstall, force-stop, or disable permissions, parents are notified and re-enabling protection requires parent authentication."
+    a: "A parent can choose to turn on uninstall protection on the child's phone. It is optional and can be switched off at any time. The child can always see that CensorX is on."
   },
   {
     q: "Does CensorX work without internet or in Incognito / Private mode?",
@@ -32,7 +32,7 @@ const FAQS = [
   },
   {
     q: "What if CensorX blocks something harmless by mistake?",
-    a: "CensorX is tuned conservatively to reduce false positives. Parents always have override controls, and detections are logged for improvement, not punishment."
+    a: "No detection system is perfect, and CensorX will sometimes flag something harmless. Alerts are worded as possible concerns for a parent to review, not as proof. Parents choose which protections are on from the parent app."
   },
   {
     q: "Will CensorX slow down the phone or drain battery?",
@@ -56,7 +56,7 @@ export default function FAQList() {
         }
 
         .cxFq-item{
-          border-radius:18px;
+          border-radius:var(--radius-lg);
           background:rgba(255,255,255,0.04);
           border:1px solid rgba(255,255,255,0.10);
           transition:background .3s ease, border-color .3s ease, box-shadow .3s ease;
@@ -86,23 +86,23 @@ export default function FAQList() {
         .cxFq-btn:focus-visible{
           outline:2px solid rgba(255,255,255,0.6);
           outline-offset:2px;
-          border-radius:18px;
+          border-radius:var(--radius-lg);
         }
 
         .cxFq-num{
           flex-shrink:0;
           font-size:12px;
-          font-weight:900;
+          font-weight:800;
           letter-spacing:0.08em;
           color:rgba(255,255,255,0.45);
           transition:color .3s ease;
         }
-        .cxFq-item.open .cxFq-num{ color:#0f6b65; }
+        .cxFq-item.open .cxFq-num{ color:var(--teal-ink); }
 
         .cxFq-q{
           flex:1;
-          font-size:15.5px;
-          font-weight:900;
+          font-size:14.5px;
+          font-weight:800;
           line-height:1.4;
           color:var(--text, #ffffff);
           transition:color .3s ease;
@@ -143,7 +143,7 @@ export default function FAQList() {
         .cxFq-a{
           margin:0;
           padding:0 20px 20px 20px;
-          font-size:14.5px;
+          font-size:13.5px;
           line-height:1.8;
           color:#374151;
           max-width:860px;
@@ -151,8 +151,8 @@ export default function FAQList() {
 
         @media (max-width: 600px){
           .cxFq-btn{ padding:16px 14px; gap:10px; }
-          .cxFq-q{ font-size:14.5px; }
-          .cxFq-a{ padding:0 14px 16px 14px; font-size:14px; }
+          .cxFq-q{ font-size:13.5px; }
+          .cxFq-a{ padding:0 14px 16px 14px; font-size:13px; }
           .cxFq-num{ display:none; }
         }
         @media (prefers-reduced-motion: reduce){

@@ -22,15 +22,15 @@ export default function Footer() {
         }
 
         .ftBrand{
-          font-weight:950;
-          font-size:20px;
+          font-weight:800;
+          font-size:17.5px;
           letter-spacing:-0.01em;
         }
         .ftTag{
           margin:12px 0 0;
           max-width:380px;
           color:var(--muted2);
-          font-size:13.5px;
+          font-size:12.5px;
           line-height:1.75;
         }
 
@@ -58,7 +58,7 @@ export default function Footer() {
         .ftLabel{
           margin:0 0 16px;
           font-size:12px;
-          font-weight:900;
+          font-weight:800;
           letter-spacing:0.12em;
           text-transform:uppercase;
           color:var(--muted2);
@@ -78,7 +78,7 @@ export default function Footer() {
           color:inherit;
           opacity:0.85;
           text-decoration:none;
-          font-size:14px;
+          font-size:13px;
           line-height:1.4;
           word-break:break-word;
           transition:opacity .15s ease, transform .15s ease;
@@ -128,7 +128,7 @@ export default function Footer() {
         <div className="ftGrid">
           {/* BRAND + SOCIAL */}
           <div className="ftCol-brand">
-            <div className="ftBrand">CensorX.ai</div>
+            <div className="ftBrand">CensorX</div>
             <p className="ftTag">
               A privacy-first digital safety layer for real-time protection against harmful content and online harassment.
             </p>

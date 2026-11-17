@@ -1,6 +1,6 @@
 /* =====================================================
    CONTACT FORMS  (School partnership + Feedback)
-   Dark info panel on the left, soft light form on the right.
+   One soft light form panel; intro and steps are small text around it.
    Teal is used only as an accent.
 ===================================================== */
 
@@ -31,8 +31,8 @@
   color: rgba(255, 255, 255, 0.72);
   padding: 10px 18px;
   border-radius: 999px;
-  font-size: 14px;
-  font-weight: 800;
+  font-size: 13px;
+  font-weight: 700;
   cursor: pointer;
   white-space: nowrap;
   transition: background 200ms ease, color 200ms ease;
@@ -57,105 +57,67 @@
 
 .cxCf-shell {
   display: grid;
-  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.5fr);
-  border-radius: 26px;
+  grid-template-columns: minmax(0, 1fr);
+  border-radius: var(--radius-xl);
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.09);
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.32);
 }
 
-/* ---------- Dark info panel ---------- */
+/* ---------- Intro + footnote (small text) ---------- */
 
-.cxCf-aside {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  padding: clamp(22px, 3vw, 34px);
-  color: #ffffff;
-  background:
-    radial-gradient(420px 300px at 0% 0%, rgba(50, 178, 169, 0.16), transparent 65%),
-    linear-gradient(170deg, #0c2b29 0%, #071615 100%);
-}
-
-.cxCf-eyebrow {
-  align-self: flex-start;
-  padding: 5px 11px;
-  border-radius: 999px;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #7fdcd4;
-  background: rgba(50, 178, 169, 0.12);
-  border: 1px solid rgba(50, 178, 169, 0.28);
-}
-
-.cxCf-aside h3 {
-  margin: 16px 0 10px;
-  font-size: clamp(21px, 2.4vw, 27px);
-  font-weight: 900;
-  line-height: 1.2;
-  letter-spacing: -0.015em;
-}
-
-.cxCf-aside > p {
-  margin: 0;
-  font-size: 14.5px;
-  line-height: 1.75;
-  color: rgba(255, 255, 255, 0.74);
-}
-
-.cxCf-steps {
-  list-style: none;
-  margin: 24px 0 0;
-  padding: 22px 0 0;
-  display: grid;
-  gap: 14px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.cxCf-steps li {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  font-size: 14px;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.82);
-}
-
-.cxCf-stepNum {
-  flex-shrink: 0;
-  width: 26px;
-  height: 26px;
-  border-radius: 999px;
-  display: grid;
-  place-items: center;
-  font-size: 12px;
-  font-weight: 900;
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-}
-
-.cxCf-direct {
-  margin-top: auto;
-  padding-top: 26px;
-  display: grid;
-  gap: 3px;
+.cxCf-intro {
+  margin: 8px 0 0;
+  max-width: 62ch;
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.65;
+  color: var(--muted);
 }
 
-.cxCf-direct a {
-  justify-self: start;
-  font-size: 15px;
-  font-weight: 800;
-  color: #ffffff;
+.cxCf-intro strong {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.cxCf-foot {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 20px;
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--muted2);
+}
+
+.cxCf-footSteps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+}
+
+.cxCf-footSteps li {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.cxCf-footSteps b {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.cxCf-foot a {
+  color: var(--text);
+  font-weight: 700;
   border-bottom: 1px solid rgba(50, 178, 169, 0.6);
   overflow-wrap: anywhere;
 }
 
-.cxCf-direct a:hover {
+.cxCf-foot a:hover {
   color: #7fdcd4;
 }
 
@@ -177,7 +139,7 @@
   margin: 10px 0 -2px;
   padding-bottom: 9px;
   font-size: 12px;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: #55635f;
@@ -213,7 +175,7 @@
   align-items: baseline;
   gap: 6px;
   padding: 0;
-  font-size: 13.5px;
+  font-size: 12.5px;
   font-weight: 700;
   color: #1c2826;
 }
@@ -223,8 +185,8 @@
 }
 
 .cxCf-req {
-  color: #0f6b65;
-  font-weight: 900;
+  color: var(--teal-ink);
+  font-weight: 800;
 }
 
 .cxCf-opt {
@@ -237,12 +199,12 @@
   width: 100%;
   min-height: 46px;
   padding: 11px 13px;
-  border-radius: 12px;
+  border-radius: var(--radius-md);
   border: 1px solid #cfd9d7;
   background: #ffffff;
   color: #111827;
   font: inherit;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.4;
   outline: none;
   transition: border-color 150ms ease, box-shadow 150ms ease;
@@ -257,7 +219,7 @@
 }
 
 .cxCf-input:focus {
-  border-color: #0f6b65;
+  border-color: var(--teal-ink);
   box-shadow: 0 0 0 3px rgba(15, 107, 101, 0.16);
 }
 
@@ -328,13 +290,13 @@ select.cxCf-input {
   border: 1px solid #cfd9d7;
   background: #ffffff;
   color: #26332f;
-  font-size: 13.5px;
+  font-size: 12.5px;
   font-weight: 700;
   transition: background 150ms ease, border-color 150ms ease, color 150ms ease;
 }
 
 .cxCf-chip:hover span {
-  border-color: #0f6b65;
+  border-color: var(--teal-ink);
 }
 
 .cxCf-chip input:checked + span {
@@ -365,11 +327,11 @@ select.cxCf-input {
   height: 40px;
   display: grid;
   place-items: center;
-  font-size: 28px;
+  font-size: 24.5px;
   line-height: 1;
   color: #cbd5d3;
   cursor: pointer;
-  border-radius: 10px;
+  border-radius: var(--radius-md);
   transition: color 150ms ease, transform 150ms ease;
 }
 
@@ -381,7 +343,7 @@ select.cxCf-input {
 }
 
 .cxCf-star.on {
-  color: #0f6b65;
+  color: var(--teal-ink);
 }
 
 .cxCf-star:hover {
@@ -405,7 +367,7 @@ select.cxCf-input {
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.5;
   color: #26332f;
   cursor: pointer;
@@ -416,7 +378,7 @@ select.cxCf-input {
   width: 18px;
   height: 18px;
   margin: 2px 0 0;
-  accent-color: #0f6b65;
+  accent-color: var(--teal-ink);
   cursor: pointer;
 }
 
@@ -452,15 +414,15 @@ select.cxCf-input {
   border-radius: 999px;
   background: #0c2b29;
   color: #ffffff;
-  font-size: 15px;
-  font-weight: 800;
+  font-size: 14px;
+  font-weight: 700;
   cursor: pointer;
   box-shadow: 0 10px 24px rgba(12, 43, 41, 0.22);
   transition: background 200ms ease, transform 200ms ease, box-shadow 200ms ease;
 }
 
 .cxCf-submit:hover:not(:disabled) {
-  background: #0f6b65;
+  background: var(--teal-ink);
   transform: translateY(-2px);
   box-shadow: 0 14px 28px rgba(15, 107, 101, 0.26);
 }
@@ -487,8 +449,8 @@ select.cxCf-input {
   width: 100%;
   margin: 0;
   padding: 11px 14px;
-  border-radius: 12px;
-  font-size: 13.5px;
+  border-radius: var(--radius-md);
+  font-size: 12.5px;
   font-weight: 700;
   line-height: 1.5;
   color: #912018;
@@ -504,7 +466,7 @@ select.cxCf-input {
 }
 
 .cxCf-legal a {
-  color: #0f6b65;
+  color: var(--teal-ink);
   font-weight: 700;
   text-decoration: underline;
   text-underline-offset: 3px;
@@ -529,22 +491,22 @@ select.cxCf-input {
   display: grid;
   place-items: center;
   color: #ffffff;
-  background: #0f6b65;
+  background: var(--teal-ink);
   box-shadow: 0 0 0 8px rgba(15, 107, 101, 0.12);
   margin-bottom: 8px;
 }
 
 .cxCf-success h3 {
   margin: 0;
-  font-size: clamp(19px, 2.2vw, 23px);
-  font-weight: 900;
+  font-size: clamp(16.5px, 2vw, 20px);
+  font-weight: 800;
   color: #0b1f1d;
 }
 
 .cxCf-success p {
   margin: 0;
   max-width: 420px;
-  font-size: 14.5px;
+  font-size: 13.5px;
   line-height: 1.7;
   color: #4b5856;
 }
@@ -556,27 +518,17 @@ select.cxCf-input {
   border: 1px solid #cfd9d7;
   background: #ffffff;
   color: #0b1f1d;
-  font-size: 13.5px;
-  font-weight: 800;
+  font-size: 12.5px;
+  font-weight: 700;
   cursor: pointer;
   transition: border-color 150ms ease;
 }
 
 .cxCf-again:hover {
-  border-color: #0f6b65;
+  border-color: var(--teal-ink);
 }
 
 /* ---------- Responsive ---------- */
-
-@media (max-width: 900px) {
-  .cxCf-shell {
-    grid-template-columns: 1fr;
-  }
-
-  .cxCf-direct {
-    margin-top: 0;
-  }
-}
 
 @media (max-width: 640px) {
   .cxCf-head {
@@ -591,11 +543,11 @@ select.cxCf-input {
   .cxCf-tab {
     flex: 1;
     padding: 11px 10px;
-    font-size: 13.5px;
+    font-size: 12.5px;
   }
 
   .cxCf-shell {
-    border-radius: 20px;
+    border-radius: var(--radius-lg);
   }
 
   .cxCf-row {
@@ -604,7 +556,7 @@ select.cxCf-input {
 
   /* 16px stops iOS from zooming in on focus */
   .cxCf-input {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .cxCf-submit {

@@ -5,4 +5,4 @@ RewriteBase /
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
-RewriteRule ^(roles|privacy|features|download|user-guide|trl|roadmap|use-cases|why-it-matters|faq|contact|career|team|about|delete-account|legal/privacy-policy|legal/terms|legal/disclaimer)/?$ /index.html [L]
+RewriteRule ^(roles|privacy|features|download|user-guide|roadmap|use-cases|why-it-matters|faq|contact|career|team|about|schools|terms|delete-account|legal/privacy-policy|legal/terms|legal/disclaimer)/?$ /index.html [L]

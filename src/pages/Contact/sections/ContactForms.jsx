@@ -58,7 +58,9 @@ export default function ContactForms() {
         <div className="cxCf-head">
           <div>
             <h2 className="h2">Get in touch</h2>
-            <p className="p">Choose the form that fits what you need.</p>
+            <p className="cxCf-intro">
+              <strong>{active.title}.</strong> {active.text}
+            </p>
           </div>
 
           <div className="cxCf-tabs" role="tablist" aria-label="Contact forms" onKeyDown={onKeyDown}>
@@ -86,32 +88,23 @@ export default function ContactForms() {
           role="tabpanel"
           aria-labelledby={`cxCf-tab-${active.key}`}
         >
-          <aside className="cxCf-aside">
-            <span className="cxCf-eyebrow">{active.eyebrow}</span>
-            <h3>{active.title}</h3>
-            <p>{active.text}</p>
-
-            <ol className="cxCf-steps">
-              {active.steps.map((s, i) => (
-                <li key={s}>
-                  <span className="cxCf-stepNum" aria-hidden="true">
-                    {i + 1}
-                  </span>
-                  <span>{s}</span>
-                </li>
-              ))}
-            </ol>
-
-            <div className="cxCf-direct">
-              <span>Prefer email?</span>
-              <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>
-            </div>
-          </aside>
-
           <div className="cxCf-main">
             {/* key resets the form state when switching tabs */}
             <Form key={active.key} />
           </div>
+        </div>
+
+        <div className="cxCf-foot">
+          <ol className="cxCf-footSteps">
+            {active.steps.map((s, i) => (
+              <li key={s}>
+                <b>{i + 1}.</b> {s}
+              </li>
+            ))}
+          </ol>
+          <span>
+            Prefer email? <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>
+          </span>
         </div>
       </div>
     </section>

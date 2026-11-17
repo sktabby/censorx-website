@@ -113,7 +113,7 @@ export default function ContactForm() {
         .inp{
           width: 100%;
           padding: 12px 14px;
-          border-radius: 16px;
+          border-radius: var(--radius-lg);
           border: 1px solid rgba(255,255,255,0.08);
           background: rgba(255,255,255,0.03);
           color: rgba(255,255,255,0.92);
@@ -132,7 +132,7 @@ export default function ContactForm() {
 function Field({ label, children }) {
   return (
     <label style={{ display: "grid", gap: 6 }}>
-      <span style={{ fontWeight: 800, color: "var(--muted)" }}>{label}</span>
+      <span style={{ fontWeight: 700, color: "var(--muted)" }}>{label}</span>
       {children}
     </label>
   );

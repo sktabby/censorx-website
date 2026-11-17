@@ -42,7 +42,7 @@ export default function InstallSteps() {
           position:relative;
           border:1px solid rgba(255,255,255,0.12);
           background:rgba(255,255,255,0.04);
-          border-radius:18px;
+          border-radius:var(--radius-lg);
           padding:22px 18px 18px;
           overflow:hidden;
           transition:transform .18s ease, border-color .18s ease;
@@ -52,20 +52,20 @@ export default function InstallSteps() {
           border-color:rgba(255,255,255,0.28);
         }
         .cxSt-num{
-          font-size:46px;
-          font-weight:900;
+          font-size:40.5px;
+          font-weight:800;
           line-height:1;
           color:rgba(255,255,255,0.16);
           margin-bottom:10px;
         }
         .cxSt-card h4{
           margin:0 0 8px;
-          font-size:16px;
-          font-weight:900;
+          font-size:15px;
+          font-weight:800;
         }
         .cxSt-card p{
           margin:0;
-          font-size:13.5px;
+          font-size:12.5px;
           line-height:1.7;
           color:var(--muted2);
         }

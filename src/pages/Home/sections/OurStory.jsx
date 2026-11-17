@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import ourStoryImage from "../../../assets/our story.png";
+import ourStoryImage from "../../../assets/our story.webp";
 
 const css = `
   .cxOs{
     background:#ffffff;
     color:#111827;
-    border-radius:24px;
+    border-radius:var(--radius-xl);
     padding:clamp(22px, 4vw, 40px);
     box-shadow:0 16px 44px rgba(0,0,0,0.28);
     display:grid;
@@ -15,22 +15,22 @@ const css = `
   }
   .cxOs h2{
     margin:0 0 8px;
-    font-size:clamp(24px, 3.4vw, 34px);
+    font-size:clamp(21px, 3.1vw, 30px);
     line-height:1.15;
-    font-weight:900;
+    font-weight:800;
     letter-spacing:-0.01em;
     color:#0b1220;
   }
   .cxOs h3{
     margin:0 0 18px;
-    font-size:clamp(15.5px, 2vw, 18px);
+    font-size:clamp(14.5px, 1.8vw, 16px);
     line-height:1.45;
     font-weight:700;
-    color:#0f6b65;
+    color:var(--teal-ink);
   }
   .cxOs p{
     margin:0 0 14px;
-    font-size:clamp(14.5px, 1.8vw, 16px);
+    font-size:clamp(13.5px, 1.6vw, 15px);
     line-height:1.85;
     color:#374151;
   }
@@ -61,9 +61,9 @@ const css = `
     border:none;
     padding:0;
     font:inherit;
-    font-size:14px;
-    font-weight:800;
-    color:#0f6b65;
+    font-size:13px;
+    font-weight:700;
+    color:var(--teal-ink);
     cursor:pointer;
   }
   .cxOs-toggle:hover{ color:#0b4f4b; }
@@ -77,7 +77,7 @@ const css = `
     display:block;
     width:100%;
     height:auto;
-    border-radius:18px;
+    border-radius:var(--radius-lg);
   }
 
   @media (max-width: 900px){

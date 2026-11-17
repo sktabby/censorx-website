@@ -22,7 +22,7 @@ export default function DownloadCard() {
         .cxDl-hero{
           background:#ffffff;
           color:#111827;
-          border-radius:22px;
+          border-radius:var(--radius-xl);
           padding:30px 28px;
           box-shadow:0 18px 50px rgba(0,0,0,0.30);
           display:flex;
@@ -33,15 +33,15 @@ export default function DownloadCard() {
         }
         .cxDl-hero h3{
           margin:0 0 8px;
-          font-size:28px;
+          font-size:24.5px;
           line-height:1.2;
-          font-weight:900;
+          font-weight:800;
           color:#0b1220;
         }
         .cxDl-hero p{
           margin:0;
           max-width:560px;
-          font-size:15px;
+          font-size:14px;
           line-height:1.7;
           color:#374151;
         }
@@ -55,7 +55,7 @@ export default function DownloadCard() {
           align-items:center;
           gap:14px;
           padding:12px 26px;
-          border-radius:16px;
+          border-radius:var(--radius-lg);
           background:#111827;
           color:#ffffff;
           cursor:default;
@@ -79,8 +79,8 @@ export default function DownloadCard() {
           display:flex;
           align-items:center;
           gap:10px;
-          font-size:18px;
-          font-weight:900;
+          font-size:16px;
+          font-weight:800;
         }
         .cxDl-dots{
           display:inline-flex;
@@ -130,7 +130,7 @@ export default function DownloadCard() {
         /* ---------- MOBILE ---------- */
         @media (max-width: 800px){
           .cxDl-hero{ padding:22px 18px; }
-          .cxDl-hero h3{ font-size:23px; }
+          .cxDl-hero h3{ font-size:20px; }
           .cxDl-btn{ width:100%; justify-content:center; }
         }
 

@@ -35,7 +35,7 @@ export default function ProblemHighlight() {
         .cxPr-card{
           position:relative;
           overflow:hidden;
-          border-radius:24px;
+          border-radius:var(--radius-xl);
           padding:26px 24px 24px;
           color:#111827;
           background:linear-gradient(160deg, #ffffff 0%, #f6fbfa 60%, #e9f6f4 100%);
@@ -51,7 +51,7 @@ export default function ProblemHighlight() {
           content:"";
           position:absolute;
           inset:0;
-          border-radius:24px;
+          border-radius:var(--radius-xl);
           padding:1.5px;
           background:linear-gradient(
             160deg,
@@ -93,11 +93,11 @@ export default function ProblemHighlight() {
           margin-bottom:18px;
         }
         .cxPr-stat strong{
-          font-size:56px;
-          font-weight:900;
+          font-size:49.5px;
+          font-weight:800;
           line-height:0.95;
           letter-spacing:-0.035em;
-          background:linear-gradient(135deg, #073936 0%, #0a4a46 50%, #0f6b65 100%);
+          background:linear-gradient(135deg, #073936 0%, #0a4a46 50%, var(--teal-ink) 100%);
           -webkit-background-clip:text;
           background-clip:text;
           color:transparent;
@@ -124,20 +124,20 @@ export default function ProblemHighlight() {
         .cxPr-icon{
           width:42px;
           height:42px;
-          border-radius:13px;
+          border-radius:var(--radius-md);
           display:grid;
           place-items:center;
           color:#ffffff;
           flex-shrink:0;
-          background:linear-gradient(145deg, #0f6b65, #073936);
+          background:linear-gradient(145deg, var(--teal-ink), #073936);
           box-shadow:
             0 10px 22px rgba(10,74,70,0.40),
             inset 0 1px 0 rgba(255,255,255,0.25);
         }
         .cxPr-card h3{
           margin:0;
-          font-size:17px;
-          font-weight:900;
+          font-size:16px;
+          font-weight:800;
           line-height:1.25;
           letter-spacing:-0.01em;
           color:#0b1220;
@@ -146,7 +146,7 @@ export default function ProblemHighlight() {
           position:relative;
           z-index:1;
           margin:0;
-          font-size:14.5px;
+          font-size:13.5px;
           line-height:1.7;
           color:#374151;
         }
@@ -167,7 +167,7 @@ export default function ProblemHighlight() {
         }
         @media (max-width: 600px){
           .cxPr-card{ padding:22px 20px 20px; }
-          .cxPr-stat strong{ font-size:46px; }
+          .cxPr-stat strong{ font-size:40.5px; }
         }
         @media (prefers-reduced-motion: reduce){
           .cxPr-card{ transition:none; }
@@ -249,7 +249,7 @@ export default function ProblemHighlight() {
         <div className="cxPr-card">
           <div className="cxPr-stat">
             <strong>24/7</strong>
-            <span>exposure. A phone goes to school, to bed and everywhere in between.</span>
+            <span>exposure. A child's phone is with them at home, at tuition, on holidays and late at night.</span>
           </div>
           <div className="cxPr-head">
             <Icon>

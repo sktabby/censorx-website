@@ -15,7 +15,7 @@ export default function SetupSteps() {
           <li>Select your role: Parent / Child.</li>
           <li>Choose protection level (Strict / Balanced / Personal).</li>
           <li>Grant permissions (explained on-screen).</li>
-          <li>Start using apps normally — CensorX runs in the background.</li>
+          <li>Start using apps normally. CensorX stays on, and a notice on the child's phone shows that protection is active.</li>
         </ol>
       </Card>
     </Section>

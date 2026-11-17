@@ -20,7 +20,7 @@ export default function StepFlow() {
         {steps.map((s) => (
           <Card key={s.n} className="soft">
             <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between" }}>
-              <div style={{ fontWeight: 900 }}>{s.t}</div>
+              <div style={{ fontWeight: 800 }}>{s.t}</div>
               <kbd className="pill">{s.n}</kbd>
             </div>
             <p className="p">{s.d}</p>

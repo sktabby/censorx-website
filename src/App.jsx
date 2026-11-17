@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import { ROUTES } from "./routes/routes";
 
@@ -8,30 +8,29 @@ import Footer from "./components/layout/Footer";
 
 import Home from "./pages/Home/Home";
 
-import Roles from "./pages/Roles/Roles";
-import Features from "./pages/Features/Features";
-import Download from "./pages/Download/Download";
-import UserGuide from "./pages/UserGuide/UserGuide";
-import TRL from "./pages/TRL/TRL";
-import Roadmap from "./pages/Roadmap/Roadmap";
-import UseCases from "./pages/UseCases/UseCases";
-import WhyItMatters from "./pages/WhyItMatters/WhyItMatters";
-import FAQ from "./pages/FAQ/FAQ";
-import Contact from "./pages/Contact/Contact";
-
-import PrivacyPolicy from "./pages/Legal/PrivacyPolicy";
-import Terms from "./pages/Legal/Terms";
-import Disclaimer from "./pages/Legal/Disclaimer";
-import DeleteAccount from "./pages/Legal/DeleteAccount";
-import AboutUs from "./pages/AboutUs/AboutUs";
-import Team from "./pages/Team/Team";
-import Career from "./pages/Career/Career";
-import Schools from "./pages/Schools/Schools";
-
 import ScrollToTop from "./components/layout/ScrollToTop";
 
+// Every page except Home loads on demand, so the first visit stays light.
+const Roles = lazy(() => import("./pages/Roles/Roles"));
+const Features = lazy(() => import("./pages/Features/Features"));
+const Download = lazy(() => import("./pages/Download/Download"));
+const UserGuide = lazy(() => import("./pages/UserGuide/UserGuide"));
+const Roadmap = lazy(() => import("./pages/Roadmap/Roadmap"));
+const UseCases = lazy(() => import("./pages/UseCases/UseCases"));
+const WhyItMatters = lazy(() => import("./pages/WhyItMatters/WhyItMatters"));
+const FAQ = lazy(() => import("./pages/FAQ/FAQ"));
+const Contact = lazy(() => import("./pages/Contact/Contact"));
 
-import NotFound from "./pages/NotFound";
+const PrivacyPolicy = lazy(() => import("./pages/Legal/PrivacyPolicy"));
+const Terms = lazy(() => import("./pages/Legal/Terms"));
+const Disclaimer = lazy(() => import("./pages/Legal/Disclaimer"));
+const DeleteAccount = lazy(() => import("./pages/Legal/DeleteAccount"));
+const AboutUs = lazy(() => import("./pages/AboutUs/AboutUs"));
+const Team = lazy(() => import("./pages/Team/Team"));
+const Career = lazy(() => import("./pages/Career/Career"));
+const Schools = lazy(() => import("./pages/Schools/Schools"));
+
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 export default function App() {
   return (
@@ -40,6 +39,7 @@ export default function App() {
 
       <Navbar />
       <main className="mainWrap">
+        <Suspense fallback={<div style={{ minHeight: "60vh" }} />}>
         <Routes>
           <Route path={ROUTES.HOME} element={<Home />} />
 
@@ -47,7 +47,6 @@ export default function App() {
           <Route path={ROUTES.FEATURES} element={<Features />} />
           <Route path={ROUTES.DOWNLOAD} element={<Download />} />
           <Route path={ROUTES.USER_GUIDE} element={<UserGuide />} />
-          <Route path={ROUTES.TRL} element={<TRL />} />
           <Route path={ROUTES.ROADMAP} element={<Roadmap />} />
           <Route path={ROUTES.USE_CASES} element={<UseCases />} />
           <Route path={ROUTES.WHY_IT_MATTERS} element={<WhyItMatters />} />
@@ -58,6 +57,7 @@ export default function App() {
           <Route path={ROUTES.SCHOOLS} element={<Schools />} />
 
           <Route path={ROUTES.PRIVACY_POLICY} element={<PrivacyPolicy />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path={ROUTES.TERMS} element={<Terms />} />
           <Route path={ROUTES.DISCLAIMER} element={<Disclaimer />} />
           <Route path={ROUTES.ABOUT} element={<AboutUs />} />
@@ -67,6 +67,7 @@ export default function App() {
 
           <Route path="*" element={<NotFound />} />
         </Routes>
+        </Suspense>
       </main>
       <Footer />
     </div>

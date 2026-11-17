@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import aboutImg from "../../../assets/aboutusimage.jpg";
+import aboutImg from "../../../assets/aboutusimage.webp";
 
 const css = `
   .cxAb{
     background:#ffffff;
     color:#111827;
-    border-radius:24px;
+    border-radius:var(--radius-xl);
     padding:clamp(22px, 4vw, 40px);
     box-shadow:0 18px 50px rgba(0,0,0,0.30);
     border-left:6px solid #0f6b65;
@@ -16,30 +16,30 @@ const css = `
   }
   .cxAb-k{
     font-size:12px;
-    font-weight:800;
+    font-weight:700;
     letter-spacing:0.12em;
     text-transform:uppercase;
-    color:#0f6b65;
+    color:var(--teal-ink);
     margin:0 0 10px;
   }
   .cxAb h2{
     margin:0 0 6px;
-    font-size:clamp(24px, 3.4vw, 34px);
+    font-size:clamp(21px, 3.1vw, 30px);
     line-height:1.15;
-    font-weight:900;
+    font-weight:800;
     color:#0b1220;
     letter-spacing:-0.01em;
   }
   .cxAb h3{
     margin:0 0 18px;
-    font-size:clamp(16px, 2.2vw, 19px);
+    font-size:clamp(15px, 2vw, 16.5px);
     line-height:1.4;
     font-weight:700;
-    color:#0f6b65;
+    color:var(--teal-ink);
   }
   .cxAb p{
     margin:0 0 16px;
-    font-size:clamp(14.5px, 1.8vw, 16px);
+    font-size:clamp(13.5px, 1.6vw, 15px);
     line-height:1.85;
     color:#374151;
     max-width:820px;
@@ -52,9 +52,9 @@ const css = `
     border:none;
     padding:0;
     font:inherit;
-    font-size:14px;
-    font-weight:800;
-    color:#0f6b65;
+    font-size:13px;
+    font-weight:700;
+    color:var(--teal-ink);
     cursor:pointer;
     text-decoration:underline;
     text-underline-offset:4px;
@@ -72,7 +72,7 @@ const css = `
     height:auto;
     aspect-ratio:3 / 4;
     object-fit:cover;
-    border-radius:20px;
+    border-radius:var(--radius-lg);
     box-shadow:0 20px 50px rgba(0,0,0,0.30);
   }
   @media (max-width: 900px){

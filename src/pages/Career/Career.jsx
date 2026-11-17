@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import Section from "../../components/ui/Section";
 import Card from "../../components/ui/Card";
 import Button from "../../components/ui/Button";
@@ -347,7 +348,7 @@ export default function Career() {
   return (
     <div className="">
       <Section
-        title="Apply For Internship at Censorx.ai"
+        title="Apply For Internship at CensorX"
         subtitle="We are Expanding Our Team!"
       >
 
@@ -606,7 +607,7 @@ export default function Career() {
                 onToggle={() => toggleSection("e")}
                 complete={sectionComplete.e}
               >
-                <Field label="What do you know about censorx.ai ? Describe in one line. *">
+                <Field label="What do you know about CensorX? Describe in one line. *">
                   <textarea className="inp" name="oneLine" value={form.oneLine} onChange={onChange} rows={3} />
                 </Field>
 
@@ -644,7 +645,13 @@ export default function Career() {
                     {submitting ? "Submitting..." : "Submit Application"}
                   </button>
                 </div>
-          
+
+              </div>
+              <div className="career-submit-row">
+                <p className="career-mini-subtitle career-consent">
+                  By applying, you agree that we may use these details to review your application. See our{" "}
+                  <Link to="/legal/privacy-policy">Privacy Policy</Link>.
+                </p>
               </div>
             </form>
           </Card>

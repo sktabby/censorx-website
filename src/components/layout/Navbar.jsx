@@ -15,11 +15,8 @@ export default function Navbar() {
   const exploreItems = useMemo(
     () => [
       { to: ROUTES.ABOUT, label: "About us" },
-      { to: ROUTES.ROLES, label: "who can use censorX?" },
-      { to: ROUTES.PRIVACY_POLICY, label: "Privacy" },
-      { to: ROUTES.TERMS, label: "Terms" },
+      { to: ROUTES.ROLES, label: "Who can use CensorX?" },
       { to: ROUTES.CAREER, label: "Careers" },
-      { to: ROUTES.TRL, label: "TRL" },
       { to: ROUTES.ROADMAP, label: "Roadmap" },
       { to: ROUTES.FAQ, label: "FAQ" },
       // ✅ add this route
@@ -92,18 +89,18 @@ export default function Navbar() {
             <div
               className="brandTitle"
               style={{
-                fontSize: "clamp(16px, 3.5vw, 20px)",
-                fontWeight: 900,
+                fontSize: "clamp(15px, 3.1vw, 17.5px)",
+                fontWeight: 800,
                 lineHeight: 1.1,
               }}
             >
-              CensorX.ai
+              CensorX
             </div>
 
             <div
               className="brandSub"
               style={{
-                fontSize: "clamp(10px, 2.4vw, 12px)",
+                fontSize: "clamp(10px, 2.2vw, 12px)",
                 opacity: 0.8,
                 marginTop: 1,
                 whiteSpace: "nowrap",
@@ -138,7 +135,21 @@ export default function Navbar() {
               aria-expanded={ddOpen}
               type="button"
             >
-              Explore <span className="chev">▾</span>
+              Explore
+              <svg
+                className="chev"
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M6 9l6 6 6-6" />
+              </svg>
             </button>
 
             {ddOpen && (
@@ -163,7 +174,7 @@ export default function Navbar() {
           <NavLink to={ROUTES.DOWNLOAD}>
             <div
               style={{
-                fontSize: "clamp(11px, 2.8vw, 14px)",
+                fontSize: "clamp(11px, 2.5vw, 13px)",
                 whiteSpace: "nowrap",
               }}
             >
@@ -178,9 +189,25 @@ export default function Navbar() {
             className="menuBtn"
             onClick={() => setOpen((s) => !s)}
             aria-label="Menu"
+            aria-expanded={open}
             type="button"
           >
-            ☰
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.2"
+              strokeLinecap="round"
+              aria-hidden="true"
+            >
+              {open ? (
+                <path d="M6 6l12 12M18 6L6 18" />
+              ) : (
+                <path d="M4 7h16M4 12h16M4 17h16" />
+              )}
+            </svg>
           </button>
         </div>
       </div>
@@ -188,7 +215,7 @@ export default function Navbar() {
       {/* MOBILE PANEL */}
       {open && (
         <div ref={mobileRef} className="container mobilePanel">
-          <div className="mobileGroupTitle">More</div>
+          <div className="mobileGroupTitle">Menu</div>
           {mainLinks.map((x) => (
             <NavLink key={x.to} to={x.to} className="mobileA">
               {x.label}

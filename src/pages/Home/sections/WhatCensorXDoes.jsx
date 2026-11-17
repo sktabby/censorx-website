@@ -5,7 +5,7 @@ import Section from "../../../components/ui/Section";
 import Card from "../../../components/ui/Card";
 
 // ✅ put your image here (same folder as co-founders)
-import safetyImg from "../../../assets/team/censorx-visual.png";
+import safetyImg from "../../../assets/team/censorx-visual.webp";
 
 export default function WhatCensorXDoes() {
   return (
@@ -44,7 +44,7 @@ export default function WhatCensorXDoes() {
 
           .cx-para {
             max-width: 820px;
-            font-size: 14px;
+            font-size: 13px;
             line-height: 1.75;
             color: rgba(255,255,255,0.82);
             letter-spacing: -0.01em;
@@ -52,12 +52,12 @@ export default function WhatCensorXDoes() {
 
           .cx-para strong {
             color: rgba(255,255,255,0.96);
-            font-weight: 800;
+            font-weight: 700;
           }
 
           .cx-paraAccent {
             color: #32b2a9;
-            font-weight: 800;
+            font-weight: 700;
           }
 
           .cx-divider {
@@ -75,7 +75,7 @@ export default function WhatCensorXDoes() {
             max-width: 340px;
             aspect-ratio: 4 / 5;
             margin-left: auto;
-            border-radius: 18px;
+            border-radius: var(--radius-lg);
             overflow: hidden;
             background: rgba(255,255,255,0.04);
             border: 1px solid rgba(255,255,255,0.12);
@@ -126,10 +126,10 @@ export default function WhatCensorXDoes() {
 
             Unlike traditional tools that block everything or react only after
             damage is done, CensorX works{" "}
-            <span className="cx-paraAccent">in the moment</span>. It runs quietly
-            in the background, detects risky text and visuals, assesses severity
+            <span className="cx-paraAccent">in the moment</span>. It stays on while
+            the phone is used, with a visible notice on the child's phone, detects risky text and visuals, assesses severity
             instantly, and takes the right safety action — block, blur, warn, or
-            notify — without storing private data or turning daily life into
+            notify — without saving or uploading screenshots or turning daily life into
             surveillance.
 
             <br /><br />

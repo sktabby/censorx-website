@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import Section from "../../../components/ui/Section";
 
-import feature1 from "../../../assets/feature1.jpg";
-import feature2 from "../../../assets/feature2.jpg";
-import feature3 from "../../../assets/feature3.jpg";
-import feature4 from "../../../assets/feature4.jpg";
+import feature1 from "../../../assets/feature1.webp";
+import feature2 from "../../../assets/feature2.webp";
+import feature3 from "../../../assets/feature3.webp";
+import feature4 from "../../../assets/feature4.webp";
 
 const feats = [
   {
@@ -34,7 +34,7 @@ const feats = [
       "With screen-capture permission, CensorX checks what appears on your child’s screen using a model that runs on the phone. When it finds an unsafe image, it blurs the screen straight away.",
       "To avoid flickering on and off, it confirms across a couple of checks before it blurs, and again before it clears the blur.",
       "While the blur is showing, your child sees a clear CensorX cover with a button to leave the app and go back to the home screen.",
-      "Images are checked on the phone only. Screenshots are never saved or uploaded, and nothing from your child’s screen is sent to us.",
+      "Images are checked on the phone only. Screenshots are never saved or uploaded.",
       "You see how many screens were censored in your reports. Like any automatic filter, it can miss some content and can sometimes blur something that is safe.",
     ],
     chips: [],
@@ -93,7 +93,7 @@ export default function FeatureGrid() {
           align-items:stretch;
           background:#ffffff;
           color:#111827;
-          border-radius:20px;
+          border-radius:var(--radius-lg);
           overflow:hidden;
           border-top:5px solid #32b2a9;
           box-shadow:0 14px 40px rgba(0,0,0,0.25);
@@ -134,7 +134,7 @@ export default function FeatureGrid() {
         }
         .cxF-tag{
           font-size:11px;
-          font-weight:800;
+          font-weight:700;
           letter-spacing:0.1em;
           text-transform:uppercase;
           color:#1f8a82;
@@ -143,21 +143,21 @@ export default function FeatureGrid() {
           border-radius:999px;
         }
         .cxF-num{
-          font-size:34px;
-          font-weight:900;
+          font-size:30px;
+          font-weight:800;
           line-height:1;
           color:rgba(17,24,39,0.12);
         }
 
         .cxF-title{
-          font-size:22px;
-          font-weight:900;
+          font-size:19.5px;
+          font-weight:800;
           line-height:1.25;
           color:#0b1220;
           margin:0 0 10px;
         }
         .cxF-text{
-          font-size:15px;
+          font-size:14px;
           line-height:1.7;
           color:#374151;
           margin:0;
@@ -192,7 +192,7 @@ export default function FeatureGrid() {
           background:#f3f4f6;
           border:1px solid #e5e7eb;
           padding:5px 10px;
-          border-radius:8px;
+          border-radius:var(--radius-sm);
         }
 
         .cxF-btn{
@@ -202,8 +202,8 @@ export default function FeatureGrid() {
           border:none;
           padding:0;
           color:#1f8a82;
-          font-weight:800;
-          font-size:14px;
+          font-weight:700;
+          font-size:13px;
           cursor:pointer;
         }
         .cxF-btn:hover{ text-decoration:underline; }
@@ -223,9 +223,9 @@ export default function FeatureGrid() {
           .cxF-body{
             padding:20px 18px 20px;
           }
-          .cxF-title{ font-size:19px; }
-          .cxF-text{ font-size:14.5px; }
-          .cxF-num{ font-size:28px; }
+          .cxF-title{ font-size:16.5px; }
+          .cxF-text{ font-size:13.5px; }
+          .cxF-num{ font-size:24.5px; }
         }
       `}</style>
 

@@ -21,7 +21,7 @@ export default function WhyDifferent() {
     },
     {
       t: "What it sees stays on the phone",
-      d: "Screens are checked on the device itself. Your child's private moments are not uploaded anywhere.",
+      d: "Screens are checked on the device itself. Screenshots are never saved or uploaded.",
       icon: (
         <>
           <rect x="5" y="11" width="14" height="10" rx="2.5" />
@@ -137,7 +137,7 @@ export default function WhyDifferent() {
         .cx-card {
           flex: 0 0 auto;
           width: 300px;
-          border-radius: 20px;
+          border-radius: var(--radius-lg);
           overflow: hidden;
           background: linear-gradient(160deg, #ffffff 0%, #f7faf9 65%, #eef5f4 100%) !important;
           color: #111827 !important;
@@ -165,8 +165,8 @@ export default function WhyDifferent() {
           position: absolute;
           right: 16px;
           top: 6px;
-          font-size: 64px;
-          font-weight: 900;
+          font-size: 56.5px;
+          font-weight: 800;
           line-height: 1;
           letter-spacing: -0.04em;
           color: rgba(15,107,101,0.10);
@@ -181,7 +181,7 @@ export default function WhyDifferent() {
         .cx-icon {
           width: 46px;
           height: 46px;
-          border-radius: 14px;
+          border-radius: var(--radius-md);
           display: grid;
           place-items: center;
           background: #111827;
@@ -192,14 +192,14 @@ export default function WhyDifferent() {
         }
 
         .cx-card:hover .cx-icon {
-          background: #0f6b65;
+          background: var(--teal-ink);
           transform: rotate(-6deg) scale(1.06);
         }
 
         .cx-title {
           margin: 0;
-          font-size: 18px;
-          font-weight: 900;
+          font-size: 16px;
+          font-weight: 800;
           letter-spacing: -0.02em;
           color: #0b1220;
           line-height: 1.3;
@@ -210,7 +210,7 @@ export default function WhyDifferent() {
           height: 3px;
           border-radius: 999px;
           margin-top: 12px;
-          background: #0f6b65;
+          background: var(--teal-ink);
           transition: width 0.3s ease;
         }
 
@@ -220,7 +220,7 @@ export default function WhyDifferent() {
 
         .cx-desc {
           margin-top: 12px;
-          font-size: 14px;
+          font-size: 13px;
           line-height: 1.7;
           color: #374151;
         }
@@ -238,15 +238,15 @@ export default function WhyDifferent() {
           }
 
           .cx-title {
-            font-size: 16.5px;
+            font-size: 15.5px;
           }
 
           .cx-desc {
-            font-size: 13.5px;
+            font-size: 12.5px;
           }
 
           .cx-num {
-            font-size: 54px;
+            font-size: 47.5px;
           }
 
           .cx-belt {

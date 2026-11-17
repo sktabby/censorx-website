@@ -11,15 +11,15 @@ export default function DigitalSafetyLayer() {
     >
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 14 }}>
         <Card className="soft">
-          <div style={{ fontWeight: 900 }}>Works with daily usage</div>
+          <div style={{ fontWeight: 800 }}>Works with daily usage</div>
           <p className="p">No need to change habits or abandon platforms.</p>
         </Card>
         <Card className="soft">
-          <div style={{ fontWeight: 900 }}>Responds in the moment</div>
+          <div style={{ fontWeight: 800 }}>Responds in the moment</div>
           <p className="p">Reduces exposure before content spreads or escalates.</p>
         </Card>
         <Card className="soft">
-          <div style={{ fontWeight: 900 }}>Built for trust</div>
+          <div style={{ fontWeight: 800 }}>Built for trust</div>
           <p className="p">Privacy-first defaults and transparent permission use.</p>
         </Card>
       </div>

@@ -9,7 +9,7 @@
 
 .team-story {
   width: 100%;
-  padding: 55px 20px 35px;
+  padding: 20px 20px 35px;
 }
 
 .team-story-box {
@@ -40,8 +40,8 @@
 
 .team-story-title {
   color: #071918;
-  font-size: clamp(30px, 3.2vw, 44px);
-  font-weight: 800;
+  font-size: clamp(26.5px, 2.9vw, 38.5px);
+  font-weight: 700;
   letter-spacing: -1.5px;
   line-height: 1.2;
 
@@ -50,8 +50,8 @@
 
 .team-story-subtitle {
   color: #087b75;
-  font-size: 19px;
-  font-weight: 750;
+  font-size: 16.5px;
+  font-weight: 700;
   line-height: 1.5;
 
   margin: 0 0 22px;
@@ -59,7 +59,7 @@
 
 .team-story-description {
   color: #263b43;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.95;
 }
 
@@ -69,7 +69,7 @@
 
 .team-story-description strong {
   color: #071918;
-  font-weight: 750;
+  font-weight: 700;
 }
 
 /* Read More animation */
@@ -108,8 +108,8 @@
   border: none;
 
   color: #087b75;
-  font-size: 16px;
-  font-weight: 750;
+  font-size: 15px;
+  font-weight: 700;
 
   cursor: pointer;
 
@@ -122,7 +122,7 @@
 
 .team-story-arrow {
   display: inline-block;
-  font-size: 18px;
+  font-size: 16px;
 
   transition: transform 0.35s ease;
 }
@@ -157,7 +157,7 @@
   object-fit: cover;
   object-position: center;
 
-  border-radius: 25px;
+  border-radius: var(--radius-xl);
 
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.16);
 
@@ -205,18 +205,18 @@
 
   color: var(--c4);
   font-weight: 600;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .team-career-title {
   color: var(--text);
-  font-size: 34px;
+  font-size: 30px;
   margin-bottom: 14px;
 }
 
 .team-career-text {
   color: var(--muted);
-  font-size: 16px;
+  font-size: 15px;
   max-width: 680px;
   margin: auto;
   line-height: 1.7;
@@ -232,7 +232,7 @@
 
   border-radius: var(--r1);
   font-weight: 600;
-  font-size: 15px;
+  font-size: 14px;
 
   cursor: pointer;
 
@@ -267,11 +267,11 @@
   }
 
   .team-story-subtitle {
-    font-size: 17px;
+    font-size: 16px;
   }
 
   .team-story-description {
-    font-size: 15px;
+    font-size: 14px;
   }
 
 }
@@ -284,7 +284,7 @@
 @media (max-width: 768px) {
 
   .team-story {
-    padding: 35px 16px 20px;
+    padding: 16px 16px 20px;
   }
 
   .team-story-box {
@@ -293,7 +293,7 @@
 
     padding: 32px 24px;
 
-    border-radius: 24px;
+    border-radius: var(--radius-xl);
     border-left-width: 5px;
   }
 
@@ -311,24 +311,24 @@
     height: auto;
     max-height: 450px;
     aspect-ratio: 4 / 3;
-    border-radius: 18px;
+    border-radius: var(--radius-lg);
   }
 
   .team-story-title {
-    font-size: 32px;
+    font-size: 28px;
   }
 
   .team-story-subtitle {
-    font-size: 17px;
+    font-size: 16px;
   }
 
   .team-story-description {
-    font-size: 15px;
+    font-size: 14px;
     line-height: 1.8;
   }
 
   .team-story-toggle {
-    font-size: 15px;
+    font-size: 14px;
   }
 
   .team-career {
@@ -340,11 +340,11 @@
   }
 
   .team-career-title {
-    font-size: 26px;
+    font-size: 23px;
   }
 
   .team-career-text {
-    font-size: 15px;
+    font-size: 14px;
   }
 
   .team-career-btn {
@@ -366,11 +366,11 @@
   }
 
   .team-story-title {
-    font-size: 28px;
+    font-size: 24.5px;
   }
 
   .team-story-subtitle {
-    font-size: 16px;
+    font-size: 15px;
   }
 
 }

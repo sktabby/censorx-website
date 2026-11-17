@@ -42,8 +42,8 @@ export default function SolutionWhatIs() {
             replacing it, because a child who feels trapped will always find
             another phone. It is built on honesty: your child can always see
             that CensorX is on, every permission is explained before we ask for
-            it, and what the app sees on the screen stays on the phone instead
-            of being uploaded. You get what matters — alerts and a weekly
+            it, and screenshots are checked on the phone and never
+            uploaded. You get what matters — alerts and a weekly
             summary — not a copy of every private conversation. And it is built
             with humility. No system catches everything. CensorX will sometimes
             miss a message and sometimes flag one it shouldn't, which is why
@@ -71,7 +71,7 @@ export default function SolutionWhatIs() {
 
       <style>{`
         .cx-solutionCard {
-          border-radius: 24px;
+          border-radius: var(--radius-xl);
           padding: clamp(18px, 3vw, 24px);
           background: linear-gradient(
             180deg,
@@ -97,15 +97,15 @@ export default function SolutionWhatIs() {
         }
 
         .cx-solutionTitle {
-          font-weight: 900;
-          font-size: 18px;
+          font-weight: 800;
+          font-size: 16px;
           color: var(--text);
         }
 
         .cx-solutionPara {
           margin: 0;
           opacity: 0.9;
-          font-size: clamp(14px, 2.5vw, 15.5px);
+          font-size: clamp(13px, 2.3vw, 14.5px);
           line-height: 1.85;
           color: var(--muted);
         }
@@ -148,7 +148,7 @@ export default function SolutionWhatIs() {
           color: var(--text);
           padding: 10px 16px;
           border-radius: 999px;
-          font-weight: 800;
+          font-weight: 700;
           font-size: 13px;
           cursor: pointer;
           transition:

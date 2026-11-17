@@ -20,7 +20,7 @@ export default function ImpactGrid() {
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 14 }}>
         {items.map((x) => (
           <Card key={x.t} className="soft">
-            <div style={{ fontWeight: 900 }}>{x.t}</div>
+            <div style={{ fontWeight: 800 }}>{x.t}</div>
             <p className="p">{x.d}</p>
           </Card>
         ))}

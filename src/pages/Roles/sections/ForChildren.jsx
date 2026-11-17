@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Section from "../../../components/ui/Section";
 import Card from "../../../components/ui/Card";
-import childImg from "../../../assets/team/child_img.png";
+import childImg from "../../../assets/team/child_img.webp";
 
 export default function ForChildren() {
   const [expanded, setExpanded] = useState(false);
@@ -63,7 +63,7 @@ export default function ForChildren() {
 
           .cxChild-para {
             max-width: 820px;
-            font-size: 14px;
+            font-size: 13px;
             line-height: 1.75;
             color: rgba(255,255,255,0.82);
             letter-spacing: -0.01em;
@@ -75,12 +75,12 @@ export default function ForChildren() {
 
           .cxChild-para strong {
             color: rgba(255,255,255,0.96);
-            font-weight: 800;
+            font-weight: 700;
           }
 
           .cxChild-accent {
             color: #32b2a9;
-            font-weight: 800;
+            font-weight: 700;
           }
 
           .cxChild-divider {
@@ -123,7 +123,7 @@ export default function ForChildren() {
             color: var(--text);
             padding: 10px 16px;
             border-radius: 999px;
-            font-weight: 800;
+            font-weight: 700;
             font-size: 13px;
             cursor: pointer;
             transition:
@@ -155,7 +155,7 @@ export default function ForChildren() {
             max-width: 340px;
             aspect-ratio: 4 / 5;
             margin-left: auto;
-            border-radius: 18px;
+            border-radius: var(--radius-lg);
             overflow: hidden;
             background: rgba(255,255,255,0.04);
             border: 1px solid rgba(255,255,255,0.12);

@@ -1,6 +1,6 @@
 import React from "react";
 import Section from "../../../components/ui/Section";
-import visionImg from "../../../assets/vision.jpg";
+import visionImg from "../../../assets/vision.webp";
 
 export default function Vision() {
   return (
@@ -12,7 +12,7 @@ export default function Vision() {
         .cxVi{
           background:#ffffff;
           color:#111827;
-          border-radius:22px;
+          border-radius:var(--radius-xl);
           padding:clamp(22px, 4vw, 36px);
           box-shadow:0 16px 44px rgba(0,0,0,0.30);
           display:grid;
@@ -22,15 +22,15 @@ export default function Vision() {
         }
         .cxVi h3{
           margin:0 0 14px;
-          font-size:clamp(20px, 2.8vw, 26px);
+          font-size:clamp(17.5px, 2.5vw, 23px);
           line-height:1.25;
-          font-weight:900;
+          font-weight:800;
           color:#0b1220;
         }
         .cxVi p{
           margin:0 0 14px;
           max-width:820px;
-          font-size:clamp(14.5px, 1.8vw, 16px);
+          font-size:clamp(13.5px, 1.6vw, 15px);
           line-height:1.85;
           color:#374151;
         }
@@ -44,7 +44,7 @@ export default function Vision() {
           display:block;
           width:100%;
           height:auto;
-          border-radius:18px;
+          border-radius:var(--radius-lg);
           box-shadow:0 18px 44px rgba(0,0,0,0.28);
         }
         @media (max-width: 900px){

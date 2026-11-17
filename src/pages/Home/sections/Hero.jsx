@@ -60,7 +60,7 @@ export default function Hero() {
 function MiniStat({ title, text }) {
   return (
     <div style={{ padding: 12, borderRadius: 16, border: "1px solid rgba(255,255,255,0.06)", background: "rgba(255,255,255,0.03)" }}>
-      <div style={{ fontWeight: 800 }}>{title}</div>
+      <div style={{ fontWeight: 700 }}>{title}</div>
       <div style={{ color: "var(--muted2)", marginTop: 6, lineHeight: 1.5 }}>{text}</div>
     </div>
   );

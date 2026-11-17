@@ -30,11 +30,10 @@ const STUDENT_COUNTS = [
   "More than 3,000",
 ];
 
-const GRADES = ["Primary (1–5)", "Middle (6–8)", "Secondary (9–10)", "Senior secondary (11–12)"];
-
 const INTERESTS = [
   "Awareness session for parents",
   "Session for students",
+  "Interested in partnership",
   "Pilot with our families",
   "Just exploring",
 ];
@@ -50,7 +49,6 @@ const EMPTY = {
   city: "",
   board: "",
   studentCount: "",
-  grades: [],
   interests: [],
   preferredContact: "Email",
   message: "",
@@ -228,15 +226,6 @@ export default function SchoolPartnershipForm() {
           ))}
         </select>
       </Field>
-
-      <ChipGroup
-        id="grades"
-        label="Grades you teach"
-        multiple
-        options={GRADES}
-        value={form.grades}
-        onChange={(v) => set("grades", v)}
-      />
 
       <h4 className="cxCf-group">How can we help?</h4>
 

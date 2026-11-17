@@ -2,8 +2,8 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 
 // Safe post images
-import heroPost1 from "/src/assets/heropost1.png";
-import heroPost2 from "/src/assets/heropost2.png";
+import heroPost1 from "/src/assets/heropost1.webp";
+import heroPost2 from "/src/assets/heropost2.webp";
 
 // Harmful post image
 import harmfulPostHero from "/src/assets/harmfulposthero.png";
@@ -154,7 +154,7 @@ export default function CensorXMobileDemo() {
         }
 
         .cxName{
-          font-weight: 950;
+          font-weight: 800;
           letter-spacing: -0.02em;
           font-size: 16px;
         }
@@ -236,7 +236,7 @@ export default function CensorXMobileDemo() {
         }
 
         .status b{
-          font-weight: 900;
+          font-weight: 800;
           letter-spacing: 0.02em;
         }
 
@@ -271,7 +271,7 @@ export default function CensorXMobileDemo() {
         }
 
         .igLogo{
-          font-weight: 950;
+          font-weight: 800;
           letter-spacing: -0.02em;
           display:flex;
           align-items:center;
@@ -336,7 +336,7 @@ export default function CensorXMobileDemo() {
         }
 
         .user{
-          font-weight: 950;
+          font-weight: 800;
           font-size: 13px;
         }
 
@@ -380,7 +380,7 @@ export default function CensorXMobileDemo() {
           padding: 7px 10px;
           border-radius: 999px;
           font-size: 11px;
-          font-weight: 950;
+          font-weight: 800;
           letter-spacing: 0.02em;
           background: rgba(0,0,0,0.55);
           border: 1px solid rgba(255,255,255,0.12);
@@ -529,7 +529,7 @@ export default function CensorXMobileDemo() {
         }
 
         .toastTitle{
-          font-weight: 950;
+          font-weight: 800;
           font-size: 13px;
         }
 

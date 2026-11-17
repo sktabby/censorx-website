@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import CoFounders from "../Home/sections/CoFounders";
-import ourStoryImage from "../../assets/our story.png";
+import ourStoryImage from "../../assets/our story.webp";
 import "./Team.css";
 
 export default function Team() {

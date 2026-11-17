@@ -6,37 +6,37 @@ const css = `
   .cxHw{
     background:#ffffff;
     color:#111827;
-    border-radius:24px;
+    border-radius:var(--radius-xl);
     padding:clamp(22px, 4vw, 40px);
     box-shadow:0 18px 50px rgba(0,0,0,0.30);
     border-left:6px solid #0f6b65;
   }
   .cxHw-k{
     font-size:12px;
-    font-weight:800;
+    font-weight:700;
     letter-spacing:0.12em;
     text-transform:uppercase;
-    color:#0f6b65;
+    color:var(--teal-ink);
     margin:0 0 10px;
   }
   .cxHw h2{
     margin:0 0 6px;
-    font-size:clamp(24px, 3.4vw, 34px);
+    font-size:clamp(21px, 3.1vw, 30px);
     line-height:1.15;
-    font-weight:900;
+    font-weight:800;
     color:#0b1220;
     letter-spacing:-0.01em;
   }
   .cxHw h3{
     margin:0 0 22px;
-    font-size:clamp(16px, 2.2vw, 19px);
+    font-size:clamp(15px, 2vw, 16.5px);
     line-height:1.4;
     font-weight:700;
-    color:#0f6b65;
+    color:var(--teal-ink);
   }
   .cxHw p{
     margin:0 0 18px;
-    font-size:clamp(14.5px, 1.8vw, 16px);
+    font-size:clamp(13.5px, 1.6vw, 15px);
     line-height:1.85;
     color:#374151;
     max-width:820px;
@@ -45,8 +45,8 @@ const css = `
   .cxHw-n{
     display:inline-block;
     min-width:34px;
-    font-weight:900;
-    color:#0f6b65;
+    font-weight:800;
+    color:var(--teal-ink);
     letter-spacing:0.04em;
   }
   .cxHw p b{ color:#0b1220; }
@@ -56,9 +56,9 @@ const css = `
     border:none;
     padding:0;
     font:inherit;
-    font-size:14px;
-    font-weight:800;
-    color:#0f6b65;
+    font-size:13px;
+    font-weight:700;
+    color:var(--teal-ink);
     cursor:pointer;
     text-decoration:underline;
     text-underline-offset:4px;
@@ -83,15 +83,15 @@ const css = `
     border-radius:999px;
     background:#111827;
     color:#ffffff;
-    font-weight:800;
-    font-size:14px;
+    font-weight:700;
+    font-size:13px;
     text-decoration:none;
     box-shadow:0 10px 24px rgba(0,0,0,0.25);
     transition:transform .15s ease, background .15s ease;
   }
   .cxHw-btn:hover{
     transform:translateY(-2px);
-    background:#0f6b65;
+    background:var(--teal-ink);
   }
 `;
 
@@ -140,8 +140,8 @@ export default function HowItWorksHighLevel() {
 
             <p>
               <span className="cxHw-n">05</span>
-              <b>It keeps what it sees on the phone.</b> Screen text and images are
-              checked on the device and are not uploaded. Parents receive alerts
+              <b>It keeps what it sees on the phone.</b> Screen images are
+              checked on the device and never uploaded. Only a short excerpt of a flagged message is sent, so the parent can see the alert. Parents receive alerts
               and a weekly summary — screens blurred, concerns raised, device
               usage, safe-hours kept — not a transcript of their child's life.
             </p>

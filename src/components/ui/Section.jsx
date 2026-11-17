@@ -6,7 +6,7 @@ export default function Section({ title, subtitle, children }) {
     <section className="section">
       <div className="container">
         {(title || subtitle) && (
-          <div style={{ marginBottom: 12 }}>
+          <div className="sectionHead">
             {title && <h2 className="h2">{title}</h2>}
             {subtitle && <p className="p">{subtitle}</p>}
           </div>

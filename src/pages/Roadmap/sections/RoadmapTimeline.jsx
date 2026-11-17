@@ -186,7 +186,7 @@ export default function RoadmapTimeline() {
         }
         .cxRd-row.in .cxRd-pin{ transform:scale(1); }
         .cxRd-row.is-now .cxRd-pin{
-          background:#0f6b65;
+          background:var(--teal-ink);
           color:#ffffff;
           animation:cxRdPulse 1.8s ease-out infinite;
         }
@@ -201,7 +201,7 @@ export default function RoadmapTimeline() {
           max-width:360px;
           background:#ffffff;
           color:#111827;
-          border-radius:18px;
+          border-radius:var(--radius-lg);
           padding:18px 20px;
           box-shadow:0 14px 40px rgba(0,0,0,0.30);
           transition:box-shadow .25s ease;
@@ -212,23 +212,23 @@ export default function RoadmapTimeline() {
         }
         .cxRd-stage{
           font-size:11px;
-          font-weight:800;
+          font-weight:700;
           letter-spacing:0.14em;
           text-transform:uppercase;
           color:#6b7280;
           margin-bottom:6px;
         }
-        .cxRd-row.is-now .cxRd-stage{ color:#0f6b65; }
+        .cxRd-row.is-now .cxRd-stage{ color:var(--teal-ink); }
         .cxRd-card h4{
           margin:0 0 4px;
-          font-size:18px;
+          font-size:16px;
           line-height:1.25;
-          font-weight:900;
+          font-weight:800;
           color:#0b1220;
         }
         .cxRd-card p{
           margin:0;
-          font-size:14px;
+          font-size:13px;
           line-height:1.6;
           color:#374151;
         }
@@ -266,8 +266,8 @@ export default function RoadmapTimeline() {
           padding:0;
           font:inherit;
           font-size:13px;
-          font-weight:800;
-          color:#0f6b65;
+          font-weight:700;
+          color:var(--teal-ink);
           cursor:pointer;
         }
         .cxRd-btn:hover{ color:#0b4f4b; }
@@ -280,8 +280,8 @@ export default function RoadmapTimeline() {
 
         /* big faded stage word on the empty side */
         .cxRd-big{
-          font-size:clamp(40px, 6vw, 72px);
-          font-weight:900;
+          font-size:clamp(35px, 5.4vw, 63.5px);
+          font-weight:800;
           line-height:1;
           letter-spacing:-0.03em;
           text-transform:uppercase;
@@ -301,7 +301,7 @@ export default function RoadmapTimeline() {
           background:#ffffff;
           color:#111827;
           font-size:12px;
-          font-weight:900;
+          font-weight:800;
           letter-spacing:0.12em;
           text-transform:uppercase;
           padding:8px 16px;
@@ -433,10 +433,6 @@ export default function RoadmapTimeline() {
             </div>
           );
         })}
-
-        <div className="cxRd-end">
-          <span>A safer internet for every child</span>
-        </div>
       </div>
     </Section>
   );

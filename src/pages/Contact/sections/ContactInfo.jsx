@@ -29,7 +29,7 @@ export default function ContactInfo() {
         .cx-contactInfoCard {
           background: #ffffff !important;
           border: 1px solid rgba(21, 76, 72, 0.18) !important;
-          border-radius: 18px !important;
+          border-radius: var(--radius-lg) !important;
           box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05) !important;
         }
 
@@ -39,7 +39,7 @@ export default function ContactInfo() {
           margin: 0;
           padding: 5px 0 5px 22px;
           color: #202927;
-          font-size: 15px;
+          font-size: 14px;
           line-height: 1.7;
         }
 
@@ -49,13 +49,13 @@ export default function ContactInfo() {
 
         .cx-contactList b {
           color: #103e3a;
-          font-weight: 800;
+          font-weight: 700;
         }
 
         @media (max-width: 640px) {
           .cx-contactList {
             gap: 14px;
-            font-size: 14px;
+            font-size: 13px;
           }
         }
       `}</style>
