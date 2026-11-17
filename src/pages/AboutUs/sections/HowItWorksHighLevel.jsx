@@ -148,8 +148,8 @@ export default function HowItWorksHighLevel() {
 
             <p>
               That is the whole idea. Protection at the moment it matters, honesty
-              with the child, and a parent who is informed without becoming a
-              spy.
+              with the child, and a parent who is informed without reading every
+              message.
             </p>
           </div>
         </div>

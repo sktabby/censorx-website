@@ -57,7 +57,7 @@ export default function ContactForms() {
       <div className="container">
         <div className="cxCf-head">
           <div>
-            <h2 className="h2">Get in touch</h2>
+            <h1 className="h2">Get in touch</h1>
             <p className="cxCf-intro">
               <strong>{active.title}.</strong> {active.text}
             </p>

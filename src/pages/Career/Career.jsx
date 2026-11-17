@@ -35,7 +35,7 @@ export default function Career() {
   // This is the current Google Form text field for resume sharing.
   const ENTRY_RESUME_LINK = "entry.1434083192";
 
-  const roleOptions = ["AIML Engineer Intern", "Andriod Developer Intern"];
+  const roleOptions = ["AIML Engineer Intern", "Android Developer Intern"];
 
   const aimlTechOptions = [
     "Python",
@@ -348,7 +348,7 @@ export default function Career() {
   return (
     <div className="">
       <Section
-        title="Apply For Internship at CensorX"
+        title="Apply For Internship at CensorX" as="h1"
         subtitle="We are Expanding Our Team!"
       >
 
@@ -401,7 +401,7 @@ export default function Career() {
               </div>
 
               <div className="career-position-box">
-                <div className="career-position-role">Andriod Developer Intern</div>
+                <div className="career-position-role">Android Developer Intern</div>
                 <div className="career-position-text">
                   Best for candidates with Kotlin, Compose, Android components,
                   services, Firebase, permissions, and real-time app features.
@@ -555,7 +555,7 @@ export default function Career() {
                 subtitle={
                   form.role === "AIML Engineer Intern"
                     ? "Skills & Tools for AIML Engineer Intern"
-                    : "Skills & Tools for Andriod Developer Intern"
+                    : "Skills & Tools for Android Developer Intern"
                 }
                 open={openSections.c}
                 onToggle={() => toggleSection("c")}
@@ -650,7 +650,7 @@ export default function Career() {
               <div className="career-submit-row">
                 <p className="career-mini-subtitle career-consent">
                   By applying, you agree that we may use these details to review your application. See our{" "}
-                  <Link to="/legal/privacy-policy">Privacy Policy</Link>.
+                  <Link to="/privacy">Privacy Policy</Link>.
                 </p>
               </div>
             </form>

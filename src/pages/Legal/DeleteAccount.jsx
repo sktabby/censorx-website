@@ -79,7 +79,7 @@ export default function DeleteAccount() {
 
           <p>
             Full details are in our{" "}
-            <a href="/legal/privacy-policy">Privacy Policy</a>. Questions:{" "}
+            <a href="/privacy">Privacy Policy</a>. Questions:{" "}
             <a href="mailto:team@censorx.in">team@censorx.in</a>.
           </p>
         </div>

@@ -1,7 +1,7 @@
 const FORM_ID = "1zIpoap782bW4SJpccdJDFQDiPEzVQopXmIxOmxOB_5k";
 
 const ROLE_AIML = "AIML Engineer Intern";
-const ROLE_ANDROID = "Andriod Developer Intern";
+const ROLE_ANDROID = "Android Developer Intern";
 
 const ITEM_IDS = {
   fullName: 266172263,

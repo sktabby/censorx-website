@@ -6,7 +6,7 @@ import Card from "../../../components/ui/Card";
 export default function Mission() {
   return (
     <Section
-      title="Why CensorX matters"
+      title="Why CensorX matters" as="h1"
       subtitle="A safer internet is possible — but only if protection is real-time and trustworthy."
     >
       <Card className="soft">

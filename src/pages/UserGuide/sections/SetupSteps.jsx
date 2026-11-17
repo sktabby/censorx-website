@@ -6,7 +6,7 @@ import Card from "../../../components/ui/Card";
 export default function SetupSteps() {
   return (
     <Section
-      title="How to use CensorX"
+      title="How to use CensorX" as="h1"
       subtitle="A simple onboarding flow that anyone can follow."
     >
       <Card className="soft">

@@ -25,7 +25,7 @@ function useInView() {
   return { ref, inView };
 }
 
-export default function CoFounders() {
+export default function CoFounders({ asH1 = false }) {
   const { ref, inView } = useInView();
 
   const members = useMemo(
@@ -53,7 +53,7 @@ export default function CoFounders() {
   );
 
   return (
-    <Section title="Team" subtitle="The people behind CensorX.">
+    <Section title="Team" as={asH1 ? "h1" : "h2"} subtitle="The people behind CensorX.">
 
       <style>{`
         .cx-teamWrap {

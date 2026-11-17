@@ -1,6 +1,6 @@
 
 import React, { lazy, Suspense } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { ROUTES } from "./routes/routes";
 
 import Navbar from "./components/layout/Navbar";
@@ -9,6 +9,7 @@ import Footer from "./components/layout/Footer";
 import Home from "./pages/Home/Home";
 
 import ScrollToTop from "./components/layout/ScrollToTop";
+import Seo from "./seo/Seo.jsx";
 
 // Every page except Home loads on demand, so the first visit stays light.
 const Roles = lazy(() => import("./pages/Roles/Roles"));
@@ -36,6 +37,7 @@ export default function App() {
   return (
     <div className="appShell">
       <ScrollToTop />
+      <Seo />
 
       <Navbar />
       <main className="mainWrap">
@@ -57,8 +59,9 @@ export default function App() {
           <Route path={ROUTES.SCHOOLS} element={<Schools />} />
 
           <Route path={ROUTES.PRIVACY_POLICY} element={<PrivacyPolicy />} />
-          <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path={ROUTES.TERMS} element={<Terms />} />
+          <Route path="/legal/privacy-policy" element={<Navigate to={ROUTES.PRIVACY_POLICY} replace />} />
+          <Route path="/legal/terms" element={<Navigate to={ROUTES.TERMS} replace />} />
           <Route path={ROUTES.DISCLAIMER} element={<Disclaimer />} />
           <Route path={ROUTES.ABOUT} element={<AboutUs />} />
 

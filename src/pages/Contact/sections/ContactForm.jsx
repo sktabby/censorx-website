@@ -104,7 +104,7 @@ export default function ContactForm() {
             )}
           </div>
           <p className="p" style={{ marginTop: 10, fontSize: 13, color: "var(--muted2)" }}>
-            By submitting, you agree that we may use these details to respond to you. See our <a href="/legal/privacy-policy">Privacy Policy</a>.
+            By submitting, you agree that we may use these details to respond to you. See our <a href="/privacy">Privacy Policy</a>.
           </p>
         </form>
       </Card>

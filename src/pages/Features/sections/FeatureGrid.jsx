@@ -77,7 +77,7 @@ const feats = [
 export default function FeatureGrid() {
   return (
     <Section
-      title="Features & capabilities"
+      title="Features & capabilities" as="h1"
       subtitle="Four ways CensorX helps you protect your child, with privacy built in."
     >
       <style>{`

@@ -151,10 +151,10 @@ export default function Schools() {
 
   return (
     <>
-      <Section
-        title={
-          <div className="cxSch-titleRow">
-            <span>CensorX for Schools</span>
+      <Section>
+        <div className="sectionHead">
+          <div className="cxSch-titleRow h2">
+            <h1 className="h2">CensorX for Schools</h1>
 
             <a
               href={PORTAL_URL}
@@ -179,9 +179,7 @@ export default function Schools() {
               School login
             </a>
           </div>
-        }
-        subtitle=""
-      >
+        </div>
         <style>{`
           /* ---------- TITLE ROW + TOP LOGIN ---------- */
           .cxSch-titleRow{

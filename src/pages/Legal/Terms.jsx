@@ -117,7 +117,7 @@ export default function Terms() {
           <h2 id="t7">7. Permissions and Device Admin</h2>
           <p>
             Protection depends on the permissions described in our{" "}
-            <a href="/legal/privacy-policy">Privacy Policy</a> (Accessibility,
+            <a href="/privacy">Privacy Policy</a> (Accessibility,
             notification access, screen capture, notifications). If a
             permission is turned off, the related protection stops and the
             Parent is notified. <b>Device Admin is optional</b>, offered only
@@ -213,7 +213,7 @@ export default function Terms() {
           <p>
             How we handle personal data — including what never leaves the
             child's phone — is described in our{" "}
-            <a href="/legal/privacy-policy">Privacy Policy</a>, which forms
+            <a href="/privacy">Privacy Policy</a>, which forms
             part of these terms.
           </p>
 

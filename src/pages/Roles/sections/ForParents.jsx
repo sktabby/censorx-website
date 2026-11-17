@@ -30,7 +30,7 @@ export default function ForParents() {
 
   return (
     <Section
-      title="For Parents"
+      title="For Parents" as="h1"
       subtitle="Peace of mind for you. A safer phone for your child."
     >
       <Card

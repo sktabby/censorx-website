@@ -12,7 +12,7 @@ export default function Team() {
   return (
     <div className="team-page">
 
-      <CoFounders />
+      <CoFounders asH1 />
 
       {/* OUR STORY SECTION */}
       <section className="team-story">

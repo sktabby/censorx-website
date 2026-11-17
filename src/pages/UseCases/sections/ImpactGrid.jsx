@@ -14,7 +14,7 @@ export default function ImpactGrid() {
 
   return (
     <Section
-      title="Use cases & impact"
+      title="Use cases & impact" as="h1"
       subtitle="Real-world relevance across daily life and learning environments."
     >
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 14 }}>

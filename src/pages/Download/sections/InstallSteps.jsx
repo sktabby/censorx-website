@@ -23,7 +23,8 @@ const steps = [
 export default function InstallSteps() {
   return (
     <Section
-      title="How to setup Censorx on your Andriod Phone"
+      title="How to setup CensorX on your Android Phone"
+      as="h1"
       subtitle="Four simple steps. A parent sets everything up."
     >
       <style>{`

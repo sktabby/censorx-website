@@ -191,7 +191,7 @@ export default function TrustSignals() {
       </div>
 
       <div className="cxTr-foot">
-        <a className="cxMoreBtn" href="/legal/privacy-policy">
+        <a className="cxMoreBtn" href="/privacy">
           Read our Privacy Policy
           <span className="cxMoreArrow" aria-hidden="true">→</span>
         </a>

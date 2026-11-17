@@ -92,7 +92,7 @@ export default function RoadmapTimeline() {
   }, []);
 
   return (
-    <Section title="Roadmap" subtitle="The road ahead. One stop at a time.">
+    <Section title="Roadmap" as="h1" subtitle="The road ahead. One stop at a time.">
       <style>{`
         .cxRd-wrap{
           position:relative;

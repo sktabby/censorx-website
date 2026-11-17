@@ -3,21 +3,9 @@ import Section from "../../../components/ui/Section";
 
 export default function DownloadCard() {
   return (
-    <Section
-      title={
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            gap: 16,
-            flexWrap: "wrap",
-          }}
-        >
-        
-        </div>
-      }
-    >
+    <Section>
+      {/* Spacer keeps the exact gap the old (empty) title row gave. */}
+      <div aria-hidden="true" style={{ height: "clamp(18px, 2.4vw, 28px)" }} />
       <style>{`
         .cxDl-hero{
           background:#ffffff;

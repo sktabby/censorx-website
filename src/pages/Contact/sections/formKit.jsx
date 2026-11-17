@@ -158,7 +158,7 @@ export function SubmitRow({ submitting, label, error }) {
       </button>
       <p className="cxCf-legal">
         By submitting, you agree that we may use these details to respond to
-        you. See our <a href="/legal/privacy-policy">Privacy Policy</a>.
+        you. See our <a href="/privacy">Privacy Policy</a>.
       </p>
     </div>
   );

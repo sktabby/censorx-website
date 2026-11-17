@@ -78,8 +78,8 @@ export default function Disclaimer() {
 
         <p>
           This disclaimer should be read together with our{" "}
-          <a href="/legal/terms">Terms of Service</a> and{" "}
-          <a href="/legal/privacy-policy">Privacy Policy</a>. Questions:{" "}
+          <a href="/terms">Terms of Service</a> and{" "}
+          <a href="/privacy">Privacy Policy</a>. Questions:{" "}
           <a href="mailto:team@censorx.in">team@censorx.in</a>.
         </p>
       </article>

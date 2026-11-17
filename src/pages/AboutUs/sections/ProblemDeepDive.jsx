@@ -94,7 +94,7 @@ export default function ProblemDeepDive() {
     <section className="container section">
       <style>{css}</style>
       <div style={{ marginBottom: 12 }}>
-        <h2 className="h2">About us</h2>
+        <h1 className="h2">About us</h1>
         <p className="p">Why CensorX exists, and how it works.</p>
       </div>
       <div className="cxAb">
